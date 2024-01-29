@@ -92,6 +92,7 @@ class PropertyController extends Controller
     }
     // AllProperty
     public function AllProperty(){
-        
+       $property = Property::latest()->get();
+       return view('backend.property.all_property', compact('property'));
     }
 }

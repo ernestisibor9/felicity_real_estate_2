@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->text('address')->nullable();
             $table->enum('role', ['admin',  'user'])->default('user');
-            // $table->enum('status', ['0', '1'])->default('0');
+            $table->enum('status', ['0', '1'])->default('0');
             $table->rememberToken();
             $table->timestamps();
         });

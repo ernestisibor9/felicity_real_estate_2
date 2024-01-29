@@ -75,7 +75,7 @@ class UserController extends Controller
         $data->email = $request->email;
         $data->phone = $request->phone;
         $data->address = $request->address;
-        $data->status = 'inactive';
+        // $data->status = '0';
 
         $data->save();
 
