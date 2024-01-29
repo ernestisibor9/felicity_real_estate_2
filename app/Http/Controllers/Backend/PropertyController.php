@@ -88,11 +88,39 @@ class PropertyController extends Controller
             'message'=> 'Property Inserted Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.property')->with($notification);
     }
     // AllProperty
     public function AllProperty(){
        $property = Property::latest()->get();
        return view('backend.property.all_property', compact('property'));
+    }
+    // change.property.status
+    public function ChangePropertyStatus($id){
+        $userId = Property::findOrFail($id);
+
+        if($userId){
+            if($userId->status){
+                $userId->status = 0;
+            }
+            else{
+                $userId->status = 1;
+            }
+            $userId->save();
+        }
+        return back();
+    }
+    // DeleteProperty
+    public function DeleteProperty($id){
+        $deleteId = Property::findOrFail($id);
+        unlink($deleteId->property_thumbnail);
+
+        Property::findOrFail($id)->delete();
+
+        $notification = array(
+                'message'=> 'Property Deleted Successfully',
+                'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

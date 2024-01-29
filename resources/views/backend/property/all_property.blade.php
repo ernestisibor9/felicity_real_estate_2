@@ -39,8 +39,8 @@
                                 {{-- <a href="{{ route('active.item', $item->id) }}" title="Active" class="btn btn-success"><i class="fadeIn animated bx bx-book-alt"></i></a>
                                 <a href="" title="Inactive" class="btn btn-primary"><i class="fadeIn animated bx bx-bell-off"></i></a> --}}
                                 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleWarningModal">Change Status</button> --}}
-                                {{-- <a href="{{ route('change.item.status', $item->id) }}" class="btn btn-{{ $item->status ? 'dark': 'success'  }}">{{ $item->status ? 'InActive' : 'Active'  }} </a>
-                                <button href="{{ route('delete.item', $item->id) }}" title="Delete" class="btn btn-danger" id="delete">Delete</button> --}}
+                                <a href="{{ route('change.property.status', $item->id) }}" class="btn btn-{{ $item->status ? 'dark': 'success'  }}">{{ $item->status ? 'InActive' : 'Active'  }} </a>
+                                <button href="{{ route('delete.property', $item->id) }}" title="Delete" class="btn btn-danger" id="delete">Delete</button>
                                 
                             </td>											
                         </tr>
