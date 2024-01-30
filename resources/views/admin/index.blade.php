@@ -3,7 +3,8 @@
 @section('admin')
 
 @php
-		$users = App\Models\User::where('role', 'user')->latest()->get()
+		$users = App\Models\User::where('role', 'user')->latest()->get();
+		$property = App\Models\Property::latest()->get();
 @endphp
 
 <div class="page-wrapper">
@@ -14,8 +15,8 @@
 						<div class="card-body">
 							<div class="d-flex align-items-center">
 								<div class="me-auto">
-									<p class="mb-0 text-white">Total Orders</p>
-									<h4 class="my-1 text-white">4805</h4>
+									<p class="mb-0 text-white">Total Properties</p>
+									<h4 class="my-1 text-white">{{count($property)}}</h4>
 									<p class="mb-0 font-13 text-white">+2.5% from last week</p>
 								</div>
 								<div id="chart1"></div>

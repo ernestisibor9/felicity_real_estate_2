@@ -25,7 +25,7 @@
 
 <body class="">
 	<!--wrapper-->
-	<div class="wrapper">
+	<div class="wrapper" style="background-color: purple;">
 		<div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
 			<div class="container">
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
@@ -34,7 +34,7 @@
 							<div class="card-body">
 								<div class="p-4">
 									<div class="mb-3 text-center">
-										<img src="{{ asset('backend/assets/images/logo-icon.png') }}" width="60" alt="" />
+										<img src="{{ asset('backend/assets/images/logo.png') }}" width="60" alt="" />
 									</div>
 									<div class="text-center mb-4">
 										<h5 class="">Felicity Admin</h5>
@@ -72,17 +72,17 @@
 													<button type="submit" class="btn btn-primary">Sign in</button>
 												</div>
 											</div>
-											<div class="col-12">
+											{{-- <div class="col-12">
 												<div class="text-center ">
 													<p class="mb-0">Don't have an account yet? <a href="{{ route('register') }}">Sign up here</a>
 													</p>
 												</div>
-											</div>
+											</div> --}}
 										</form>
 									</div>
-									<div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
+									{{-- <div class="login-separater text-center mb-5"> <span>OR SIGN IN WITH</span>
 										<hr/>
-									</div>
+									</div> --}}
 
 								</div>
 							</div>

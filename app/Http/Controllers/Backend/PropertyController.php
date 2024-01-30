@@ -123,4 +123,93 @@ class PropertyController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+    // 
+    public function EditProperty($id){
+
+        $property = Property::findOrFail($id);
+        $propertyAll = Property::latest()->get();
+        $propertyTypes = PropertyType::latest()->get();
+
+        return view('backend.property.edit_property',compact('property','propertyTypes', 'propertyAll'));
+    }
+    // update.property
+    public function UpdateProperty(Request $request){
+        $pid = $request->id;
+
+        if($request->file('property_thumbnail')){
+            // create new manager instance with desired driver
+            $manager = new ImageManager(new Driver());
+
+            $image = $request->file('property_thumbnail');
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+
+            // read image from file system
+            $img = $manager->read($image);
+            $img = $img->resize(600, 800);
+
+            // save modified image in new format 
+            $img->toJpeg(80)->save(base_path('public/upload/property/thumbnail/'.$name_gen));
+
+            $save_url = 'upload/property/thumbnail/'.$name_gen;
+
+            Property::findOrFail($pid)->update([
+                'ptype_id' => $request->ptype_id,
+                'property_name' => $request->property_name,
+                'property_slug' => strtolower(str_replace('', '-', $request->property_name)),
+                'property_status' => $request->property_status,
+                'lowest_price' => $request->lowest_price,
+                'max_price' => $request->max_price,
+
+                'short_desc' => $request->short_desc,
+                'long_desc' => $request->long_desc,
+                'bedrooms' => $request->bedrooms,
+                'bathrooms' => $request->bathrooms,
+                'garage' => $request->garage,
+                'property_size' => $request->property_size,
+                'property_video' => $request->property_video,
+
+                'address' => $request->address,
+                'city' => $request->city,
+                'state' => $request->state,
+                'featured' => $request->featured,
+                'hot' => $request->hot,
+
+                'status' => 1,
+                'property_thumbnail' => $save_url,
+                'created_at' => Carbon::now(),
+            ]);
+        }
+        else{
+            Property::findOrFail($pid)->update([
+                'ptype_id' => $request->ptype_id,
+                'property_name' => $request->property_name,
+                'property_slug' => strtolower(str_replace('', '-', $request->property_name)),
+                'property_status' => $request->property_status,
+                'lowest_price' => $request->lowest_price,
+                'max_price' => $request->max_price,
+
+                'short_desc' => $request->short_desc,
+                'long_desc' => $request->long_desc,
+                'bedrooms' => $request->bedrooms,
+                'bathrooms' => $request->bathrooms,
+                'garage' => $request->garage,
+                'property_size' => $request->property_size,
+                'property_video' => $request->property_video,
+
+                'address' => $request->address,
+                'city' => $request->city,
+                'state' => $request->state,
+                'featured' => $request->featured,
+                'hot' => $request->hot,
+
+                'status' => 1,
+                'created_at' => Carbon::now(),
+            ]);
+        }
+            $notification = array(
+                'message'=> 'Property Updated Successfully',
+                'alert-type'=>'success'
+            );
+            return redirect()->route('all.property')->with($notification);
+    }
 }

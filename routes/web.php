@@ -114,6 +114,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/all/property', 'AllProperty')->name('all.property');
         Route::get('change/property/status/{id}', 'ChangePropertyStatus')->name('change.property.status');
         Route::get('delete/property/{id}', 'DeleteProperty')->name('delete.property');
+        Route::get('edit/property/{id}', 'EditProperty')->name('edit.property');
+        Route::post('update/property', 'UpdateProperty')->name('update.property');
     });
 });
 
