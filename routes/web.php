@@ -70,6 +70,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
         Route::post('/user/profile/store', 'UserProfileStore')->name('user.profile.store');
         Route::get('/user/change/password', 'UserChangePassword')->name('user.change.password');
         Route::post('/user/update/password', 'UserUpdatePassword')->name('user.password.update');
+        Route::get('/user/add/property', 'UserAddProperty')->name('add.user.property');
+        Route::post('/user/store/property', 'UserStoreProperty')->name('store.user.property');
     });
 });
 

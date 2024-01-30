@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\PropertyType;
 
 use Illuminate\Support\Facades\Hash;
 use Intervention\Image\ImageManager;
@@ -115,5 +116,11 @@ class UserController extends Controller
         );
         return redirect()->back()->with($notification);
     }
-    // DeleteUser
+    // UserAddProperty
+    public function UserAddProperty(){
+        $propertyTypes = PropertyType::latest()->get();
+        return view('user.add_property', compact('propertyTypes'));
+    }
+    // UserStoreProperty
+    public function UserStoreProperty(){}
 }
