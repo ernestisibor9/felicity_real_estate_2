@@ -4,10 +4,10 @@
 
 @php
 		$users = App\Models\User::where('role', 'user')->latest()->get();
-		$admin = App\Models\User::where('role', 'admin')->latest()->get();
+		// $admin = App\Models\User::where('role', 'admin')->latest()->get();
 		$property = App\Models\Property::latest()->get();
 		$allUsers = App\Models\User::latest()->get();
-		$subscribers = App\Models\Subscriber::latest()->get();
+		// $subscribers = App\Models\Subscriber::latest()->get();
 @endphp
 
 <div class="page-wrapper">
@@ -41,34 +41,7 @@
 					   </div>
 					</div>
 				  </div>
-				  <div class="col">
-					<div class="card radius-10 bg-gradient-ohhappiness">
-					   <div class="card-body">
-						   <div class="d-flex align-items-center">
-							   <div class="me-auto">
-								   <p class="mb-0 text-white">Total Subscribers</p>
-								   <h4 class="my-1 text-white">{{count($subscribers)}}</h4>
-								   <p class="mb-0 font-13 text-white"></p>
-							   </div>
-							   <div id="chart3"></div>
-						   </div>
-					   </div>
-					</div>
-				  </div>
-				  <div class="col">
-					<div class="card radius-10 bg-gradient-kyoto">
-					   <div class="card-body">
-						   <div class="d-flex align-items-center">
-							   <div class="me-auto">
-								   <p class="mb-0 text-dark">Total Admin</p>
-								   <h4 class="my-1 text-dark">{{count($admin)}}</h4>
-								   <p class="mb-0 font-13 text-dark"></p>
-							   </div>
-							   <div id="chart4"></div>
-						   </div>
-					   </div>
-					</div>
-				  </div> 
+
 				</div><!--end row-->
 
 

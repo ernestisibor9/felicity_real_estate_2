@@ -99,6 +99,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/admin/update/password', 'AdminUpdatePassword')->name('admin.password.update');
         Route::get('/delete/user/{id}', 'DeleteUser')->name('delete.user');
         Route::get('/change/status/user/{id}', 'ChangeStatusUser')->name('change.user.status');
+        Route::get('all/users', 'AllUsers')->name('admin.users');
     });
 
     // Property Type Route for Admin

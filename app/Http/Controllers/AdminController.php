@@ -142,4 +142,23 @@ class AdminController extends Controller
         );
         return redirect()->route('admin.dashboard')->with($notification);
     }
+    // AllUsers
+    public function AllUsers(){
+        $users = User::latest()->get();
+        return view('admin.all_users', compact('users'));       
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

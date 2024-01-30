@@ -1,3 +1,8 @@
+@php
+	$id = Auth::user()->id;
+	$user = App\Models\User::where('id', $id)->where('role', 'user')->where('status', '1')->first();
+@endphp
+
 <!--sidebar wrapper -->
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
@@ -51,6 +56,7 @@
 					</ul>
 				</li>
 				<li class="menu-label">UI Elements</li>
+				@if ($user)
 				<li>
 					<a href="{{route('add.user.property')}}">
 						<div class="parent-icon"><i class='bx bx-cookie'></i>
@@ -58,6 +64,7 @@
 						<div class="menu-title">Add Property</div>
 					</a>
 				</li>
+				@endif
 				<li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-cart'></i>

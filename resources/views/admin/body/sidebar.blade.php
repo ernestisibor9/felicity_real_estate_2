@@ -97,6 +97,13 @@
 					</a>
 				</li>
 				<li>
+					<a href="{{ route('admin.users') }}">
+						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						</div>
+						<div class="menu-title">Users</div>
+					</a>
+				</li>
+				<li>
 					<a href="{{ route('admin.logout') }}">
 						<div class="parent-icon"><i class='bx bx-cookie'></i>
 						</div>
