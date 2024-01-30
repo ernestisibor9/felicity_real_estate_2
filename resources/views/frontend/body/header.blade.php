@@ -50,7 +50,7 @@
 
       {{-- @auth --}}
           
-				<button type="button" class="btn btn-success" data-bs-toggle="" data-bs-target="">
+				<button type="button" class="btn btn-outline" data-bs-toggle="" data-bs-target="">
 					<a href="{{ route('login') }}" class="text-white">Sign in</a>
 				</button>
 

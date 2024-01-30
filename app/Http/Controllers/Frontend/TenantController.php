@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\PropertyType;
 use App\Models\Property;
 use App\Models\BuyProperty;
+use App\Models\PropertyCategory;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ScheduleMail;
 
@@ -25,6 +26,11 @@ class TenantController extends Controller
         $propertyTypes = PropertyType::latest()->get(); 
         $property = Property::latest()->get(); 
         return view('frontpage.tenant.finished_property', compact('propertyTypes', 'property'));
+    }
+    // FinishedProperty2
+    public function FinishedProperty2(){
+        $propertyCategory = PropertyCategory::where('category_name', 'finished property')->latest()->get(); 
+        return view('frontpage.property.finished_property2', compact('propertyCategory'));
     }
     // StoreFinishedBuy
     public function StoreFinishedBuy(Request $request){

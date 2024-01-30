@@ -181,13 +181,13 @@
       </div>
 
       <div class="d-flex mb-3">
-        <button type="button" class="btn btn-singup navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="" data-bs-target="">
+        {{-- <button type="button" class="btn btn-singup navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="" data-bs-target="">
           <a href="signup.html">Login</a>
         </button>
   
         <button type="button" class="btn btn-b-n navbar-toggle-box toggle-navbar navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
           <i class="bi bi-search"></i>
-        </button>
+        </button> --}}
        </div>
 
     </div>

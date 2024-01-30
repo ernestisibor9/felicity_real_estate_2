@@ -4,7 +4,10 @@
 
 @php
 		$users = App\Models\User::where('role', 'user')->latest()->get();
+		$admin = App\Models\User::where('role', 'admin')->latest()->get();
 		$property = App\Models\Property::latest()->get();
+		$allUsers = App\Models\User::latest()->get();
+		$subscribers = App\Models\Subscriber::latest()->get();
 @endphp
 
 <div class="page-wrapper">
@@ -17,7 +20,7 @@
 								<div class="me-auto">
 									<p class="mb-0 text-white">Total Properties</p>
 									<h4 class="my-1 text-white">{{count($property)}}</h4>
-									<p class="mb-0 font-13 text-white">+2.5% from last week</p>
+									<p class="mb-0 font-13 text-white"></p>
 								</div>
 								<div id="chart1"></div>
 							</div>
@@ -29,9 +32,9 @@
 					   <div class="card-body">
 						   <div class="d-flex align-items-center">
 							   <div class="me-auto">
-								   <p class="mb-0 text-white">Total Revenue</p>
-								   <h4 class="my-1 text-white">$84,245</h4>
-								   <p class="mb-0 font-13 text-white">+5.4% from last week</p>
+								   <p class="mb-0 text-white">Total Users</p>
+								   <h4 class="my-1 text-white">{{count($allUsers)}}</h4>
+								   <p class="mb-0 font-13 text-white"></p>
 							   </div>
 							   <div id="chart2"></div>
 						   </div>
@@ -43,9 +46,9 @@
 					   <div class="card-body">
 						   <div class="d-flex align-items-center">
 							   <div class="me-auto">
-								   <p class="mb-0 text-white">Bounce Rate</p>
-								   <h4 class="my-1 text-white">34.6%</h4>
-								   <p class="mb-0 font-13 text-white">-4.5% from last week</p>
+								   <p class="mb-0 text-white">Total Subscribers</p>
+								   <h4 class="my-1 text-white">{{count($subscribers)}}</h4>
+								   <p class="mb-0 font-13 text-white"></p>
 							   </div>
 							   <div id="chart3"></div>
 						   </div>
@@ -57,9 +60,9 @@
 					   <div class="card-body">
 						   <div class="d-flex align-items-center">
 							   <div class="me-auto">
-								   <p class="mb-0 text-dark">Total Customers</p>
-								   <h4 class="my-1 text-dark">8.4K</h4>
-								   <p class="mb-0 font-13 text-dark">+8.4% from last week</p>
+								   <p class="mb-0 text-dark">Total Admin</p>
+								   <h4 class="my-1 text-dark">{{count($admin)}}</h4>
+								   <p class="mb-0 font-13 text-dark"></p>
 							   </div>
 							   <div id="chart4"></div>
 						   </div>

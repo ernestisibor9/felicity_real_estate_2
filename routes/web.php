@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\PropertyCategoryController;
 use App\Http\Controllers\Frontend\TenantController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -38,6 +39,7 @@ Route::get('/register', [UserController::class, 'UserRegister'])->name('register
 Route::get('/tenant/page', [TenantController::class, 'TenantPage'])->name('tenant.page');
 Route::get('/tenant/buy/property', [TenantController::class, 'TenantBuyProperty'])->name('buy.tenant.property');
 Route::get('/finished/property', [TenantController::class, 'FinishedProperty'])->name('finished.property');
+Route::get('/finished/property2', [TenantController::class, 'FinishedProperty2'])->name('finished.property2');
 Route::post('/store/finished/property/buy', [TenantController::class, 'StoreFinishedBuy'])->name('store.finished.buy');
 Route::get('/unfinished/property', [TenantController::class, 'UnFinishedProperty'])->name('unfinished.property');
 Route::post('/store/unfinished/property/buy', [TenantController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
@@ -55,7 +57,7 @@ Route::post('/store/subscriber', [SubscriberController::class, 'StoreSubscriber'
 Route::post('/search/property', [SearchController::class, 'SearchProperty'])->name('search.property');
 
 // Book Inspect Rent
-Route::get('/book/inpect/rent', [BookInspectionController::class, 'BookInspectRent'])->name('inspect.rent');
+// Route::get('/book/inpect/rent', [BookInspectionController::class, 'BookInspectRent'])->name('inspect.rent');
 
 
 
@@ -116,6 +118,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('delete/property/{id}', 'DeleteProperty')->name('delete.property');
         Route::get('edit/property/{id}', 'EditProperty')->name('edit.property');
         Route::post('update/property', 'UpdateProperty')->name('update.property');
+    });
+
+    // Property Category Route for Admin
+    Route::controller(PropertyCategoryController::class)->group(function(){
+        Route::get('/add/property/category', 'AddPropertyCategory')->name('add.property.category');
+        Route::post('/store/category', 'StoreCategory')->name('store.category');
+        Route::get('/all/property/category', 'AllPropertyCategory')->name('all.property.category');
+        Route::get('edit/category/{id}', 'EditCatgegory')->name('edit.category');
+        Route::post('update/category', 'UpdateCategory')->name('update.category');
+        Route::get('delete/category/{id}', 'DeleteCategory')->name('delete.category');
     });
 });
 

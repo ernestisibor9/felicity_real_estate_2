@@ -11,6 +11,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Buy</a>
           <div class="dropdown-menu">
             <a class="dropdown-item " href="{{route('finished.property')}}">Finished Property</a>
+            <a class="dropdown-item " href="{{route('finished.property2')}}">Finished Property2</a>
             <a class="dropdown-item " href="{{route('unfinished.property')}}">Unfinished Property</a>
             <a class="dropdown-item " href="{{route('land.property')}}">Land</a>
           </div>
@@ -24,7 +25,7 @@
             <a class="dropdown-item " href="agent-single.html">Agent Single</a> -->
           </div>
         </li>
-        {{-- <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Short Let</a>
           <div class="dropdown-menu">
             <a class="dropdown-item " href="property-single.html">Property Single</a>
@@ -32,14 +33,14 @@
             <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
             <a class="dropdown-item " href="agent-single.html">Agent Single</a>
           </div>
-        </li> --}}
-        <li class="nav-item dropdown">
+        </li>
+        {{-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book An Inspection</a>
           <div class="dropdown-menu">
             <a class="dropdown-item " href="">Buy</a>
             <a class="dropdown-item " href="{{route('inspect.rent')}}">Rent</a>
           </div>
-        </li>
+        </li> --}}
        </ul>
       </div>
     </div>
