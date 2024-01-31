@@ -29,7 +29,7 @@
             </div>
           </div>
           <h5 class="text-center mt-5">Please fill the form below</h5>
-          <form action="{{route('store.finished.buy')}}" method="post" enctype="multipart/form-data">
+          <form action="{{route('store.unfinished.buy')}}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="buy_category" id="" value="{{$property->property_category}}">
             <div class="row">

@@ -40,6 +40,12 @@ Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedPr
 Route::get('/finished/properties/details/{id}', [PropertyCategoryController::class, 'FinishPropertyDetails'])->name('finish.properties.details');
 Route::get('/buy/finished/property/{id}', [PropertyCategoryController::class, 'BuyFinishedProperty'])->name('buy.finished.property');
 Route::post('/store/finished/buy', [PropertyCategoryController::class, 'StoreFinishedBuy'])->name('store.finished.buy');
+Route::get('/unfinished/property', [PropertyCategoryController::class, 'UnFinishedProperty'])->name('unfinished.property');
+Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 'BuyUnFinishedProperty'])->name('buy.unfinished.property');
+// Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
+Route::get('/unfinished/properties/details/{id}', [PropertyCategoryController::class, 'UnFinishPropertyDetails'])->name('unfinish.properties.details');
+Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 'BuyUnFinishedProperty'])->name('buy.unfinished.property');
+Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
 
 
 
@@ -47,8 +53,6 @@ Route::post('/store/finished/buy', [PropertyCategoryController::class, 'StoreFin
 Route::get('/tenant/page', [TenantController::class, 'TenantPage'])->name('tenant.page');
 Route::get('/tenant/buy/property', [TenantController::class, 'TenantBuyProperty'])->name('buy.tenant.property');
 
-Route::get('/unfinished/property', [TenantController::class, 'UnFinishedProperty'])->name('unfinished.property');
-Route::post('/store/unfinished/property/buy', [TenantController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
 Route::get('/land/property', [TenantController::class, 'LandProperty'])->name('land.property');
 Route::post('/store/land/property/buy', [TenantController::class, 'StoreLandBuy'])->name('store.land.buy');
 

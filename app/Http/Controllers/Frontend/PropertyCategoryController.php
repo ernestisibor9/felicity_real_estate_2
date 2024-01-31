@@ -58,5 +58,52 @@ class PropertyCategoryController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+    // UnFinishedProperty
+    public function BuyUnFinishedProperty($id){
+        $propertyTypes = PropertyType::latest()->get(); 
+        $property = Property::findOrFail($id);
+        $propertyAll = Property::latest()->get();
+        return view('frontpage.category.buy_unfinished_property', compact('property', 'propertyAll', 'propertyTypes'));
+    }
+    // StoreUnFinishedBuy
+    public function  StoreUnFinishedBuy(Request $request){
+        $buyCategory = $request->buy_category;
+        
+        // Insert into database
+        BuyProperty::insert([
+            'title'=>$request->title,
+            'surname'=>$request->surname,
+            'firstname'=>$request->firstname,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'buy_category'=>$buyCategory,
+            'employment_status'=>$request->employment_status,
+            'background_checks'=>$request->background_checks,
+            'additional_information'=>$request->additional_information,
+            'additional_requests'=>$request->additional_requests,
+            'status' => '1'
+        ]);
+        $data = [
+            'Subject' => 'Request to buy properties.',
+            'Message' => 'We appreciate your request to buy our properties. We have attached an ebook to guide you more on real estate. Thanks'
+        ];
+        Mail::to(($request->email))->send(new ScheduleMail($data));
+        $notification = array(
+                'message'=> 'Request Submitted Successfully. You can check your mail for a free ebook',
+                'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+    // Unfinished Property
+    public function UnFinishedProperty(){
+        $property = Property::where('property_category', 'unfinished_property')->latest()->get(); 
+        return view('frontpage.category.unfinished_property', compact('property'));
+    }
+    // 
+    // UnFinishPropertyDetails
+    public function UnFinishPropertyDetails($id){
+        $pid = Property::findOrFail($id);
+        return view('frontpage.category.unfinished_property_details', compact('pid'));
+    }
     
 }

@@ -102,11 +102,13 @@
                             <li class="d-flex justify-content-between">
                               <strong>Bedrooms:</strong>
                               <span>
-                                @if ($pid->bedrooms !== NULL)
-                                  {{$pid->bedrooms}}
-                                @else
-                                  <h6>0</h6>
-                                @endif
+                                <span>
+                                    @if ($pid->bedrooms !== NULL)
+                                      {{$pid->bedrooms}}
+                                    @else
+                                      <span>0</span>
+                                    @endif
+                                  </span>
                               </span>
                             </li>
                             <li class="d-flex justify-content-between">
