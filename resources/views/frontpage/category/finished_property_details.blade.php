@@ -111,6 +111,10 @@
                               <strong>Garage:</strong>
                               <span>{{$pid->garage}}</span>
                             </li>
+                            <li class="d-flex justify-content-between">
+                               <button class="btn btn-primary">Buy</button>
+                               <button class="btn btn-warning">Book For Inpection</button>
+                              </li>
                           </ul>
                         </div>
                       </div>
@@ -154,11 +158,9 @@
                     </div>
                   </div>
                 </div>
+                <h4 class="text-center">Property Video</h4>
                 <div class="col-md-10">
-                    <video width="1000" height="240" controls>
-                        <source src="{{$pid->property_video}}" type="video/mp4">
-                      Your browser does not support the video tag.
-                      </video>
+                    <iframe width="1200" height="315" src="{{$pid->property_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 {{-- <div class="col-md-10 offset-md-1">
                   <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">

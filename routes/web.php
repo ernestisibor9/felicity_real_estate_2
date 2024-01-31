@@ -38,13 +38,15 @@ Route::get('/register', [UserController::class, 'UserRegister'])->name('register
 // PropertyCategory
 Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedProperty'])->name('finished.property');
 Route::get('/finished/properties/details/{id}', [PropertyCategoryController::class, 'FinishPropertyDetails'])->name('finish.properties.details');
+Route::get('/buy/finished/property/{id}', [PropertyCategoryController::class, 'BuyFinishedProperty'])->name('buy.finished.property');
+Route::post('/store/finished/buy', [PropertyCategoryController::class, 'StoreFinishedBuy'])->name('store.finished.buy');
+
+
 
 // Tenant
 Route::get('/tenant/page', [TenantController::class, 'TenantPage'])->name('tenant.page');
 Route::get('/tenant/buy/property', [TenantController::class, 'TenantBuyProperty'])->name('buy.tenant.property');
-// Route::get('/finished/property', [TenantController::class, 'FinishedProperty'])->name('finished.property');
-// Route::get('/finished/property2', [TenantController::class, 'FinishedProperty2'])->name('finished.property2');
-Route::post('/store/finished/property/buy', [TenantController::class, 'StoreFinishedBuy'])->name('store.finished.buy');
+
 Route::get('/unfinished/property', [TenantController::class, 'UnFinishedProperty'])->name('unfinished.property');
 Route::post('/store/unfinished/property/buy', [TenantController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
 Route::get('/land/property', [TenantController::class, 'LandProperty'])->name('land.property');

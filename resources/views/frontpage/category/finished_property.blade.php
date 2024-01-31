@@ -15,7 +15,7 @@
                           <h6>Property Name: {{$item->property_name}}</h6>
                           <h6>Property Category: Finished Property</h6>
                           <h6>Property Price: &#8358;{{$item->price}}</h6>
-                          <button class="btn btn-primary">Buy</button>
+                          <a href="{{route('buy.finished.property', $item->id)}}" class="btn btn-primary">Buy</a>
                           <a href="{{route('finish.properties.details', $item->id)}}" class="btn btn-danger">Details</a>
                         </div>
                       @endforeach

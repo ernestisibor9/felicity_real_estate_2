@@ -18,18 +18,12 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('email');
             $table->string('phone');
-            $table->integer('ptype_id')->nullable();
-            $table->string('budget');
             $table->string('buy_category')->nullable();
-            $table->integer('city_id');
-            $table->string('amenities')->nullable();
-            $table->string('state_of_community')->nullable();
-            $table->string('property_size')->nullable();
             $table->string('employment_status')->nullable();
             $table->string('background_checks')->nullable();
+            $table->string('status')->default(0)->nullable();
             $table->text('additional_information')->nullable();
             $table->text('additional_requests')->nullable();
-            $table->string('status')->default(0)->nullable();
             $table->timestamps();
         });
     }
