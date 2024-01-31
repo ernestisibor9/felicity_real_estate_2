@@ -17,8 +17,9 @@ return new class extends Migration
             $table->string('property_name');
             $table->string('property_slug');
             $table->string('property_status');
-            $table->string('lowest_price')->nullable();
-            $table->string('max_price')->nullable();
+            $table->string('property_category')->nullable();
+            $table->string('price')->nullable();
+
             $table->string('property_thumbnail');
             $table->text('short_desc')->nullable();
             $table->longText('long_desc')->nullable();

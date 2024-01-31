@@ -27,7 +27,7 @@
                             <td><img src="{{ asset($item->property_thumbnail) }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="60" height="60"></td>
                             <td>{{ $item->property_name }}</td>
                             <td>{{ $item->type->type_name }}</td>
-                            <td>{{ $item->property_status }}</td>
+                            <td>{{ $item->property_category }}</td>
                             <td>{{ $item->city }}</td>
                             <td>
                                 @if ( $item->status == '1')
@@ -41,7 +41,7 @@
                                 <a href="" title="Inactive" class="btn btn-primary"><i class="fadeIn animated bx bx-bell-off"></i></a> --}}
                                 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleWarningModal">Change Status</button> --}}
                                 <a href="{{ route('change.property.status', $item->id) }}" class="btn btn-{{ $item->status ? 'dark': 'success'  }}">{{ $item->status ? 'InActive' : 'Active'  }} </a>
-                                <a href="{{ route('edit.property', $item->id) }}" title="Delete" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('edit.property', $item->id) }}" title="Edit" class="btn btn-primary">Edit</a>
                                 <button href="{{ route('delete.property', $item->id) }}" title="Delete" class="btn btn-danger" id="delete">Delete</button>
                                 
                             </td>											

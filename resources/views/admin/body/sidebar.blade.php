@@ -45,7 +45,7 @@
 						</li>
 					</ul>
 				</li>
-				<li>
+				{{-- <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-alt'></i>
 						</div>
@@ -57,7 +57,7 @@
 						<li> <a href="{{ route('all.property.category') }}"><i class='bx bx-radio-circle'></i>All Property Category </a>
 						</li>
 					</ul>
-				</li>
+				</li> --}}
 				{{-- <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-category"></i>

@@ -124,14 +124,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
     // Property Category Route for Admin
-    Route::controller(PropertyCategoryController::class)->group(function(){
-        Route::get('/add/property/category', 'AddPropertyCategory')->name('add.property.category');
-        Route::post('/store/category', 'StoreCategory')->name('store.category');
-        Route::get('/all/property/category', 'AllPropertyCategory')->name('all.property.category');
-        Route::get('edit/category/{id}', 'EditCatgegory')->name('edit.category');
-        Route::post('update/category', 'UpdateCategory')->name('update.category');
-        Route::get('delete/category/{id}', 'DeleteCategory')->name('delete.category');
-    });
+    // Route::controller(PropertyCategoryController::class)->group(function(){
+    //     Route::get('/add/property/category', 'AddPropertyCategory')->name('add.property.category');
+    //     Route::post('/store/category', 'StoreCategory')->name('store.category');
+    //     Route::get('/all/property/category', 'AllPropertyCategory')->name('all.property.category');
+    //     Route::get('edit/category/{id}', 'EditCatgegory')->name('edit.category');
+    //     Route::post('update/category', 'UpdateCategory')->name('update.category');
+    //     Route::get('delete/category/{id}', 'DeleteCategory')->name('delete.category');
+    // });
 });
 
 
