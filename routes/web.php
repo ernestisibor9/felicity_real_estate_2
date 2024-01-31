@@ -37,6 +37,7 @@ Route::get('/register', [UserController::class, 'UserRegister'])->name('register
 
 // PropertyCategory
 Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedProperty'])->name('finished.property');
+Route::get('/finished/properties/details/{id}', [PropertyCategoryController::class, 'FinishPropertyDetails'])->name('finish.properties.details');
 
 // Tenant
 Route::get('/tenant/page', [TenantController::class, 'TenantPage'])->name('tenant.page');
