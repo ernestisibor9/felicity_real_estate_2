@@ -11,7 +11,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Buy</a>
           <div class="dropdown-menu">
             <a class="dropdown-item " href="{{route('finished.property')}}">Finished Property</a>
-            <a class="dropdown-item " href="{{route('finished.property2')}}">Finished Property2</a>
+            {{-- <a class="dropdown-item " href="{{route('finished.property2')}}">Finished Property2</a> --}}
             <a class="dropdown-item " href="{{route('unfinished.property')}}">Unfinished Property</a>
             <a class="dropdown-item " href="{{route('land.property')}}">Land</a>
           </div>

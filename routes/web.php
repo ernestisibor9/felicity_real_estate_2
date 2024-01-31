@@ -3,8 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
-use App\Http\Controllers\Backend\PropertyCategoryController;
 use App\Http\Controllers\Frontend\TenantController;
+use App\Http\Controllers\Frontend\PropertyCategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Frontend\InvestorController;
@@ -35,11 +35,14 @@ Route::get('/', [UserController::class, 'Index']);
 Route::get('/login', [UserController::class, 'UseLogin'])->name('login');
 Route::get('/register', [UserController::class, 'UserRegister'])->name('register');
 
+// PropertyCategory
+Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedProperty'])->name('finished.property');
+
 // Tenant
 Route::get('/tenant/page', [TenantController::class, 'TenantPage'])->name('tenant.page');
 Route::get('/tenant/buy/property', [TenantController::class, 'TenantBuyProperty'])->name('buy.tenant.property');
-Route::get('/finished/property', [TenantController::class, 'FinishedProperty'])->name('finished.property');
-Route::get('/finished/property2', [TenantController::class, 'FinishedProperty2'])->name('finished.property2');
+// Route::get('/finished/property', [TenantController::class, 'FinishedProperty'])->name('finished.property');
+// Route::get('/finished/property2', [TenantController::class, 'FinishedProperty2'])->name('finished.property2');
 Route::post('/store/finished/property/buy', [TenantController::class, 'StoreFinishedBuy'])->name('store.finished.buy');
 Route::get('/unfinished/property', [TenantController::class, 'UnFinishedProperty'])->name('unfinished.property');
 Route::post('/store/unfinished/property/buy', [TenantController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');

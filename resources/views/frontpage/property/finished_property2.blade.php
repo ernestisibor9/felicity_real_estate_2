@@ -1,4 +1,4 @@
-@extends('frontpage.dashboard')
+{{-- @extends('frontpage.dashboard')
 
 
 @section('main')
@@ -22,4 +22,4 @@
     </main>
 
 
-@endsection
+@endsection --}}

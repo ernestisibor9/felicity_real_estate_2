@@ -22,19 +22,31 @@
                                 <div class="col-md-6 form-group">
                                     <label for="input2" class="form-label">Property Status</label>
                                     <select id="input7" class="form-select" name="property_status">
-                                        <option selected="" disabled>Property Status</option>
+                                        <option selected="" disabled>Select Property Status</option>
                                         <option value="buy">For Buy</option>
                                         <option value="rent">For Rent</option>
                                         <option value="let">For Let</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <label for="input1" class="form-label">Lowest Price</label>
-                                    <input type="text" name="lowest_price" class="form-control" id="input1" placeholder="Lowest Price">
+                                    <label for="input2" class="form-label">Price</label>
+                                    <select id="input7" class="form-select" name="price">
+                                        <option selected="" disabled>Select Price Range</option>
+                                        <option value="1m-2m">&#8358;1m - &#8358;2m</option>
+                                        <option value="3m-4m">&#8358;3m - &#8358;4m</option>
+                                        <option value="5m-6m">&#8358;5m - &#8358;6m</option>
+                                        <option value="7m-8m">&#8358;7m - &#8358;8m</option>
+                                        <option value="9m-10m">&#8358;9m - &#8358;10m</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <label for="input1" class="form-label">Maximum Price</label>
-                                    <input type="text" name="max_price" class="form-control" id="input1" placeholder="Maximum Price">
+                                    <label for="input1" class="form-label">Property Category</label>
+                                    <select id="input7" class="form-select" name="property_category">
+                                        <option selected="" disabled>Select Property Category</option>
+                                        <option value="finished_property">Finished Property</option>
+                                        <option value="unfinished_property">Unfinished Property</option>
+                                        <option value="land">Land</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="input2" class="form-label">Property Thumbnail Photo</label>
@@ -185,10 +197,10 @@ $(document).ready(function (){
                             property_status: {
                 required : true,
             }, 
-                            lowest_price: {
+                            price: {
                 required : true,
             },
-                            max_price: {
+                            property_category: {
                 required : true,
             },
                             property_thumbnail:{
@@ -206,11 +218,11 @@ $(document).ready(function (){
             property_status: {
                 required : 'Please Select Property Status',
             },
-                            lowest_price: {
-                required : 'Please Enter Lowest Price',
+                            price: {
+                required : 'Please Select Price',
             },
-                            max_price: {
-                required : 'Please Enter Maximum Price',
+                            property_category: {
+                required : 'Please Select Property Category',
             },
                             property_thumbnail:{
                                 required : 'Please Upload a Thumbnail Photo',

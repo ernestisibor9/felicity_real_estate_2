@@ -146,8 +146,8 @@ class UserController extends Controller
             'property_name' => $request->property_name,
             'property_slug' => strtolower(str_replace('', '-', $request->property_name)),
             'property_status' => $request->property_status,
-            'lowest_price' => $request->lowest_price,
-            'max_price' => $request->max_price,
+            'price' => $request->price,
+            'property_category' => $request->property_category,
 
             'short_desc' => $request->short_desc,
             'long_desc' => $request->long_desc,

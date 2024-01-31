@@ -196,10 +196,10 @@
 								property_status: {
                     required : true,
                 }, 
-								lowest_price: {
+								price: {
                     required : true,
                 },
-								max_price: {
+								property_category: {
                     required : true,
                 },
 								property_thumbnail:{
@@ -217,11 +217,11 @@
                 property_status: {
                     required : 'Please Select Property Status',
                 },
-								lowest_price: {
-                    required : 'Please Enter Lowest Price',
+								price: {
+                    required : 'Please Select Price',
                 },
-								max_price: {
-                    required : 'Please Enter Maximum Price',
+								property_category: {
+                    required : 'Please Select Property Category',
                 },
 								property_thumbnail:{
 									required : 'Please Upload a Thumbnail Photo',

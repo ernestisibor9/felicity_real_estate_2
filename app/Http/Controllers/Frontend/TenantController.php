@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\PropertyType;
 use App\Models\Property;
 use App\Models\BuyProperty;
-use App\Models\PropertyCategory;
+// use App\Models\PropertyCategory;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ScheduleMail;
 
@@ -22,53 +22,53 @@ class TenantController extends Controller
         return view('frontpage.tenant.buy_property');
     }
     // FinishedProperty
-    public function FinishedProperty(){
-        $propertyTypes = PropertyType::latest()->get(); 
-        $property = Property::latest()->get(); 
-        return view('frontpage.tenant.finished_property', compact('propertyTypes', 'property'));
-    }
+    // public function FinishedProperty(){
+    //     $propertyTypes = PropertyType::latest()->get(); 
+    //     $property = Property::latest()->get(); 
+    //     return view('frontpage.tenant.finished_property', compact('propertyTypes', 'property'));
+    // }
     // FinishedProperty2
-    public function FinishedProperty2(){
-        $propertyCategory = PropertyCategory::where('category_name', 'finished property')->latest()->get(); 
-        return view('frontpage.property.finished_property2', compact('propertyCategory'));
-    }
+    // public function FinishedProperty2(){
+    //     $propertyCategory = PropertyCategory::where('category_name', 'finished property')->latest()->get(); 
+    //     return view('frontpage.property.finished_property2', compact('propertyCategory'));
+    // }
     // StoreFinishedBuy
-    public function StoreFinishedBuy(Request $request){
+    // public function StoreFinishedBuy(Request $request){
         // $request->validate([
         //     'type_name' => 'required|unique:property_types|max:200',
         // ]);
 
         // Insert into database
-        BuyProperty::insert([
-            'title'=>$request->title,
-            'surname'=>$request->surname,
-            'firstname'=>$request->firstname,
-            'email'=>$request->email,
-            'phone'=>$request->phone,
-            'ptype_id'=>$request->ptype_id,
-            'budget'=>$request->budget,
-            'buy_category'=>'finished property',
-            'city_id'=>$request->city_id,
-            'amenities'=>$request->amenities,
-            'state_of_community'=>$request->state_of_community,
-            'property_size'=>$request->property_size,
-            'employment_status'=>$request->employment_status,
-            'background_checks'=>$request->background_checks,
-            'additional_information'=>$request->additional_information,
-            'additional_requests'=>$request->additional_requests,
-            'status' => '1'
-        ]);
-        $data = [
-            'Subject' => 'Request to buy properties.',
-            'Message' => 'We appreciate your request to buy our properties. We have attached an ebook to guide you more on real estate. Thanks'
-        ];
-        Mail::to(($request->email))->send(new ScheduleMail($data));
-        $notification = array(
-                'message'=> 'Request Submitted Successfully. You can check your mail for a free ebook',
-                'alert-type'=>'success'
-        );
-        return redirect()->back()->with($notification);
-    }
+    //     BuyProperty::insert([
+    //         'title'=>$request->title,
+    //         'surname'=>$request->surname,
+    //         'firstname'=>$request->firstname,
+    //         'email'=>$request->email,
+    //         'phone'=>$request->phone,
+    //         'ptype_id'=>$request->ptype_id,
+    //         'budget'=>$request->budget,
+    //         'buy_category'=>'finished property',
+    //         'city_id'=>$request->city_id,
+    //         'amenities'=>$request->amenities,
+    //         'state_of_community'=>$request->state_of_community,
+    //         'property_size'=>$request->property_size,
+    //         'employment_status'=>$request->employment_status,
+    //         'background_checks'=>$request->background_checks,
+    //         'additional_information'=>$request->additional_information,
+    //         'additional_requests'=>$request->additional_requests,
+    //         'status' => '1'
+    //     ]);
+    //     $data = [
+    //         'Subject' => 'Request to buy properties.',
+    //         'Message' => 'We appreciate your request to buy our properties. We have attached an ebook to guide you more on real estate. Thanks'
+    //     ];
+    //     Mail::to(($request->email))->send(new ScheduleMail($data));
+    //     $notification = array(
+    //             'message'=> 'Request Submitted Successfully. You can check your mail for a free ebook',
+    //             'alert-type'=>'success'
+    //     );
+    //     return redirect()->back()->with($notification);
+    // }
     // UnFinished Property
     public function UnFinishedProperty(){
         $propertyTypes = PropertyType::latest()->get(); 
