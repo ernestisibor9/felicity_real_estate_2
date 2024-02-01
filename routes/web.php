@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminInspectionController;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Frontend\TenantController;
 use App\Http\Controllers\Frontend\PropertyCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Frontend\InvestorController;
 use App\Http\Controllers\Frontend\SubscriberController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookInspectionController;
+use App\Http\Controllers\Frontend\RentPropertyController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -36,15 +38,19 @@ Route::get('/', [UserController::class, 'Index']);
 Route::get('/login', [UserController::class, 'UseLogin'])->name('login');
 Route::get('/register', [UserController::class, 'UserRegister'])->name('register');
 
+// Rent Property Route
+Route::get('/rent/property', [RentPropertyController::class, 'RentProperty'])->name('rent.property');
+Route::get('/rent/property/{id}', [RentPropertyController::class, 'RentPropertyTenant'])->name('rent.property.tenant');
+Route::post('/store/rent/property', [RentPropertyController::class, 'StoreRentProperty'])->name('store.rent.property');
+
+
 // PropertyCategory
 Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedProperty'])->name('finished.property');
 Route::get('/finished/properties/details/{id}', [PropertyCategoryController::class, 'FinishPropertyDetails'])->name('finish.properties.details');
 Route::get('/buy/finish/property/{id}', [PropertyCategoryController::class, 'BuyFinishedProperty'])->name('buy.finished.property');
-// Route::get('/buy/finished/property/{id}', [PropertyCategoryController::class, 'BuyFinishedProperty2'])->name('buy.finish');
 Route::post('/store/finished/buy', [PropertyCategoryController::class, 'StoreFinishedBuy'])->name('store.finished.buy');
 Route::get('/unfinished/property', [PropertyCategoryController::class, 'UnFinishedProperty'])->name('unfinished.property');
 Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 'BuyUnFinishedProperty'])->name('buy.unfinished.property');
-// Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
 Route::get('/unfinished/properties/details/{id}', [PropertyCategoryController::class, 'UnFinishPropertyDetails'])->name('unfinish.properties.details');
 Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 'BuyUnFinishedProperty'])->name('buy.unfinished.property');
 Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
@@ -63,9 +69,6 @@ Route::get('/tenant/buy/property', [TenantController::class, 'TenantBuyProperty'
 Route::get('/land/property', [TenantController::class, 'LandProperty'])->name('land.property');
 Route::post('/store/land/property/buy', [TenantController::class, 'StoreLandBuy'])->name('store.land.buy');
 
-// Investors
-Route::get('/investor/page', [InvestorController::class, 'InvestorProperty'])->name('investor.page');
-Route::post('/store/investor/property/buy', [InvestorController::class, 'StoreInvestorBuy'])->name('store.investor.buy');
 
 // Subscribers
 Route::post('/store/subscriber', [SubscriberController::class, 'StoreSubscriber'])->name('store.subscriber');
@@ -141,6 +144,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::controller(AdminInspectionController::class)->group(function(){
         Route::get('/admin/inspection', 'AdminBookingInspect')->name('admin.inspection');
         Route::get('/inspect/property/status/{id}', 'InspectPropertyStatus')->name('inspect.property.status');
+    });
+
+    // Carousel Route For Admin
+    Route::controller(CarouselController::class)->group(function(){
+        Route::get('/add/carousel', 'AddCarousel')->name('add.carousel');
+        Route::post('/store/carousel', 'StoreCarousel')->name('store.carousel');
     });
 });
 

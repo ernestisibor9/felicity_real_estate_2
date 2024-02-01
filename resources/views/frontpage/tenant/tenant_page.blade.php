@@ -41,7 +41,7 @@
               </a>
             </div>
             <div class="col-md-4">
-              <a href="">
+              <a href="{{route('rent.property')}}">
               <div class="card-box-c foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">

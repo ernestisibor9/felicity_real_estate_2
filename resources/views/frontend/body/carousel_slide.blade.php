@@ -1,3 +1,7 @@
+  @php
+    $sliders = App\Models\Carousel::latest()->limit(3)->get();  
+  @endphp  
+  
   <!-- ======= Intro Section ======= -->
   <div class="intro intro-carousel swiper position-relative">
 
@@ -20,7 +24,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rent</a>
           <div class="dropdown-menu">
             <a class="dropdown-item " href="{{route('tenant.page')}}">Tenant</a>
-            <a class="dropdown-item " href="{{route('investor.page')}}">Investor</a>
+            <a class="dropdown-item " href="{{route('buy.tenant.property')}}">Investor</a>
             <!-- <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
             <a class="dropdown-item " href="agent-single.html">Agent Single</a> -->
           </div>
@@ -47,7 +51,7 @@
     
     <div class="swiper-wrapper">
 
-      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({{ asset('frontend/assets/img/slide-1.jpg') }} )">
+      {{-- <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({{ asset('frontend/assets/img/slide-1.jpg') }} )">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -96,8 +100,9 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({{ asset('frontend/assets/img/slide-3.jpg') }} )">
+      </div> --}}
+      @foreach ($sliders as $slide)
+      <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({{ asset($slide->photo_slide) }} )">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -105,15 +110,15 @@
               <div class="row">
                 <div class="col-lg-8">
                   <div class="intro-body">
-                    <p class="intro-title-top">Doral, Florida
-                      <br> 78345
+                    <p class="intro-title-top">{{$slide->property_name}}
+                      <br> 
                     </p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b">204 </span> Alira
-                      <br> Roan Road One
+                      <span class="color-b"></span> {{$slide->property_name}}
+                      <br> {{$slide->city}}
                     </h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a">rent | $ 12.000</span></a>
+                      <a href="#"><span class="price-a"> &#8358; {{$item->price}}</span></a>
                     </p>
                   </div>
                 </div>
@@ -122,6 +127,8 @@
           </div>
         </div>
       </div>
+      @endforeach
+
     </div>
     <div class="swiper-pagination"></div>
   </div><!-- End Intro Section -->

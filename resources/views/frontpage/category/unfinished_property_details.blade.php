@@ -9,7 +9,7 @@
                 <div class="col-md-12 col-lg-8">
                   <div class="title-single-box">
                     {{-- <h1 class="title-single">{{$property->property_name}}</h1> --}}
-                    <span class="title-single">{{$pid->property_category}}</span>
+                    <span class="title-single">{{$pid->property_name}}</span>
                     {{-- <span class="color-text-a">{{$property->property_name}}</span> --}}
                   </div>
                 </div>

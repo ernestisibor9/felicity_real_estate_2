@@ -4,41 +4,42 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\PropertyType;
 use App\Models\Property;
-use App\Models\BuyProperty;
+use App\Models\PropertyType;
+use App\Models\RentProperty;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ScheduleMail;
 
-class InvestorController extends Controller
+class RentPropertyController extends Controller
 {
-    //
-    public function InvestorProperty(){
-        $propertyTypes = PropertyType::latest()->get(); 
-        $property = Property::latest()->get(); 
-        return view('frontpage.investor.buy_property', compact('propertyTypes', 'property'));
+    // RentProperty
+    public function RentProperty(){
+        $property = Property::where('property_status', 'rent')->latest()->get();
+        return view('frontpage.tenant.rent_property', compact('property'));
     }
-    // StoreInvestorBuy
-    public function StoreInvestorBuy(Request $request){
-        // $request->validate([
-        //     'type_name' => 'required|unique:property_types|max:200',
-        // ]);
-
+    // RentPropertyTenant
+    public function RentPropertyTenant($id){
+        $propertyTypes = PropertyType::latest()->get(); 
+        $property = Property::findOrFail($id);
+        $propertyAll = Property::latest()->get();
+        return view('frontpage.tenant.rent_property_tenant', compact('property', 'propertyAll', 'propertyTypes'));
+    }
+    // StoreRentProperty
+    public function StoreRentProperty(Request $request){
+        $rentCategory = $request->rent_category;
+        
         // Insert into database
-        BuyProperty::insert([
+        RentProperty::insert([
             'title'=>$request->title,
             'surname'=>$request->surname,
             'firstname'=>$request->firstname,
             'email'=>$request->email,
             'phone'=>$request->phone,
-            'ptype_id'=>$request->ptype_id,
-            'budget'=>$request->budget,
-            'buy_category'=>$request->buy_category,
-            'city_id'=>$request->city_id,
-            'amenities'=>$request->amenities,
-            'state_of_community'=>$request->state_of_community,
-            'property_size'=>$request->property_size,
+            'rent_category'=>$rentCategory,
+            'workplace'=>$request->workplace,
+            'evicted'=>$request->evicted,
+            'rented_before'=>$request->rented_before,
             'employment_status'=>$request->employment_status,
             'background_checks'=>$request->background_checks,
             'additional_information'=>$request->additional_information,

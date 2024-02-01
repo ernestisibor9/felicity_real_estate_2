@@ -18,7 +18,8 @@ class UserController extends Controller
 {
     // Home Page
     public function Index (){
-        return view('frontend.index');
+        $property = Property::where('featured', '1')->where('property_category', 'finished_property')->orWhere('property_category', 'finished_property')->latest()->get();
+        return view('frontend.index', compact('property'));
     }
     // UseLogin
     public function UseLogin(){
