@@ -134,8 +134,8 @@
                               </span>
                             </li>
                             <li class="d-flex justify-content-between">
-                               <button class="btn btn-primary">Buy</button>
-                               <button class="btn btn-warning">Book For Inpection</button>
+                               <a href="{{route('buy.finished.property', $pid->id)}}" class="btn btn-primary">Buy</a>
+                               <a href="{{route('inspect.property', $pid->id)}}" class="btn btn-warning">Book For Inpection</a>
                               </li>
                           </ul>
                         </div>

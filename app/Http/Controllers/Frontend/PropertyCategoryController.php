@@ -29,6 +29,13 @@ class PropertyCategoryController extends Controller
         $propertyAll = Property::latest()->get();
         return view('frontpage.category.buy_finished_property', compact('property', 'propertyAll', 'propertyTypes'));
     }
+    // BuyFinishedProperty
+    // public function BuyFinishedProperty2($id){
+    //     $propertyTypes = PropertyType::latest()->get(); 
+    //     $property = Property::findOrFail($id);
+    //     $propertyAll = Property::latest()->get();
+    //     return view('frontpage.category.buy_finished_property', compact('property', 'propertyAll', 'propertyTypes'));
+    // }
     // StoreFinishedBuy
     public function  StoreFinishedBuy(Request $request){
         $buyCategory = $request->buy_category;

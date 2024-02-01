@@ -45,6 +45,13 @@
 						</li>
 					</ul>
 				</li>
+				<li>
+					<a href="{{ route('admin.inspection') }}">
+						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						</div>
+						<div class="menu-title">Inspection</div>
+					</a>
+				</li>
 				{{-- <li>
 					<a href="javascript:;" class="has-arrow">
 						<div class="parent-icon"><i class='bx bx-home-alt'></i>

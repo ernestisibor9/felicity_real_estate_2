@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('book_inspections', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
+            $table->string('name')->nullable();
             $table->integer('property_id')->nullable();
             $table->date('inspection_date');
-            $table->timestamp('inspection_time');
+            $table->string('inspection_time');
             $table->string('email');
             $table->string('phone');
             $table->string('message');
-            $table->string('status');
+            $table->integer('status');
             // $table->text('allergies')->nullable();
             // $table->integer('ptype_id');
             // $table->string('budget');
