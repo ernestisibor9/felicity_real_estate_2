@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\AdminInspectionController;
 use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\CarouselController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Frontend\TenantController;
 use App\Http\Controllers\Frontend\PropertyCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -153,6 +154,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/add/carousel', 'AddCarousel')->name('add.carousel');
         Route::post('/store/carousel', 'StoreCarousel')->name('store.carousel');
     });
+
+    // Blog Category For Admin
+    Route::controller(BlogController::class)->group(function(){
+        Route::get('/blog/category', 'AllBlogCategory')->name('all.blog.category');
+        Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
+        Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('cat.edit');
+        Route::post('/update/blog/category', 'UpdateBlogCategory')->name('update.blog.category');
+        Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('cat.delete');
+    });
+
 });
 
 
