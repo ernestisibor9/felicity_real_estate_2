@@ -37,6 +37,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [UserController::class, 'Index']);
 Route::get('/login', [UserController::class, 'UseLogin'])->name('login');
 Route::get('/register', [UserController::class, 'UserRegister'])->name('register');
+Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
+
 
 // Rent Property Route
 Route::get('/rent/property', [RentPropertyController::class, 'RentProperty'])->name('rent.property');

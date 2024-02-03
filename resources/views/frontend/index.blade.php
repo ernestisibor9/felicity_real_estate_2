@@ -4,94 +4,107 @@
 @section('main')
 		<main id="main">
 
-    <!-- ======= Services Section ======= -->
-    <section class="section-services section-t8">
+      <style>
+        .my-card:hover{
+          background-color: #800080;
+          color: #fff;
+        }
+        h5:hover{
+          color: #fff;
+        }
+      </style>
+
+      <!-- ======= Service Section ======= -->
+    <section class="section-property section-t8">
       <div class="container">
-        <div class="row">
+        <div class="row mb-4">
           <div class="col-md-12">
             <div class="title-wrap d-flex justify-content-between">
               <div class="title-box">
-                <h2 class="title-a">Our Services</h2>
+                <h2 class="title-a">Services</h2>
               </div>
             </div>
           </div>
+          <div class="col-12 col-sm-6 col-md-4 m-auto">
+            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Property Sales and Purchase</h5>
+                <small style="text-align: justify;">
+                  Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties Limited offers
+                  <a href="btn" class="text-warning">read more ...</a>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 m-auto">
+            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Rental Solutions</h5>
+                <small style="text-align: justify;">
+                  Our rental services cover a wide spectrum of residential and commercial properties, ensuring that our clients find the perfect space 
+                  <a href="btn" class="text-warning">read more ...</a>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 m-auto">
+            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-shop mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Long Lease</h5>
+                <small style="text-align: justify;">
+                  Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
+                  <a href="btn" class="text-warning">read more ...</a>
+                </small>
+              </div>
+            </div>
+          </div>       
         </div>
+      </div>
+      <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card-box-c foo">
-              <div class="card-header-c d-flex">
-                <div class="card-box-ico">
-                  <img src="{{asset('frontend/assets/img/house icon.png')}}" alt="">
-                </div>
-                <div class="card-title-c align-self-center">
-                  <h2 class="title-c">Buy</h2>
-                </div>
-              </div>
-              <div class="card-body-c">
-                <p class="content-c">
-                  Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
-                  convallis a pellentesque
-                  nec, egestas non nisi.
-                </p>
-              </div>
-              <div class="card-footer-c">
-                <a href="#" class="link-c link-icon">Read more
-                  <span class="bi bi-chevron-right"></span>
-                </a>
+          <div class="col-12 col-sm-6 col-md-4 m-auto">
+            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-globe mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Global Reach</h5>
+                <small style="text-align: justify;">
+                  We extend our services to Nigerians living abroad, ensuring that the process of buying, selling, or leasing property in Lagos remains seamless, transparent, and stress-free.
+                  <a href="btn" class="text-warning">read more ...</a>
+                </small>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-box-c foo">
-              <div class="card-header-c d-flex">
-                <div class="card-box-ico">
-                  <span class="bi bi-calendar4-week"></span>
-                </div>
-                <div class="card-title-c align-self-center">
-                  <h2 class="title-c">Rent</h2>
-                </div>
-              </div>
-              <div class="card-body-c">
-                <p class="content-c">
-                  Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit
-                  aliquet elit, eget tincidunt
-                  nibh pulvinar a.
-                </p>
-              </div>
-              <div class="card-footer-c">
-                <a href="#" class="link-c link-icon">Read more
-                  <span class="bi bi-calendar4-week"></span>
-                </a>
+          <div class="col-12 col-sm-6 col-md-4 m-auto">
+            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-building-columns mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Investor Support:</h5>
+                <small style="text-align: justify;">
+                  Felicity Properties Limited is a preferred choice for investors looking to capitalize on the growing opportunities in the Nigerian real estate market. We offer strategic insights, market analysis,
+                  <a href="btn" class="text-warning">read more ...</a>
+                </small>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-box-c foo">
-              <div class="card-header-c d-flex">
-                <div class="card-box-ico">
-                  <span class="bi bi-card-checklist"></span>
-                </div>
-                <div class="card-title-c align-self-center">
-                  <h2 class="title-c">Short Let</h2>
-                </div>
-              </div>
-              <div class="card-body-c">
-                <p class="content-c">
-                  Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa,
-                  convallis a pellentesque
-                  nec, egestas non nisi.
-                </p>
-              </div>
-              <div class="card-footer-c">
-                <a href="#" class="link-c link-icon">Read more
-                  <span class="bi bi-chevron-right"></span>
-                </a>
+          <div class="col-12 col-sm-6 col-md-4 m-auto" style="display: none;">
+            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Property Sales and Purchase</h5>
+                <small style="text-align: justify;">
+                  Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties Limited offers
+                  <a href="btn" class="text-warning">read more ...</a>
+                </small>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- End Services Section -->
+      </section>
+
 
     <!-- ======= Latest Properties Section ======= -->
     <section class="section-property section-t8">

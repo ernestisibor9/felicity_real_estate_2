@@ -196,4 +196,8 @@ class UserController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+    // AboutUs
+    public function AboutUs(){
+        return view('frontpage.about.about_us');
+    }
 }

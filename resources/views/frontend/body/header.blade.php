@@ -7,7 +7,7 @@
         <span></span>
       </button>
       <!-- <a class="navbar-brand text-brand" href="index.html">Estate<span class="color-b">Agency</span></a> -->
-      <a class="navbar-brand text-brand" href="index.html">
+      <a class="navbar-brand text-brand" href="{{url('/')}}">
         <!-- <img src="assets/img/logo.png" class="logo-el" alt=""> -->
         <div class="logo-el">
           <img src="{{ asset('frontend/assets/img/logo.png') }}" alt="">
@@ -18,11 +18,11 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="{{url('/')}}">Home</a>
+            <a class="nav-link" href="{{url('/')}}">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="about.html">About</a>
+            <a class="nav-link " href="{{route('about.us')}}">About</a>
           </li>
 
           <li class="nav-item">
@@ -50,8 +50,8 @@
 
       {{-- @auth --}}
           
-				<button type="button" class="btn btn-outline-success" data-bs-toggle="" data-bs-target="">
-					<a href="{{ route('login') }}" class="">Sign in</a>
+				<button type="button" class="btn btn-success" data-bs-toggle="" data-bs-target="" style="margin-right: 20px;">
+					<a href="{{ route('login') }}" class="text-white">Sign in</a>
 				</button>
 
       {{-- @else --}}
