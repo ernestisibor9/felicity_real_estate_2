@@ -54,7 +54,7 @@
 					<ul>
 						<li> <a href="{{ route('add.carousel') }}"><i class='bx bx-radio-circle'></i>Add Carousel </a>
 						</li>
-						<li> <a href="{{ route('all.property') }}"><i class='bx bx-radio-circle'></i>All Carousel </a>
+						<li> <a href="{{ route('all.carousel') }}"><i class='bx bx-radio-circle'></i>All Carousel </a>
 						</li>
 					</ul>
 				</li>
@@ -66,6 +66,21 @@
 					</a>
 					<ul>
 						<li> <a href="{{ route('all.blog.category') }}"><i class='bx bx-radio-circle'></i>All Blog Category </a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						</div>
+						<div class="menu-title">Blog Post</div>
+					</a>
+					<ul>
+						<li> <a href="{{ route('all.post') }}"><i class='bx bx-radio-circle'></i>All Post </a>
+						</li>
+					</ul>
+					<ul>
+						<li> <a href="{{ route('add.post') }}"><i class='bx bx-radio-circle'></i>Add Post </a>
 						</li>
 					</ul>
 				</li>

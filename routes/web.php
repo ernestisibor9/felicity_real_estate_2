@@ -153,6 +153,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::controller(CarouselController::class)->group(function(){
         Route::get('/add/carousel', 'AddCarousel')->name('add.carousel');
         Route::post('/store/carousel', 'StoreCarousel')->name('store.carousel');
+        Route::get('/all/carousel', 'AllCarousel')->name('all.carousel');
+        Route::get('/edit/carousel/{id}', 'EditCarousel')->name('edit.carousel');
+        Route::post('/update/carousel', 'UpdateCarousel')->name('update.carousel');
+        Route::get('/delete/carousel/{id}', 'DeleteCarousel')->name('delete.carousel');
     });
 
     // Blog Category For Admin
@@ -162,6 +166,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/blog/category/{id}', 'EditBlogCategory')->name('cat.edit');
         Route::post('/update/blog/category', 'UpdateBlogCategory')->name('update.blog.category');
         Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('cat.delete');
+        Route::get('/all/blog/post', 'AllPost')->name('all.post');
+        Route::get('/add/blog/post', 'AddPost')->name('add.post');
+        Route::post('/store/blog/post', 'StorePost')->name('store.post');
+        Route::get('/edit/blog/post/{id}', 'EditPost')->name('edit.post');
     });
 
 });
