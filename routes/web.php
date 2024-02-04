@@ -41,6 +41,10 @@ Route::get('/register', [UserController::class, 'UserRegister'])->name('register
 Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
 
 
+// Blog Details Route
+Route::get('/blog/details/{slug}', [BlogController::class, 'BlogDetails']);
+
+
 // Rent Property Route
 Route::get('/rent/property', [RentPropertyController::class, 'RentProperty'])->name('rent.property');
 Route::get('/rent/property/{id}', [RentPropertyController::class, 'RentPropertyTenant'])->name('rent.property.tenant');

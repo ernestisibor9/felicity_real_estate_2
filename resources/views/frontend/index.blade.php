@@ -4,15 +4,9 @@
 @section('main')
 		<main id="main">
 
-      <style>
-        .my-card:hover{
-          background-color: #800080;
-          color: #fff;
-        }
-        h5:hover{
-          color: #fff;
-        }
-      </style>
+      @php
+          $blog = App\Models\BlogPost::latest()->limit(4)->get();
+      @endphp
 
       <!-- ======= Service Section ======= -->
     <section class="section-property section-t8">
@@ -26,37 +20,37 @@
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 m-auto">
-            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Property Sales and Purchase</h5>
                 <small style="text-align: justify;">
                   Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties Limited offers
-                  <a href="btn" class="text-warning">read more ...</a>
+                  <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 m-auto">
-            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Rental Solutions</h5>
                 <small style="text-align: justify;">
                   Our rental services cover a wide spectrum of residential and commercial properties, ensuring that our clients find the perfect space 
-                  <a href="btn" class="text-warning">read more ...</a>
+                  <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 m-auto">
-            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-shop mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Long Lease</h5>
                 <small style="text-align: justify;">
                   Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
-                  <a href="btn" class="text-warning">read more ...</a>
+                  <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
@@ -66,37 +60,37 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-6 col-md-4 m-auto">
-            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-globe mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Global Reach</h5>
                 <small style="text-align: justify;">
                   We extend our services to Nigerians living abroad, ensuring that the process of buying, selling, or leasing property in Lagos remains seamless, transparent, and stress-free.
-                  <a href="btn" class="text-warning">read more ...</a>
+                  <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 m-auto">
-            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-building-columns mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Investor Support:</h5>
                 <small style="text-align: justify;">
                   Felicity Properties Limited is a preferred choice for investors looking to capitalize on the growing opportunities in the Nigerian real estate market. We offer strategic insights, market analysis,
-                  <a href="btn" class="text-warning">read more ...</a>
+                  <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-6 col-md-4 m-auto" style="display: none;">
-            <div class="card text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Property Sales and Purchase</h5>
                 <small style="text-align: justify;">
                   Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties Limited offers
-                  <a href="btn" class="text-warning">read more ...</a>
+                  <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
@@ -259,102 +253,31 @@
 
         <div id="news-carousel" class="swiper">
           <div class="swiper-wrapper">
-
+            @foreach ($blog as $item)
             <div class="carousel-item-c swiper-slide">
               <div class="card-box-b card-shadow news-box">
                 <div class="img-box-b">
-                  <img src="{{asset('frontend/assets/img/post-2.jpg')}}" alt="" class="img-b img-fluid">
+                  <img src="{{asset($item->post_image)}}" alt="" class="img-b img-fluid">
                 </div>
                 <div class="card-overlay">
                   <div class="card-header-b">
                     <div class="card-category-b">
-                      <a href="#" class="category-b">House</a>
+                      <a href="{{url('blog/details/'.$item->post_slug)}}" class="category-b">{{$item->category->category_name}}</a>
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">House is comming
-                          <br> new</a>
+                        <a href="{{url('blog/details/'.$item->post_slug)}}">{{$item->post_title}}
+                          <br><small style="font-size: 0.8rem;">{{$item->category->category_name}}</small></a>
                       </h2>
                     </div>
                     <div class="card-date">
-                      <span class="date-b">18 Sep. 2017</span>
+                      <span class="date-b">{{$item->created_at->format('M d Y')}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div><!-- End carousel item -->
-
-            <div class="carousel-item-c swiper-slide">
-              <div class="card-box-b card-shadow news-box">
-                <div class="img-box-b">
-                  <img src="{{asset('frontend/assets/img/post-5.jpg')}}" alt="" class="img-b img-fluid">
-                </div>
-                <div class="card-overlay">
-                  <div class="card-header-b">
-                    <div class="card-category-b">
-                      <a href="#" class="category-b">Travel</a>
-                    </div>
-                    <div class="card-title-b">
-                      <h2 class="title-2">
-                        <a href="blog-single.html">Travel is comming
-                          <br> new</a>
-                      </h2>
-                    </div>
-                    <div class="card-date">
-                      <span class="date-b">18 Sep. 2017</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End carousel item -->
-
-            <div class="carousel-item-c swiper-slide">
-              <div class="card-box-b card-shadow news-box">
-                <div class="img-box-b">
-                  <img src="{{asset('frontend/assets/img/post-7.jpg')}}" alt="" class="img-b img-fluid">
-                </div>
-                <div class="card-overlay">
-                  <div class="card-header-b">
-                    <div class="card-category-b">
-                      <a href="#" class="category-b">Park</a>
-                    </div>
-                    <div class="card-title-b">
-                      <h2 class="title-2">
-                        <a href="blog-single.html">Park is comming
-                          <br> new</a>
-                      </h2>
-                    </div>
-                    <div class="card-date">
-                      <span class="date-b">18 Sep. 2017</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End carousel item -->
-
-            <div class="carousel-item-c swiper-slide">
-              <div class="card-box-b card-shadow news-box">
-                <div class="img-box-b">
-                  <img src="{{asset('frontend/assets/img/post-3.jpg')}}" alt="" class="img-b img-fluid">
-                </div>
-                <div class="card-overlay">
-                  <div class="card-header-b">
-                    <div class="card-category-b">
-                      <a href="#" class="category-b">Travel</a>
-                    </div>
-                    <div class="card-title-b">
-                      <h2 class="title-2">
-                        <a href="#">Travel is comming
-                          <br> new</a>
-                      </h2>
-                    </div>
-                    <div class="card-date">
-                      <span class="date-b">18 Sep. 2017</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End carousel item -->
+            @endforeach
 
           </div>
         </div>

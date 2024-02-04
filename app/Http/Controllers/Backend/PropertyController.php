@@ -72,7 +72,7 @@ class PropertyController extends Controller
             $name_gen2 = hexdec(uniqid()).'.'.$img1->getClientOriginalExtension();
            // read image from file system
             $img2 = $manager->read($img1);
-            $img3 = $img2->resize(600, 800);
+            $img3 = $img2->resize(700, 800);
            // save modified image in new format 
             $img3->toJpeg(80)->save(base_path('public/upload/property/multi_images/'.$name_gen2));
             $save_url2 = 'upload/property/multi_images/'.$name_gen2;
@@ -145,7 +145,7 @@ class PropertyController extends Controller
 
             // read image from file system
             $img = $manager->read($image);
-            $img = $img->resize(600, 800);
+            $img = $img->resize(700, 800);
 
             // save modified image in new format 
             $img->toJpeg(80)->save(base_path('public/upload/property/thumbnail/'.$name_gen));

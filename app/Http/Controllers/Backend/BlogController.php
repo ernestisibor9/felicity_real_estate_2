@@ -85,7 +85,7 @@ class BlogController extends Controller
 
         // read image from file system
         $img = $manager->read($image);
-        $img = $img->resize(500, 500);
+        $img = $img->resize(600, 500);
 
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
@@ -128,7 +128,7 @@ class BlogController extends Controller
 
             // read image from file system
             $img = $manager->read($image);
-            $img = $img->resize(500, 500);
+            $img = $img->resize(600, 500);
 
             // save modified image in new format 
             $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
@@ -177,5 +177,12 @@ class BlogController extends Controller
                 'alert-type'=>'success'
         );
         return redirect()->back()->with($notification);
+    }
+    // BlogDetails
+    public function BlogDetails($slug){
+        $blog = BlogPost::where('post_slug', $slug)->first();
+        $tag = $blog->post_tag;
+        $tagAll = explode(',',$tag);
+        return view('frontpage.blog.blog_details', compact('blog', 'tagAll'));
     }
 }
