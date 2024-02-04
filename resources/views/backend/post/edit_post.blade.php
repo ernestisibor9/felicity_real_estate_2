@@ -8,7 +8,7 @@
 					<div class="col-md-10">
 						<h6 class="mb-0 text-uppercase">Edit Post</h6>
 				<hr>
-				<form action="{{ route('store.post') }}" method="post" enctype="multipart/form-data">
+				<form action="{{ route('update.post') }}" method="post" enctype="multipart/form-data">
 					@csrf
                     <input type="hidden" name="id" value="{{$editPost->id}}">
 					<div class="card">
@@ -22,7 +22,7 @@
                                 <select id="input7" class="form-select" name="blog_cat_id">
                                     <option selected="" disabled>Select Category</option>
                                     @foreach ($blogcat as $cat)
-                                    <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                                    <option value="{{$cat->id}}" {{$cat->id === $editPost->blog_cat_id ? 'selected' : ''}}>{{$cat->category_name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -40,12 +40,14 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="input2" class="form-label">Post Photo</label>
-                                <input type="file" name="post_image" class="form-control" id="input1" onChange="mainThamUrl(this)">
+                                <input type="file" name="post_image" class="form-control" id="image">
                                 <div class="mt-2"></div>
-                                    <img src="" id="mainThmb">
+                                <div>
+                                    <img src="{{asset($editPost->post_image)}}" id="showImage" alt="" width="90px" height="90px">
+                                </div>
                             </div>
 							<div class="mt-3">
-								<button type="submit" class="btn btn-primary">Add</button>
+								<button type="submit" class="btn btn-primary">Update</button>
 							</div>
 						</div>
 					</div>
@@ -56,17 +58,17 @@
 </div>
 
 
-<script type="text/javascript">
-    function mainThamUrl(input){
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e){
-              $('#mainThmb').attr('src',e.target.result).width(80).height(80);
-            };
-            reader.readAsDataURL(input.files[0]);
+<script>
+    $(document).ready(function(){
+      $('#image').change(function(e){
+        let reader = new FileReader();
+        reader.onload = function(e){
+          $('#showImage').attr('src',e.target.result)
         }
-    } 
- </script>
+        reader.readAsDataURL(e.target.files['0']);
+      })
+    })
+  </script>
 
 
 @endsection

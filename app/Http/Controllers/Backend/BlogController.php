@@ -107,12 +107,75 @@ class BlogController extends Controller
             'message'=> 'Post Inserted Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->route('post')->with($notification);
+        return redirect()->route('all.post')->with($notification);
     }
     // EditPost
     public function EditPost($id){
         $blogcat = BlogCategory::latest()->get();
         $editPost = BlogPost::findOrFail($id);
         return view('backend.post.edit_post', compact('editPost', 'blogcat'));
+    }
+    // UpdatePost
+    public function UpdatePost(Request $request){
+        $pid = $request->id;
+
+        if($request->file('post_image')){
+            // create new manager instance with desired driver
+            $manager = new ImageManager(new Driver());
+
+            $image = $request->file('post_image');
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+
+            // read image from file system
+            $img = $manager->read($image);
+            $img = $img->resize(500, 500);
+
+            // save modified image in new format 
+            $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
+
+            $save_url = 'upload/post/'.$name_gen;
+
+            BlogPost::findOrFail($pid)->update([
+                'blog_cat_id' => $request->blog_cat_id,
+                'user_id' => Auth::user()->id,
+                'post_title' => $request->post_title,
+                'post_slug' => strtolower(str_replace(',', '-', $request->post_title)),
+                'short_desc' => $request->short_desc,
+                'long_desc' => $request->long_desc,
+                'post_tag' => $request->post_tag,
+                'post_image' => $save_url,
+                'created_at' => Carbon::now(),
+            ]);
+        }
+        else{
+            BlogPost::findOrFail($pid)->update([
+                'blog_cat_id' => $request->blog_cat_id,
+                'user_id' => Auth::user()->id,
+                'post_title' => $request->post_title,
+                'post_slug' => strtolower(str_replace(',', '-', $request->post_title)),
+                'short_desc' => $request->short_desc,
+                'long_desc' => $request->long_desc,
+                'post_tag' => $request->post_tag,
+                'created_at' => Carbon::now(),
+            ]);
+        }
+        $notification = array(
+            'message'=> 'Post Updated Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->route('all.post')->with($notification);
+    }
+    // Delete Post
+    public function DeletePost($id){
+        $deleteId = BlogPost::findOrFail($id);
+        unlink($deleteId->post_image);
+
+        BlogPost::findOrFail($id)->delete();
+
+        $notification = array(
+                'message'=> 'Post Deleted Successfully',
+                'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
     }
 }

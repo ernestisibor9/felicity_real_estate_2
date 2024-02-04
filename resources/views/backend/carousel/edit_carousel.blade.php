@@ -51,15 +51,15 @@
 </div>
 
 
-<script type="text/javascript">
-    function mainThamUrl(input){
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e){
-              $('#mainThmb').attr('src',e.target.result).width(80).height(80);
-            };
-            reader.readAsDataURL(input.files[0]);
+<script>
+    $(document).ready(function(){
+      $('#image').change(function(e){
+        let reader = new FileReader();
+        reader.onload = function(e){
+          $('#showImage').attr('src',e.target.result)
         }
-    } 
- </script>
+        reader.readAsDataURL(e.target.files['0']);
+      })
+    })
+  </script>
 @endsection

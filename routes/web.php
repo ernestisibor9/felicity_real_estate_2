@@ -170,6 +170,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/add/blog/post', 'AddPost')->name('add.post');
         Route::post('/store/blog/post', 'StorePost')->name('store.post');
         Route::get('/edit/blog/post/{id}', 'EditPost')->name('edit.post');
+        Route::post('/update/blog/post', 'UpdatePost')->name('update.post');
+        Route::get('/delete/blog/post/{id}', 'DeletePost')->name('delete.post');
     });
 
 });
