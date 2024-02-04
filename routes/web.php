@@ -43,6 +43,7 @@ Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
 
 // Blog Details Route
 Route::get('/blog/details/{slug}', [BlogController::class, 'BlogDetails']);
+Route::post('/store/comment', [BlogController::class, 'StoreComment'])->name('store.comment');
 
 
 // Rent Property Route

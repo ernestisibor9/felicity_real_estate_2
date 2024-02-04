@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BlogCategory;
 use App\Models\BlogPost;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 
 use Intervention\Image\ImageManager;
@@ -96,7 +97,7 @@ class BlogController extends Controller
             'blog_cat_id' => $request->blog_cat_id,
             'user_id' => Auth::user()->id,
             'post_title' => $request->post_title,
-            'post_slug' => strtolower(str_replace(',', '-', $request->post_title)),
+            'post_slug' => strtolower(str_replace(',','-',$request->post_title)),
             'short_desc' => $request->short_desc,
             'long_desc' => $request->long_desc,
             'post_tag' => $request->post_tag,
@@ -139,7 +140,7 @@ class BlogController extends Controller
                 'blog_cat_id' => $request->blog_cat_id,
                 'user_id' => Auth::user()->id,
                 'post_title' => $request->post_title,
-                'post_slug' => strtolower(str_replace(',', '-', $request->post_title)),
+                'post_slug' => strtolower(str_replace(',','-',$request->post_title)),
                 'short_desc' => $request->short_desc,
                 'long_desc' => $request->long_desc,
                 'post_tag' => $request->post_tag,
@@ -152,7 +153,7 @@ class BlogController extends Controller
                 'blog_cat_id' => $request->blog_cat_id,
                 'user_id' => Auth::user()->id,
                 'post_title' => $request->post_title,
-                'post_slug' => strtolower(str_replace(',', '-', $request->post_title)),
+                'post_slug' => strtolower(str_replace(',','-',$request->post_title)),
                 'short_desc' => $request->short_desc,
                 'long_desc' => $request->long_desc,
                 'post_tag' => $request->post_tag,
@@ -184,5 +185,25 @@ class BlogController extends Controller
         $tag = $blog->post_tag;
         $tagAll = explode(',',$tag);
         return view('frontpage.blog.blog_details', compact('blog', 'tagAll'));
+    }
+    // StoreComment
+    public function StoreComment(Request $request){
+        $pid = $request->post_id;
+
+        // Insert into database
+        Comment::insert([
+            'name'=>$request->name,
+            'email' => $request->email,
+            'post_id' => $pid,
+            'parent_id' => null,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+        ]);
+        $notification = array(
+            'message'=> 'Comment Inserted Successfully',
+            'alert-type'=>'success'
+    );
+    return redirect()->back()->with($notification);
     }
 }
