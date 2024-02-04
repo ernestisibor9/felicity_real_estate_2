@@ -15,7 +15,7 @@
 						<div class="card-body">
                             <div class="col-md-12">
                                 <label for="input8" class="form-label">Post title</label>
-                                <input type="text" class="form-control" id="input8" name="post_title" placeholder="Property Name">
+                                <input type="text" class="form-control" id="input8" name="post_title" placeholder="Post title">
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="input2" class="form-label">Blog Category</label>

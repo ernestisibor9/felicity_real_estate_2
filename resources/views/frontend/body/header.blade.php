@@ -10,7 +10,7 @@
       <a class="navbar-brand text-brand" href="{{url('/')}}">
         <!-- <img src="assets/img/logo.png" class="logo-el" alt=""> -->
         <div class="logo-el">
-          <img src="{{ asset('frontend/assets/img/logo.png') }}" alt="">
+          <img src="{{ asset('frontend/assets/img/logo.jpg') }}" alt="">
         </div>
       </a>
 

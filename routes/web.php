@@ -43,7 +43,12 @@ Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
 
 // Blog Details Route
 Route::get('/blog/details/{slug}', [BlogController::class, 'BlogDetails']);
+
+// Blog Comment
 Route::post('/store/comment', [BlogController::class, 'StoreComment'])->name('store.comment');
+Route::get('/admin/blog/comment', [BlogController::class,'AdminBlogComment'])->name('admin.blog.comment');
+Route::get('/admin/comment/reply/{id}', [BlogController::class,'AdminCommentReply'])->name('admin.comment.reply');
+Route::post('/reply/message', [BlogController::class,'ReplyMessage'])->name('reply.message');
 
 
 // Rent Property Route

@@ -2,7 +2,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<img src="{{ asset('backend/assets/images/logo.png') }}" class="logo-icon" alt="logo icon">
+					<img src="{{ asset('backend/assets/images/logo2.png') }}" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
 					<h4 class="logo-text">Felicity</h4>
@@ -83,6 +83,13 @@
 						<li> <a href="{{ route('add.post') }}"><i class='bx bx-radio-circle'></i>Add Post </a>
 						</li>
 					</ul>
+				</li>
+				<li>
+					<a href="{{ route('admin.blog.comment') }}">
+						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						</div>
+						<div class="menu-title">Blog Comment</div>
+					</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.inspection') }}">

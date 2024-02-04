@@ -206,4 +206,36 @@ class BlogController extends Controller
     );
     return redirect()->back()->with($notification);
     }
+    // AdminBlogComment
+    public function AdminBlogComment(){
+        $comment = Comment::where('parent_id', null)->latest()->get();
+        return view('backend.comment.all_comment', compact('comment'));
+    }
+    // AdminCommentReply
+    public function AdminCommentReply($id){
+        $comment = Comment::where('id', $id)->first();
+        return view('backend.comment.reply_comment', compact('comment'));
+    }
+    // ReplyMessage
+    public function ReplyMessage(Request $request){
+        $id = $request->id;
+        $pid = $request->post_id;
+        $name = $request->name;
+        $email = $request->email;
+         // Insert into database
+         Comment::insert([
+            'name'=>$name,
+            'email' => $email,
+            'post_id' => $pid,
+            'parent_id' => $id,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+        ]);
+        $notification = array(
+            'message'=> 'Reply Inserted Successfully',
+            'alert-type'=>'success'
+    );
+    return redirect()->back()->with($notification);
+    }
 }

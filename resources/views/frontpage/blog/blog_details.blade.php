@@ -117,43 +117,53 @@
               </div>
             </div>
           </div>
+          @php
+              $comment = App\Models\Comment::where('post_id', $blog->id)->where('parent_id', null)->
+              limit(5)->get();
+          @endphp
+
           <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1">
             <div class="title-box-d">
-              <h3 class="title-d">Comments (4)</h3>
+              <h3 class="title-d">Comments ({{count($comment)}})</h3>
             </div>
             <div class="box-comments">
               <ul class="list-comments">
+                @foreach ($comment as $item)
                 <li>
                   <div class="comment-avatar">
-                    <img src="assets/img/author-2.jpg" alt="">
+                    <img src="{{asset('frontend/assets/img/avatar.png')}}" alt="">
                   </div>
                   <div class="comment-details">
-                    <h4 class="comment-author">Emma Stone</h4>
-                    <span>18 Sep 2017</span>
+                    <h4 class="comment-author">{{$item->name}}</h4>
+                    <span>{{$item->created_at->format('M d Y')}}</span>
                     <p class="comment-description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
+                      {{$item->message}}
                     </p>
                     <a href="3">Reply</a>
                   </div>
                 </li>
+                @php
+                    $reply = App\Models\Comment::where('parent_id', $item->id)->get();
+                @endphp
+                @foreach ($reply as $rep)
                 <li class="comment-children">
                   <div class="comment-avatar">
-                    <img src="assets/img/author-1.jpg" alt="">
+                    <img src="{{asset('frontend/assets/img/logo.jpg')}}" alt="">
                   </div>
                   <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
+                    <h4 class="comment-author">Admin</h4>
+                    <span>{{$rep->created_at->format('M d Y')}}</span>
                     <p class="comment-description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae.
+                      {!! $rep->message !!}
                     </p>
                     <a href="3">Reply</a>
                   </div>
                 </li>
-                <li>
+                @endforeach
+                
+                @endforeach
+                
+                {{-- <li>
                   <div class="comment-avatar">
                     <img src="assets/img/author-2.jpg" alt="">
                   </div>
@@ -167,7 +177,7 @@
                     </p>
                     <a href="3">Reply</a>
                   </div>
-                </li>
+                </li> --}}
               </ul>
             </div>
             <div class="form-comments">
