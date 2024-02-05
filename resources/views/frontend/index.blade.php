@@ -19,19 +19,19 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 m-auto">
+          <div class="col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px;"></i>
                 <h5 class="mb-3">Property Sales and Purchase</h5>
                 <small style="text-align: justify;">
-                  Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties Limited offers
+                  Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties 
                   <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 m-auto">
+          <div class=" col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
@@ -43,7 +43,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 m-auto">
+          <div class="col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-shop mb-3" style="font-size: 45px;"></i>
@@ -54,12 +54,24 @@
                 </small>
               </div>
             </div>
-          </div>       
+          </div>    
+          <div class="col-md-3 ">
+            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+              <div class="card-body">
+                <i class="fa-solid fa-shop mb-3" style="font-size: 45px;"></i>
+                <h5 class="mb-3">Long Lease</h5>
+                <small style="text-align: justify;">
+                  Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
+                  <a href="btn" style="color: #198754;">read more ...</a>
+                </small>
+              </div>
+            </div>
+          </div>     
         </div>
       </div>
-      <div class="container">
+      {{-- <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 m-auto">
+          <div class=" col-sm-6 col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-globe mb-3" style="font-size: 45px;"></i>
@@ -71,7 +83,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 m-auto">
+          <div class=" col-sm-6 col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-building-columns mb-3" style="font-size: 45px;"></i>
@@ -83,7 +95,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-md-4 m-auto" style="display: none;">
+          <div class=" col-sm-6 col-md-3 " style="display: none;">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
                 <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
@@ -96,7 +108,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
       </section>
 
 

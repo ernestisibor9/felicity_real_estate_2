@@ -86,7 +86,7 @@ class BlogController extends Controller
 
         // read image from file system
         $img = $manager->read($image);
-        $img = $img->resize(600, 500);
+        $img = $img->resize(700, 500);
 
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
@@ -129,7 +129,7 @@ class BlogController extends Controller
 
             // read image from file system
             $img = $manager->read($image);
-            $img = $img->resize(600, 500);
+            $img = $img->resize(700, 500);
 
             // save modified image in new format 
             $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));

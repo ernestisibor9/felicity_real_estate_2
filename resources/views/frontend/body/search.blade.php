@@ -21,33 +21,31 @@
               <input type="text" name="property_name" class="form-control form-control-lg form-control-a" placeholder="Search name" required>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
+          <div class="col-md-12 mb-2">
+            <div class="form-group">
+              <label class="pb-2" for="Type">City</label>
+              <input type="text" name="city" class="form-control form-control-lg form-control-a" placeholder="City" required>
+            </div>
+          </div>
+          <div class="col-md-12 mb-2">
             <div class="form-group mt-3">
-              <label class="pb-2" for="Type">Type</label>
-              <select name="ptype_id" class="form-control form-select form-control-a" id="Type">
-                @foreach ($propertyType as $ptype)
-                    <option value="{{$ptype->type_name}}">{{$ptype->type_name}}</option>
-                @endforeach
+              <label class="pb-2" for="Type">Property Category</label>
+              <select name="property_category" class="form-control form-select form-control-a" id="">
+                  <option value="">Select Property Category</option>
+                  <option value="finished_property">Finished Property</option>
+                  <option value="unfinished_property">Unfinished Property</option>
+                  <option value="land">Land</option>
               </select>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="city">City</label>
-              <select name="city" class="form-control form-select form-control-a" id="city">
-                @foreach ($property as $location)
-                    <option value="{{$location->city}}">{{$location->city}}</option>
-                @endforeach
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
+
+          <div class="col-md-12 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="bedrooms">Buy/Rent/Let</label>
               <select name="property_status" class="form-control form-select form-control-a" id="bedrooms">
-                @foreach ($property as $property_status)
-                    <option value="{{$property_status->property_status}}">{{$property_status->property_status}}</option>
-                @endforeach
+                  <option value="buy">Buy</option>
+                  <option value="rent">Rent</option>
+                  <option value="let">Let</option>
               </select>
             </div>
           </div>

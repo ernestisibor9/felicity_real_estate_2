@@ -89,30 +89,33 @@
                 porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
               </p>
             </div>
-            <!-- Related Post  -->
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="card">
-                <div class="card-body">
                   @php
-                      $slug = $blog->post_slug;
-                      $tag = $blog->post_tag;
-                      // $tag2 = explode(',',$tag);
-                      // $tagAll = implode(',',$tag2);
-                      $relatedPosts = App\Models\BlogPost::where('post_slug', '<>', $slug)->where('post_tag', 'like', '%' .$tag. '%')->limit(3)->get();
+                    $slug = $blog->post_slug;
+                    $tag = $blog->post_tag;
+                    // $tag2 = explode(',',$tag);
+                    // $tagAll = implode(',',$tag2);
+                    $relatedPosts = App\Models\BlogPost::where('post_slug', '<>', $slug)->where('post_tag', 'like', '%' .$tag. '%')->limit(3)->get();
+                    $relatedCount = $relatedPosts->count();
                   @endphp
-                  
-                    <div class="col-md-3 d-flex">
-                      @foreach ($relatedPosts as $relatedPost)
-                      <img src="{{asset($relatedPost->post_image)}}" alt="" width="150px" height="120px"  style="margin-right: 50px;">
-                      @endforeach
-                    </div>
-                 
-                </div>
+            <h4 class="title-d mt-4">Related Articles {{$relatedCount}}</h4>
+            <hr class="mb-4">
+            <!-- Related Post  -->
+              <div class="row">
+
+                  @foreach ($relatedPosts as $relatedPost)
+                  <div class="col-md-4">
+                    <a href="{{url('blog/details/'.$relatedPost->post_slug)}}">
+                      <img src="{{asset($relatedPost->post_image)}}" alt="" width="180px" height="140px" style="margin-right: 50px;">
+                    <small style="font-size: 0.9rem;">{{$relatedPost->post_title}}</small> <br>
+                    <small style="font-size: 0.8rem;">{{$relatedPost->created_at->format('M d Y')}}</small>
+                    </a>
+                  </div>
+                  @endforeach
+                {{-- <div class="col-md-4">
+                  <h1>Hello</h1>
+                </div> --}}
               </div>
-            </div>
-          </div>
-          <!--  --->
+            <!--  --->
             <div class="post-footer">
               <div class="post-share">
                 <span>Share: </span>
