@@ -22,8 +22,8 @@
           <div class="col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
-                <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px;"></i>
-                <h5 class="mb-3">Property Sales and Purchase</h5>
+                <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px; color: #800080;"></i>
+                <h5 class="mb-3" style="color: #800080;">Property Sales and Purchase</h5>
                 <small style="text-align: justify;">
                   Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties 
                   <a href="btn" style="color: #198754;">read more ...</a>
@@ -34,8 +34,8 @@
           <div class=" col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
-                <i class="fa-solid fa-house mb-3" style="font-size: 45px;"></i>
-                <h5 class="mb-3">Rental Solutions</h5>
+                <i class="fa-solid fa-house mb-3" style="font-size: 45px; color: #800080;"></i>
+                <h5 class="mb-3" style="color: #800080;">Rental Solutions</h5>
                 <small style="text-align: justify;">
                   Our rental services cover a wide spectrum of residential and commercial properties, ensuring that our clients find the perfect space 
                   <a href="btn" style="color: #198754;">read more ...</a>
@@ -46,9 +46,9 @@
           <div class="col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
-                <i class="fa-solid fa-shop mb-3" style="font-size: 45px;"></i>
-                <h5 class="mb-3">Long Lease</h5>
-                <small style="text-align: justify;">
+                <i class="fa-solid fa-shop mb-3" style="font-size: 45px; color: #800080;"></i>
+                <h5 class="mb-3" style="color: #800080;">Long Lease</h5>
+                <small style="text-align: justify; ">
                   Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
                   <a href="btn" style="color: #198754;">read more ...</a>
                 </small>
@@ -58,8 +58,8 @@
           <div class="col-md-3 ">
             <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
               <div class="card-body">
-                <i class="fa-solid fa-shop mb-3" style="font-size: 45px;"></i>
-                <h5 class="mb-3">Long Lease</h5>
+                <i class="fa-solid fa-shop mb-3" style="font-size: 45px; color: #800080;"></i>
+                <h5 class="mb-3" style="color: #800080;">Long Lease</h5>
                 <small style="text-align: justify;">
                   Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
                   <a href="btn" style="color: #198754;">read more ...</a>

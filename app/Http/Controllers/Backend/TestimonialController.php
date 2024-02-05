@@ -26,7 +26,7 @@ class TestimonialController extends Controller
 
         // read image from file system
         $img = $manager->read($image);
-        $img = $img->resize(650, 450);
+        $img = $img->resize(550, 450);
 
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/testimonial/'.$name_gen));
@@ -68,12 +68,12 @@ class TestimonialController extends Controller
 
             // read image from file system
             $img = $manager->read($image);
-            $img = $img->resize(650, 450);
+            $img = $img->resize(550, 450);
 
             // save modified image in new format 
             $img->toJpeg(80)->save(base_path('public/upload/testimonial/'.$name_gen));
 
-            $save_url = 'upload/property/testimonial/'.$name_gen;
+            $save_url = 'upload/testimonial/'.$name_gen;
 
             Testimonial::findOrFail($pid)->update([
                 'name' => $request->name,

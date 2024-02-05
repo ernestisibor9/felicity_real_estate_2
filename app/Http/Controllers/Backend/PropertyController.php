@@ -29,7 +29,7 @@ class PropertyController extends Controller
 
         // read image from file system
         $img = $manager->read($image);
-        $img = $img->resize(600, 800);
+        $img = $img->resize(700, 800);
 
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/property/thumbnail/'.$name_gen));
