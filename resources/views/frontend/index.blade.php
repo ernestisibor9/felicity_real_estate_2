@@ -5,7 +5,7 @@
 		<main id="main">
 
       @php
-          $blog = App\Models\BlogPost::latest()->limit(4)->get();
+          $blog = App\Models\BlogPost::latest()->limit(5)->get();
       @endphp
 
       <!-- ======= Service Section ======= -->

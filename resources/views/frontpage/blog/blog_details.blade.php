@@ -39,7 +39,7 @@
               <img src="{{asset($blog->post_image)}}" alt="" class="img-fluid">
             </div>
           </div>
-          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <div class="col-md-12 offset-md-1 col-lg-8 offset-lg-2">
             <div class="post-information">
               <ul class="list-inline text-center color-a">
                 <li class="list-inline-item mr-2">
@@ -89,6 +89,30 @@
                 porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
               </p>
             </div>
+            <!-- Related Post  -->
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="card">
+                <div class="card-body">
+                  @php
+                      $slug = $blog->post_slug;
+                      $tag = $blog->post_tag;
+                      // $tag2 = explode(',',$tag);
+                      // $tagAll = implode(',',$tag2);
+                      $relatedPosts = App\Models\BlogPost::where('post_slug', '<>', $slug)->where('post_tag', 'like', '%' .$tag. '%')->limit(3)->get();
+                  @endphp
+                  
+                    <div class="col-md-3 d-flex">
+                      @foreach ($relatedPosts as $relatedPost)
+                      <img src="{{asset($relatedPost->post_image)}}" alt="" width="150px" height="120px"  style="margin-right: 50px;">
+                      @endforeach
+                    </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  --->
             <div class="post-footer">
               <div class="post-share">
                 <span>Share: </span>
@@ -117,6 +141,7 @@
               </div>
             </div>
           </div>
+
           @php
               $comment = App\Models\Comment::where('post_id', $blog->id)->where('parent_id', null)->
               limit(5)->get();

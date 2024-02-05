@@ -32,7 +32,15 @@
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label class="form-label">Post tag</label>
-                                <input type="text" class="form-control" name="post_tag" data-role="tagsinput" value="Real Estate">
+                                <select name="post_tag" id="" class="form-select">
+                                    <option value="">Select Post Tags</option>
+                                    <option value="Real Estate">Real Estate</option>
+                                    <option value="Politics">Politics</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Sports">Sports</option>
+                                </select>
                             </div>
                             <div class="col-md-12">
                                 <label for="">Long Description</label>
