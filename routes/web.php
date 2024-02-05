@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Frontend\TenantController;
 use App\Http\Controllers\Frontend\PropertyCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -168,6 +169,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/update/carousel', 'UpdateCarousel')->name('update.carousel');
         Route::get('/delete/carousel/{id}', 'DeleteCarousel')->name('delete.carousel');
     });
+
+    // Testimonial Route For Admin
+    Route::controller(TestimonialController::class)->group(function(){
+        Route::get('/add/testimonial', 'AddTestimonial')->name('add.testimonial');
+        Route::post('/store/testimonial', 'StoreTestimonial')->name('store.testimonial');
+        Route::get('/all/testimonial', 'AllTestimonial')->name('all.testimonial');
+        Route::get('/edit/testimonial/{id}', 'EditTestimonial')->name('edit.testimonial');
+        Route::post('/update/testimonial', 'UpdateTestimonial')->name('update.testimonial');
+        Route::get('/delete/testimonial/{id}', 'DeleteTestimonial')->name('delete.testimonial');
+    });
+
 
     // Blog Category For Admin
     Route::controller(BlogController::class)->group(function(){
