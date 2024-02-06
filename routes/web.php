@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Frontend\TenantController;
 use App\Http\Controllers\Frontend\PropertyCategoryController;
@@ -44,6 +45,7 @@ Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
 
 // Contact Route
 Route::get('/contact/page', [ContactController::class, 'ContactPage'])->name('contact.page');
+Route::post('/store/contact', [ContactController::class,'StoreContact'])->name('store.contact');
 
 // Blog Details Route
 Route::get('/blog/details/{slug}', [BlogController::class, 'BlogDetails']);
@@ -201,6 +203,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/edit/blog/post/{id}', 'EditPost')->name('edit.post');
         Route::post('/update/blog/post', 'UpdatePost')->name('update.post');
         Route::get('/delete/blog/post/{id}', 'DeletePost')->name('delete.post');
+    });
+
+    // Message to Admin Route
+    Route::controller(MessageController::class)->group(function(){
+        Route::get('/admin/message', 'AdminMessage')->name('admin.message');
     });
 
 });

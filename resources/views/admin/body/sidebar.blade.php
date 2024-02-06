@@ -105,6 +105,13 @@
 					</a>
 				</li>
 				<li>
+					<a href="{{ route('admin.message') }}">
+						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						</div>
+						<div class="menu-title">Message</div>
+					</a>
+				</li>
+				<li>
 					<a href="{{ route('admin.inspection') }}">
 						<div class="parent-icon"><i class='bx bx-cookie'></i>
 						</div>

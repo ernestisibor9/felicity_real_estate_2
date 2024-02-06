@@ -43,9 +43,11 @@
             <div class="col-sm-12 section-t8">
               <div class="row">
                 <div class="col-md-7">
-                  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                  <form action="{{route('store.contact')}}" method="post">
+                    @csrf
+
                     <div class="row">
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-6 mb-3 form-group">
                         <div class="form-group">
                           <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
                         </div>
@@ -60,16 +62,9 @@
                           <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
                         </div>
                       </div>
-                      <div class="col-md-12">
+                      <div class="col-md-12 mb-2">
                         <div class="form-group">
                           <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-12 my-3">
-                        <div class="mb-3">
-                          <div class="loading">Loading</div>
-                          <div class="error-message"></div>
-                          <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                       </div>
   
@@ -162,5 +157,68 @@
         </div>
       </section><!-- End Contact Single-->
     </main>
+
+    <!-- Validate js -->
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('#myForm').validate({
+            rules: {
+                property_name: {
+                    required : true,
+                },
+								property_status: {
+                    required : true,
+                }, 
+								price: {
+                    required : true,
+                },
+								property_category: {
+                    required : true,
+                },
+								property_thumbnail:{
+										required: true
+								},
+								ptype_id:{
+									required: true
+								}
+                
+            },
+            messages :{
+                property_name: {
+                    required : 'Please Enter Property Name',
+                }, 
+                property_status: {
+                    required : 'Please Select Property Status',
+                },
+								price: {
+                    required : 'Please Select Price',
+                },
+								property_category: {
+                    required : 'Please Select Property Category',
+                },
+								property_thumbnail:{
+									required : 'Please Upload a Thumbnail Photo',
+								},
+								ptype_id:{
+									required : 'Please Select a Property Type',
+								}
+
+            },
+            errorElement : 'span', 
+            errorPlacement: function (error,element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight : function(element, errorClass, validClass){
+                $(element).addClass('is-invalid');
+            },
+            unhighlight : function(element, errorClass, validClass){
+                $(element).removeClass('is-invalid');
+            },
+        });
+    });
+    
+</script>
+	<!-- End Validate js -->
 
 @endsection
