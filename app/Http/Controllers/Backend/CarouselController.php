@@ -26,7 +26,7 @@ class CarouselController extends Controller
 
         // read image from file system
         $img = $manager->read($image);
-        $img = $img->resize(1500, 1500);
+        $img = $img->resize(1400, 1500);
 
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/property/slides/'.$name_gen));
@@ -70,7 +70,7 @@ class CarouselController extends Controller
 
             // read image from file system
             $img = $manager->read($image);
-            $img = $img->resize(1500, 1500);
+            $img = $img->resize(1400, 1500);
 
             // save modified image in new format 
             $img->toJpeg(80)->save(base_path('public/upload/property/slides/'.$name_gen));

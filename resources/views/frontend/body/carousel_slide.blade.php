@@ -114,7 +114,7 @@
                       <br> 
                     </p>
                     <h1 class="intro-title mb-4">
-                      <span class="color-b"></span> {{$slide->property_name}}
+                      <span class="color-b"></span>
                       <br> {{$slide->city}}
                     </h1>
                     <p class="intro-subtitle intro-price">

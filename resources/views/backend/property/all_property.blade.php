@@ -6,6 +6,7 @@
 
 <div class="page-wrapper">
     <div class="page-content">
+        <h4>All Properties</h4>
         <div class="table-responsive">
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>

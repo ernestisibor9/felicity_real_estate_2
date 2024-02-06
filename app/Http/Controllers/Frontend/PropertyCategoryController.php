@@ -112,5 +112,13 @@ class PropertyCategoryController extends Controller
         $pid = Property::findOrFail($id);
         return view('frontpage.category.unfinished_property_details', compact('pid'));
     }
+
+    // ShowAllProperties
+    public function ShowAllProperties(){
+        $finishedProperties = Property::where('property_category','finished_property')->latest()->get();
+        $unfinishedProperties = Property::where('property_category','unfinished_property')->latest()->get();
+        $land = Property::where('property_category','land')->latest()->get();
+        return view('frontpage.property.show_all_property', compact('finishedProperties', 'unfinishedProperties', 'land'));
+    }
     
 }

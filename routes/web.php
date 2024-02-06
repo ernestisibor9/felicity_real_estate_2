@@ -15,8 +15,9 @@ use App\Http\Controllers\Frontend\InvestorController;
 use App\Http\Controllers\Frontend\SubscriberController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookInspectionController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\RentPropertyController;
-
+use App\Http\Controllers\Frontend\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,8 @@ Route::get('/login', [UserController::class, 'UseLogin'])->name('login');
 Route::get('/register', [UserController::class, 'UserRegister'])->name('register');
 Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
 
+// Contact Route
+Route::get('/contact/page', [ContactController::class, 'ContactPage'])->name('contact.page');
 
 // Blog Details Route
 Route::get('/blog/details/{slug}', [BlogController::class, 'BlogDetails']);
@@ -57,6 +60,9 @@ Route::get('/rent/property', [RentPropertyController::class, 'RentProperty'])->n
 Route::get('/rent/property/{id}', [RentPropertyController::class, 'RentPropertyTenant'])->name('rent.property.tenant');
 Route::post('/store/rent/property', [RentPropertyController::class, 'StoreRentProperty'])->name('store.rent.property');
 
+// Read Services Route
+Route::get('/our/services', [ServicesController::class,'ReadServices'])->name('read.services');
+
 
 // PropertyCategory
 Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedProperty'])->name('finished.property');
@@ -68,6 +74,7 @@ Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 
 Route::get('/unfinished/properties/details/{id}', [PropertyCategoryController::class, 'UnFinishPropertyDetails'])->name('unfinish.properties.details');
 Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 'BuyUnFinishedProperty'])->name('buy.unfinished.property');
 Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
+Route::get('/show/all/properties', [PropertyCategoryController::class, 'ShowAllProperties'])->name('show.all.properties');
 
 
 // Book Inspection

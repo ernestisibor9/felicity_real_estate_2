@@ -63,7 +63,7 @@
                             <span class="bi bi-cash">&#8358;</span>
                           </div>
                           <div class="card-title-c align-self-center">
-                            <h5 class="title-c">{{$item->lowest_price}}</h5>
+                            <h5 class="title-c">{{$item->price}}</h5>
                           </div>
                         </div>
                       </div>
@@ -80,6 +80,10 @@
                             <li class="d-flex justify-content-between">
                               <strong>Property ID:</strong>
                               <span>{{$item->id}}</span>
+                            </li>
+                            <li class="d-flex justify-content-between">
+                              <strong>Property ID:</strong>
+                              <span>{{$item->property_name}}</span>
                             </li>
                             <li class="d-flex justify-content-between">
                               <strong>Location:</strong>

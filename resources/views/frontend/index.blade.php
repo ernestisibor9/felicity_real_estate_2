@@ -26,7 +26,7 @@
                 <h5 class="mb-3" style="color: #800080;">Property Sales and Purchase</h5>
                 <small style="text-align: justify;">
                   Whether you are looking to invest in your dream home or capitalize on a promising real estate venture, Felicity Properties 
-                  <a href="btn" style="color: #198754;">read more ...</a>
+                  <a href="{{route('read.services')}}" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
@@ -38,7 +38,7 @@
                 <h5 class="mb-3" style="color: #800080;">Rental Solutions</h5>
                 <small style="text-align: justify;">
                   Our rental services cover a wide spectrum of residential and commercial properties, ensuring that our clients find the perfect space 
-                  <a href="btn" style="color: #198754;">read more ...</a>
+                  <a href="{{route('read.services')}}" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
@@ -50,7 +50,7 @@
                 <h5 class="mb-3" style="color: #800080;">Long Lease</h5>
                 <small style="text-align: justify; ">
                   Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
-                  <a href="btn" style="color: #198754;">read more ...</a>
+                  <a href="{{route('read.services')}}" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
@@ -62,7 +62,7 @@
                 <h5 class="mb-3" style="color: #800080;">Long Lease</h5>
                 <small style="text-align: justify;">
                   Felicity Properties Limited facilitates long-term leases, providing a flexible and secure option for individuals and businesses seeking extended
-                  <a href="btn" style="color: #198754;">read more ...</a>
+                  <a href="{{route('read.services')}}" style="color: #198754;">read more ...</a>
                 </small>
               </div>
             </div>
@@ -143,7 +143,7 @@
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">{{$item->property_name}}
+                        <a href="{{route('finish.properties.details', $item->id)}}">
                           <br /> {{$item->city}}</a>
                       </h2>
                     </div>
@@ -246,7 +246,7 @@
 
 
     <!-- ======= Recent Blog Section ======= -->
-    <section class="section-news section-t8">
+    <section class="section-news section-t8" id="blog">
       <div class="container">
         <div class="row">
           <div class="col-md-12">

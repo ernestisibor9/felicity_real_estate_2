@@ -114,6 +114,11 @@
                 </a>
               </li>
               <li class="list-inline-item">
+                <a href="https://wa.me/07038950658">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
                 <a href="#">
                   <i class="bi bi-twitter" aria-hidden="true"></i>
                 </a>

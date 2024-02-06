@@ -1,3 +1,19 @@
+<!--  --->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/65c220910ff6374032c9e7f3/1hlv4uehi';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+<!--  --->
+
 <!-- ======= Footer ======= -->
   <section class="section-footer">
     <div class="container">
@@ -111,6 +127,11 @@
               <li class="list-inline-item">
                 <a href="#">
                   <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://wa.me/07038950658">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
                 </a>
               </li>
               <li class="list-inline-item">

@@ -18,7 +18,7 @@ class UserController extends Controller
 {
     // Home Page
     public function Index (){
-        $property = Property::where('featured', '1')->where('property_category', 'finished_property')->orWhere('property_category', 'finished_property')->latest()->get();
+        $property = Property::where('featured', '1')->where('property_category', 'finished_property')->orWhere('property_category', 'unfinished_property')->latest()->get();
         return view('frontend.index', compact('property'));
     }
     // UseLogin
@@ -135,7 +135,7 @@ class UserController extends Controller
 
         // read image from file system
         $img = $manager->read($image);
-        $img = $img->resize(600, 800);
+        $img = $img->resize(700, 800);
 
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/property/thumbnail/'.$name_gen));

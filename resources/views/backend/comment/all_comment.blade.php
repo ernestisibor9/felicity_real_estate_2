@@ -13,7 +13,7 @@
                     <tr>
                         <th>S/N</th>
                         <th>User Name</th>
-                        <th>Post Title</th>
+                        {{-- <th>Post Title</th> --}}
                         <th>Subject</th>
                         <th>Action</th>
                     </tr>
@@ -23,7 +23,7 @@
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>{{$item->name}}</td>
-                            <td>{{ $item->post->post_title }}</td>
+                            {{-- <td>{{ $item->post->post_title }}</td> --}}
                             <td>{{$item->subject}}</td>
                            
                             <td>
