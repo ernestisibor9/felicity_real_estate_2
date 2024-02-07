@@ -1,5 +1,15 @@
 @extends('frontpage.dashboard')
 
+<style>
+    @media screen and (max-width: 540px) {
+    .mob {
+      margin-top: 50px;
+    }
+    .sect{
+      margin-top: -280px;
+    }
+  }
+  </style>
 
 @section('main')
     <main id="main">
@@ -8,7 +18,7 @@
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                <div class="title-wrap d-flex justify-content-between">
+                <div class="title-wrap d-flex justify-content-between mob">
                     <div class="title-box">
                     <h2 class="title-a">Finished Properties</h2>
                     </div>
@@ -82,7 +92,7 @@
         </section><!-- End Finished Properties Section -->
 
         <!-- ======= Unfinished Properties Section ======= -->
-        <section class="section-property section-t8">
+        <section class="section-property section- sect">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">

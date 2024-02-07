@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\TestimonialController;
+use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
 use App\Http\Controllers\Frontend\TenantController;
 use App\Http\Controllers\Frontend\PropertyCategoryController;
 use App\Http\Controllers\ProfileController;
@@ -17,9 +18,12 @@ use App\Http\Controllers\Frontend\SubscriberController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookInspectionController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\FooterController;
 use App\Http\Controllers\Frontend\RentPropertyController;
 use App\Http\Controllers\Frontend\ServicesController;
+use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,12 +47,20 @@ Route::get('/login', [UserController::class, 'UseLogin'])->name('login');
 Route::get('/register', [UserController::class, 'UserRegister'])->name('register');
 Route::get('/about/us', [UserController::class, 'AboutUs'])->name('about.us');
 
+// Footer Route
+Route::get('/our/partners', [FooterController::class,'OurPartners'])->name('our.partners');
+Route::get('/faq', [FooterController::class,'FAQ'])->name('faq');
+Route::get('/show/testimonial', [FooterController::class, 'ShowTestimonial'])->name('show.testimonial');
+
 // Contact Route
 Route::get('/contact/page', [ContactController::class, 'ContactPage'])->name('contact.page');
 Route::post('/store/contact', [ContactController::class,'StoreContact'])->name('store.contact');
 
 // Blog Details Route
 Route::get('/blog/details/{slug}', [BlogController::class, 'BlogDetails']);
+
+// Blog Route
+Route::get('/all/blog', [FrontendBlogController::class,'AllBlog'])->name('all.blogs');
 
 // Blog Comment
 Route::post('/store/comment', [BlogController::class, 'StoreComment'])->name('store.comment');
@@ -213,7 +225,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 
-Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
 
 
 

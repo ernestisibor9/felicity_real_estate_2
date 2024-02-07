@@ -234,7 +234,7 @@
                 @csrf
                 <div class="d-flex">
                   <input type="email" name="email" required class="form-control" id="" placeholder="Email address">
-                <button class="btn btn-submit" type="submit">Subcribe</button>
+                <button class="btn btn-submit" type="submit">Subscribe</button>
                 </div>
               </form>
             </div>

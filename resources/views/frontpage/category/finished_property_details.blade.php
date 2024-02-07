@@ -1,5 +1,14 @@
 @extends('frontpage.dashboard')
 
+<style>
+  @media screen and (max-width: 540px) {
+  .mob {
+    width: 200px;
+    height: 300px;
+    text-align: center;
+  }
+}
+</style>
 
 @section('main')
     <main id="main">
@@ -38,7 +47,7 @@
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-lg-8">
-                  <div id="property-single-carousel" class="swiper">
+                  <div id="property-single-carousel" class="swiper mob">
                     <div class="swiper-wrapper">
                       <div class="carousel-item-b swiper-slide">
                         <img src="{{asset($pid->property_thumbnail)}}" alt="">
@@ -182,7 +191,7 @@
                 </div>
                 <h4 class="text-center">Property Video</h4>
                 <div class="col-md-10">
-                    <iframe width="1200" height="315" src="{{$pid->property_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="1200" height="315" src="{{$pid->property_video}}" class="d-none d-md-block" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
                 </div>
                 {{-- <div class="col-md-10 offset-md-1">
                   <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
