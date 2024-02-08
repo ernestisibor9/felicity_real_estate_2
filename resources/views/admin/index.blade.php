@@ -2,12 +2,20 @@
 
 @section('admin')
 
+<style>
+	.stats{
+		color: #fff;
+		font-size: 50px;
+	}
+</style>
+
 @php
 		$users = App\Models\User::where('role', 'user')->latest()->get();
 		$admin = App\Models\User::where('role', 'admin')->latest()->get();
 		$property = App\Models\Property::latest()->get();
 		$allUsers = App\Models\User::latest()->get();
 		$subscribers = App\Models\Subscriber::latest()->get();
+		$posts = App\Models\BlogPost::latest()->get();
 @endphp
 
 <div class="page-wrapper">
@@ -22,7 +30,8 @@
 									<h4 class="my-1 text-white">{{count($property)}}</h4>
 									<p class="mb-0 font-13 text-white"></p>
 								</div>
-								<div id="chart1"></div>
+								{{-- <div id="chart1"></div> --}}
+								<i class='bx bx-home-alt stats'></i>
 							</div>
 						</div>
 					 </div>
@@ -36,7 +45,7 @@
 								   <h4 class="my-1 text-white">{{count($allUsers)}}</h4>
 								   <p class="mb-0 font-13 text-white"></p>
 							   </div>
-							   <div id="chart2"></div>
+							   <i class="fadeIn animated bx bx-user-plus stats"></i>
 						   </div>
 					   </div>
 					</div>
@@ -50,7 +59,7 @@
 								   <h4 class="my-1 text-white">{{count($subscribers)}}</h4>
 								   <p class="mb-0 font-13 text-white"></p>
 							   </div>
-							   <div id="chart3"></div>
+							   <i class="fadeIn animated bx bx-bar-chart-alt stats"></i>
 						   </div>
 					   </div>
 					</div>
@@ -60,11 +69,11 @@
 					   <div class="card-body">
 						   <div class="d-flex align-items-center">
 							   <div class="me-auto">
-								   <p class="mb-0 text-dark">Total Admin</p>
-								   <h4 class="my-1 text-dark">{{count($admin)}}</h4>
+								   <p class="mb-0 text-dark">Total Posts</p>
+								   <h4 class="my-1 text-dark">{{count($posts)}}</h4>
 								   <p class="mb-0 font-13 text-dark"></p>
 							   </div>
-							   <div id="chart4"></div>
+							   <i class="fadeIn animated bx bx-book stats"></i>
 						   </div>
 					   </div>
 					</div>

@@ -79,6 +79,8 @@ Route::get('/our/services', [ServicesController::class,'ReadServices'])->name('r
 
 
 // PropertyCategory
+Route::get('/land/property', [PropertyCategoryController::class, 'LandProperty'])->name('land.property');
+Route::get('/short/let/property', [PropertyCategoryController::class, 'ShortLetProperty'])->name('short.let');
 Route::get('/finished/property', [PropertyCategoryController::class, 'FinishedProperty'])->name('finished.property');
 Route::get('/finished/properties/details/{id}', [PropertyCategoryController::class, 'FinishPropertyDetails'])->name('finish.properties.details');
 Route::get('/buy/finish/property/{id}', [PropertyCategoryController::class, 'BuyFinishedProperty'])->name('buy.finished.property');
@@ -101,7 +103,7 @@ Route::post('/store/inspect/property', [BookInspectionController::class, 'StoreI
 Route::get('/tenant/page', [TenantController::class, 'TenantPage'])->name('tenant.page');
 Route::get('/tenant/buy/property', [TenantController::class, 'TenantBuyProperty'])->name('buy.tenant.property');
 
-Route::get('/land/property', [TenantController::class, 'LandProperty'])->name('land.property');
+
 Route::post('/store/land/property/buy', [TenantController::class, 'StoreLandBuy'])->name('store.land.buy');
 
 

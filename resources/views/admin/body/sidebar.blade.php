@@ -2,7 +2,7 @@
 		<div class="sidebar-wrapper" data-simplebar="true">
 			<div class="sidebar-header">
 				<div>
-					<img src="{{ asset('backend/assets/images/logo2.png') }}" class="logo-icon" alt="logo icon">
+					<img src="{{ asset('frontend/assets/img/logorem.png') }}" class="logo-icon" alt="logo icon">
 				</div>
 				<div>
 					<h4 class="logo-text">Felicity</h4>
@@ -21,7 +21,7 @@
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-home-smile"></i>
 						</div>
 						<div class="menu-title">Property Type</div>
 					</a>
@@ -47,7 +47,7 @@
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-carousel"></i>
 						</div>
 						<div class="menu-title">Carousel</div>
 					</a>
@@ -60,7 +60,7 @@
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-happy-heart-eyes"></i>
 						</div>
 						<div class="menu-title">Testimonial</div>
 					</a>
@@ -73,7 +73,7 @@
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						<div class="parent-icon"><i class='bx bx-folder'></i>
 						</div>
 						<div class="menu-title">Blog Category</div>
 					</a>
@@ -84,7 +84,7 @@
 				</li>
 				<li>
 					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class='bx bx-home-alt'></i>
+						<div class="parent-icon"><i class='bx bx-book'></i>
 						</div>
 						<div class="menu-title">Blog Post</div>
 					</a>
@@ -99,21 +99,21 @@
 				</li>
 				<li>
 					<a href="{{ route('admin.blog.comment') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-comment-detail"></i>
 						</div>
 						<div class="menu-title">Blog Comment</div>
 					</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.message') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-message-detail"></i>
 						</div>
 						<div class="menu-title">Message</div>
 					</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.inspection') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-tachometer"></i>
 						</div>
 						<div class="menu-title">Inspection</div>
 					</a>
@@ -157,28 +157,28 @@
 				<li class="menu-label">Admin Details</li>
 				<li>
 					<a href="{{ route('admin.profile') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-user-circle"></i>
 						</div>
 						<div class="menu-title">Profile</div>
 					</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.change.password') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-key"></i>
 						</div>
 						<div class="menu-title">Change Password</div>
 					</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.users') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-user-plus"></i>
 						</div>
 						<div class="menu-title">Users</div>
 					</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.logout') }}">
-						<div class="parent-icon"><i class='bx bx-cookie'></i>
+						<div class="parent-icon"><i class="fadeIn animated bx bx-log-out-circle"></i>
 						</div>
 						<div class="menu-title">Logout</div>
 					</a>
@@ -200,86 +200,7 @@
 						</li>
 					</ul>
 				</li> --}}
-				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class='bx bx-bookmark-heart'></i>
-						</div>
-						<div class="menu-title">Components</div>
-					</a>
-					<ul>
-						<li> <a href="component-alerts.html"><i class='bx bx-radio-circle'></i>Alerts</a>
-						</li>
-						<li> <a href="component-accordions.html"><i class='bx bx-radio-circle'></i>Accordions</a>
-						</li>
-						<li> <a href="component-badges.html"><i class='bx bx-radio-circle'></i>Badges</a>
-						</li>
-						<li> <a href="component-buttons.html"><i class='bx bx-radio-circle'></i>Buttons</a>
-						</li>
-						<li> <a href="component-cards.html"><i class='bx bx-radio-circle'></i>Cards</a>
-						</li>
-						<li> <a href="component-carousels.html"><i class='bx bx-radio-circle'></i>Carousels</a>
-						</li>
-						<li> <a href="component-list-groups.html"><i class='bx bx-radio-circle'></i>List Groups</a>
-						</li>
-						<li> <a href="component-media-object.html"><i class='bx bx-radio-circle'></i>Media Objects</a>
-						</li>
-						<li> <a href="component-modals.html"><i class='bx bx-radio-circle'></i>Modals</a>
-						</li>
-						<li> <a href="component-navs-tabs.html"><i class='bx bx-radio-circle'></i>Navs & Tabs</a>
-						</li>
-						<li> <a href="component-navbar.html"><i class='bx bx-radio-circle'></i>Navbar</a>
-						</li>
-						<li> <a href="component-paginations.html"><i class='bx bx-radio-circle'></i>Pagination</a>
-						</li>
-						<li> <a href="component-popovers-tooltips.html"><i class='bx bx-radio-circle'></i>Popovers & Tooltips</a>
-						</li>
-						<li> <a href="component-progress-bars.html"><i class='bx bx-radio-circle'></i>Progress</a>
-						</li>
-						<li> <a href="component-spinners.html"><i class='bx bx-radio-circle'></i>Spinners</a>
-						</li>
-						<li> <a href="component-notifications.html"><i class='bx bx-radio-circle'></i>Notifications</a>
-						</li>
-						<li> <a href="component-avtars-chips.html"><i class='bx bx-radio-circle'></i>Avatrs & Chips</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"><i class="bx bx-repeat"></i>
-						</div>
-						<div class="menu-title">Content</div>
-					</a>
-					<ul>
-						<li> <a href="content-grid-system.html"><i class='bx bx-radio-circle'></i>Grid System</a>
-						</li>
-						<li> <a href="content-typography.html"><i class='bx bx-radio-circle'></i>Typography</a>
-						</li>
-						<li> <a href="content-text-utilities.html"><i class='bx bx-radio-circle'></i>Text Utilities</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a class="has-arrow" href="javascript:;">
-						<div class="parent-icon"> <i class="bx bx-donate-blood"></i>
-						</div>
-						<div class="menu-title">Icons</div>
-					</a>
-					<ul>
-						<li> <a href="icons-line-icons.html"><i class='bx bx-radio-circle'></i>Line Icons</a>
-						</li>
-						<li> <a href="icons-boxicons.html"><i class='bx bx-radio-circle'></i>Boxicons</a>
-						</li>
-						<li> <a href="icons-feather-icons.html"><i class='bx bx-radio-circle'></i>Feather Icons</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="form-froala-editor.html">
-						<div class="parent-icon"><i class='bx bx-code-alt'></i>
-						</div>
-						<div class="menu-title">Froala Editor</div>
-					</a>
-				</li>
+
 			</ul>
 			<!--end navigation-->
 		</div>

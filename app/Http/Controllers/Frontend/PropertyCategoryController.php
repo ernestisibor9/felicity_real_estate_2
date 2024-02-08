@@ -14,7 +14,7 @@ class PropertyCategoryController extends Controller
 {
     // FinishedProperty
     public function FinishedProperty(){
-        $property = Property::where('property_category', 'finished_property')->latest()->get(); 
+        $property = Property::where('property_category', 'finished_property')->where('status', '1')->latest()->get(); 
         return view('frontpage.category.finished_property', compact('property'));
     }
     // FinishPropertyDetails
@@ -26,7 +26,7 @@ class PropertyCategoryController extends Controller
     public function BuyFinishedProperty($id){
         $propertyTypes = PropertyType::latest()->get(); 
         $property = Property::findOrFail($id);
-        $propertyAll = Property::latest()->get();
+        $propertyAll = Property::where('status', '1')->latest()->get();
         return view('frontpage.category.buy_finished_property', compact('property', 'propertyAll', 'propertyTypes'));
     }
     // BuyFinishedProperty
@@ -69,7 +69,7 @@ class PropertyCategoryController extends Controller
     public function BuyUnFinishedProperty($id){
         $propertyTypes = PropertyType::latest()->get(); 
         $property = Property::findOrFail($id);
-        $propertyAll = Property::latest()->get();
+        $propertyAll = Property::where('status', '1')->latest()->get();
         return view('frontpage.category.buy_unfinished_property', compact('property', 'propertyAll', 'propertyTypes'));
     }
     // StoreUnFinishedBuy
@@ -115,10 +115,22 @@ class PropertyCategoryController extends Controller
 
     // ShowAllProperties
     public function ShowAllProperties(){
-        $finishedProperties = Property::where('property_category','finished_property')->latest()->get();
-        $unfinishedProperties = Property::where('property_category','unfinished_property')->latest()->get();
-        $land = Property::where('property_category','land')->latest()->get();
-        return view('frontpage.property.show_all_property', compact('finishedProperties', 'unfinishedProperties', 'land'));
+        $finishedProperties = Property::where('property_category','finished_property')->where('status', '1')->latest()->get();
+        $unfinishedProperties = Property::where('property_category','unfinished_property')->where('status', '1')->latest()->get();
+        $rent = Property::where('property_status','rent')->where('status', '1')->latest()->get();
+        $land = Property::where('property_category','land')->where('status', '1')->latest()->get();
+        return view('frontpage.property.show_all_property', compact('finishedProperties', 'unfinishedProperties', 'land', 'rent' ));
     }
-    
+    //
+     // Land Property
+     public function LandProperty(){
+        $propertyTypes = PropertyType::latest()->get(); 
+        $property = Property::where('property_category','land')->where('status', '1')->latest()->get(); 
+        return view('frontpage.property.land_property', compact('propertyTypes', 'property'));
+    }
+    // ShortLetProperty
+    public function ShortLetProperty(){
+        $property = Property::where('property_status','let')->where('status', '1')->latest()->get(); 
+        return view('frontpage.property.short_let_property', compact('property'));
+    }
 }

@@ -15,7 +15,7 @@
 				<h1 class="mb-4">Welcome {{$userData->name}}</h1>
 				@if ($userData->status === 0)
 					<h5>Account Status: <span class="text-danger">Pending</span></h5>
-					<h6>Admin will check and approved your account if matched our terms and conditions</h6>
+					<h6>Admin will check and approved your account if you matched our terms and conditions</h6>
 				@else
 				<h5>Account Status: <span class="text-success">Active</span></h5>
 				@endif

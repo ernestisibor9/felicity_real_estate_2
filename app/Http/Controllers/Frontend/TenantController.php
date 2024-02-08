@@ -29,12 +29,7 @@ class TenantController extends Controller
         return view('frontpage.tenant.unfinished_property', compact('propertyTypes', 'property'));
     }
     
-    // Land Property
-    public function LandProperty(){
-        $propertyTypes = PropertyType::latest()->get(); 
-        $property = Property::latest()->get(); 
-        return view('frontpage.tenant.land_property', compact('propertyTypes', 'property'));
-    }
+
     // StoreLandBuy
     public function StoreLandBuy(Request $request){
         // $request->validate([
