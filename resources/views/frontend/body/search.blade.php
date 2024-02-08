@@ -28,6 +28,12 @@
             </div>
           </div>
           <div class="col-md-12 mb-2">
+            <div class="form-group">
+              <label class="pb-2" for="Type">State</label>
+              <input type="text" name="state" class="form-control form-control-lg form-control-a" placeholder="State" >
+            </div>
+          </div>
+          {{-- <div class="col-md-12 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="Type">Property Category</label>
               <select name="property_category" class="form-control form-select form-control-a" id="">
@@ -54,7 +60,7 @@
                   <option value="other">Other</option>
                 </select>
               </div>
-          </div>
+          </div> --}}
 
           {{-- <div class="col-md-12 mb-2">
             <div class="form-group mt-3">

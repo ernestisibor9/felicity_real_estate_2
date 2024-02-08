@@ -19,11 +19,11 @@
 									@csrf
 
 									<div class="col-md-6 form-group">
-										<label for="input1" class="form-label">Property Name</label>
+										<label for="input1" class="form-label">Property Name <span style="color: red;">*</span></label>
 										<input type="text" name="property_name" class="form-control" id="input1" placeholder="Property Name">
 									</div>
 									<div class="col-md-6 form-group">
-										<label for="input2" class="form-label">Property Status</label>
+										<label for="input2" class="form-label">Property Status <span style="color: red;">*</span></label>
 										<select id="input7" class="form-select" name="property_status">
 											<option selected="" disabled>Select Property Status</option>
 											<option value="buy">For Buy</option>
@@ -32,7 +32,7 @@
 										</select>
 									</div>
 									<div class="col-md-6 form-group">
-										<label for="input2" class="form-label">Price</label>
+										<label for="input2" class="form-label">Price <span style="color: red;">*</span></label>
 										<select id="input7" class="form-select" name="price">
 											<option selected="" disabled>Select Price Range</option>
 											<option value="1m-2m">&#8358;1m - &#8358;2m</option>
@@ -43,7 +43,7 @@
 										</select>
 									</div>
 									<div class="col-md-6 form-group">
-										<label for="input1" class="form-label">Property Category</label>
+										<label for="input1" class="form-label">Property Category <span style="color: red;">*</span></label>
 										<select id="input7" class="form-select" name="property_category">
 											<option selected="" disabled>Select Property Category</option>
 											<option value="finished_property">Finished Property</option>
@@ -52,7 +52,7 @@
 										</select>
 									</div>
 									<div class="col-md-6 form-group">
-										<label for="input2" class="form-label">Property Thumbnail Photo</label>
+										<label for="input2" class="form-label">Property Thumbnail Photo <span style="color: red;">*</span></label>
 										<input type="file" name="property_thumbnail" class="form-control" id="input1" onChange="mainThamUrl(this)">
 										<div class="mt-2"></div>
 											<img src="" id="mainThmb">
@@ -64,7 +64,7 @@
 											<div class="row" id="preview_img"></div>
 									</div>
 									<div class="col-md-6">
-										<label for="input1" class="form-label">No. of Bedrooms</label>
+										<label for="input1" class="form-label">No. of Bedrooms </label>
 										<input type="number" name="bedrooms" class="form-control" id="input1" >
 									</div>
 									<div class="col-md-6">
@@ -84,7 +84,7 @@
 										<input type="text" name="property_video" class="form-control" id="input1">
 									</div>
 									<div class="col-md-6">
-										<label for="input1" class="form-label">Property Type</label>
+										<label for="input1" class="form-label">Property Type <span style="color: red;">*</span></label>
 										<select id="input7" class="form-select form-group" name="ptype_id">
 											<option selected="" disabled>Select Property Type</option>
 											@foreach ($propertyTypes as $ptype)
@@ -94,11 +94,11 @@
 									</div>
 									
 									<div class="col-md-6">
-										<label for="input8" class="form-label">City</label>
+										<label for="input8" class="form-label">City <span style="color: red;">*</span></label>
 										<input type="text" class="form-control" id="input8" name="city" placeholder="City">
 									</div>
 									<div class="col-md-6">
-										<label for="input9" class="form-label">State</label>
+										<label for="input9" class="form-label">State <span style="color: red;">*</span></label>
 										<select id="input9" class="form-select" name="state">
 											<option selected="">Select State</option>
 											<option>Lagos</option>
@@ -112,20 +112,20 @@
 										</select>
 									</div>
 									<div class="col-md-12">
-										<label for="input11" class="form-label">Address</label>
-										<textarea class="form-control" id="input11" placeholder="Address ..." rows="3" name="address"></textarea>
+										<label for="input11" class="form-label">Address <span style="color: red;">*</span></label>
+										<textarea class="form-control" required id="input11" placeholder="Address ..." rows="3" name="address"></textarea>
 									</div>
 									<div class="col-md-12">
-										<label for="input11" class="form-label">Short Description</label>
-										<textarea class="form-control" id="input11" rows="2" name="short_desc"></textarea>
+										<label for="input11" class="form-label">Short Description <span style="color: red;">*</span></label>
+										<textarea class="form-control" required id="input11" rows="2" name="short_desc"></textarea>
 									</div>
 									<div class="col-md-12">
-										<label for="input11" class="form-label">Long Description</label>
-										<textarea class="form-control" id="input11" rows="4" name="long_desc"></textarea>
+										<label for="input11" class="form-label">Long Description <span style="color: red;">*</span></label>
+										<textarea class="form-control" required id="input11" rows="4" name="long_desc"></textarea>
 									</div>
 									<div class="col-md-6">
 										<div class="form-check">
-											<input class="form-check-input" type="checkbox" id="input12" value="1" name="featured">
+											<input class="form-check-input"  type="checkbox" id="input12" value="1" name="featured">
 											<label class="form-check-label" for="input12" name="short_desc">Featured</label>
 										</div>
 									</div>

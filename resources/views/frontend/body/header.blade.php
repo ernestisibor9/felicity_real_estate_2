@@ -44,17 +44,21 @@
 
       {{-- @auth --}}
           
-				<button type="button" class="btn btn-success" data-bs-toggle="" data-bs-target="" style="margin-right: 20px;">
+				{{-- <button type="button" class="btn btn-success" data-bs-toggle="" data-bs-target="" style="margin-right: 20px;">
 					<a href="{{ route('login') }}" class="text-white">Sign in</a>
-				</button>
+				</button> --}}
 
       {{-- @else --}}
     
-      <button type="button" class="btn btn-singup navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="" data-bs-target="">
+      {{-- <button type="button" class="btn btn-singup navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="" data-bs-target="">
         <a href="{{ route('register') }}">Sign up</a>
-      </button>
+      </button> --}}
+
       <button type="button" class="btn btn-b-n navbar-toggle-box toggle-navbar navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-        <i class="bi bi-search"></i>
+        <div class="d-flex gap-2 align-items-center">
+          <span>Search</span>
+          <i class="bi bi-search"></i>
+        </div>
       </button>
       {{-- @endauth --}}
 

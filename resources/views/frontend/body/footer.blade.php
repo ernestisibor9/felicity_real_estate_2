@@ -27,10 +27,10 @@
             <div class="w-footer-a">
               <ul class="list-unstyled">
                 <li class="color-a">
-                  <span class="color-text-a">Phone .</span> info@felicitypropertiesltd.com
+                  <span class="color-text-a">Email .</span> info@felicitypropertiesltd.com
                 </li>
                 <li class="color-a">
-                  <span class="color-text-a">Email .</span> 07038950658
+                  <span class="color-text-a">Phone .</span> 07038950658
                 </li>
               </ul>
               <div>
@@ -174,7 +174,7 @@
     <div class="copyright-footer container-fluid">
       <p class="copyright color-text-a">
         &copy; Copyright
-        <span class="color-a">FELICITY PROPERTY LTD</span> All Rights Reserved.
+        <span class="color-a">Felicity Properties Limited.</span> All Rights Reserved.
       </p>
     </div>
   </footer>

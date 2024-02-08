@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="{{ asset('backend/assets/images/favicon-32x32.png') }}" type="image/png" />
+	<link rel="icon" href="{{ asset('backend/assets/logo.jpg') }}" type="image/png" />
 	<!--plugins-->
 	<link href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('backend/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
@@ -25,7 +25,7 @@
 
 <body class="">
 	<!--wrapper-->
-	<div class="wrapper" style="background-color: purple;">
+	<div class="wrapper">
 		<div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
 			<div class="container">
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">

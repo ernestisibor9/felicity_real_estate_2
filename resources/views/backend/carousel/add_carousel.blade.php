@@ -18,8 +18,8 @@
 					<div class="card">
 						<div class="card-body">
                             <div class="col-md-12">
-                                <label for="input8" class="form-label">Property Name</label>
-                                <input type="text" class="form-control" id="input8" name="property_name" placeholder="Property Name">
+                                <label for="input8" class="form-label">Property Name <span style="color: red;">*</span></label>
+                                <input type="text" class="form-control" id="input8" name="property_name" required placeholder="Property Name">
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="input2" class="form-label">Price</label>
@@ -37,8 +37,8 @@
                                 <input type="text" class="form-control" id="input8" name="city" placeholder="City">
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="input2" class="form-label">Property Slider Photo</label>
-                                <input type="file" name="photo_slide" class="form-control" id="input1" onChange="mainThamUrl(this)">
+                                <label for="input2" class="form-label">Property Slider Photo <span style="color: red;">*</span></label>
+                                <input type="file" required name="photo_slide" class="form-control" id="input1" onChange="mainThamUrl(this)">
                                 <div class="mt-2"></div>
                                     <img src="" id="mainThmb">
                             </div>

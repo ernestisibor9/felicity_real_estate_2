@@ -34,6 +34,11 @@ class PropertyController extends Controller
         // save modified image in new format 
         $img->toJpeg(80)->save(base_path('public/upload/property/thumbnail/'.$name_gen));
 
+        $request->validate([
+            'property_name' => 'required|unique:properties|max:200',
+        ]);
+
+
         $save_url = 'upload/property/thumbnail/'.$name_gen;
 
         $property_id = Property::insertGetId([

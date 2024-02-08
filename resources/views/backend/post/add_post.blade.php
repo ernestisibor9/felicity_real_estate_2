@@ -18,12 +18,12 @@
 					<div class="card">
 						<div class="card-body">
                             <div class="col-md-12">
-                                <label for="input8" class="form-label">Post title</label>
-                                <input type="text" class="form-control" id="input8" name="post_title" placeholder="Post title">
+                                <label for="input8" class="form-label">Post title <span style="color: red;">*</span></label>
+                                <input type="text" required class="form-control" id="input8" name="post_title" placeholder="Post title">
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="input2" class="form-label">Blog Category</label>
-                                <select id="input7" class="form-select" name="blog_cat_id">
+                                <label for="input2" class="form-label">Blog Category <span style="color: red;">*</span></label>
+                                <select id="input7" required class="form-select" name="blog_cat_id">
                                     <option selected="" disabled>Select Category</option>
                                     @foreach ($blogcat as $cat)
                                     <option value="{{$cat->id}}">{{$cat->category_name}}</option>
@@ -31,8 +31,8 @@
                                 </select>
                             </div>
                             <div class="col-md-12">
-                                <label for="">Short Description</label>
-                                <textarea class="form-control"  rows="4" name="short_desc"></textarea>
+                                <label for="">Short Description <span style="color: red;">*</span></label>
+                                <textarea class="form-control" required rows="4" name="short_desc"></textarea>
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label class="form-label">Post tag</label>
@@ -47,12 +47,12 @@
                                 </select>
                             </div>
                             <div class="col-md-12">
-                                <label for="">Long Description</label>
-                                <textarea class="form-control"  id="mytextarea" rows="3" name="long_desc"></textarea>
+                                <label for="">Long Description <span style="color: red;">*</span></label>
+                                <textarea class="form-control" required  id="mytextarea" rows="3" name="long_desc"></textarea>
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="input2" class="form-label">Post Photo</label>
-                                <input type="file" name="post_image" class="form-control" id="input1" onChange="mainThamUrl(this)">
+                                <label for="input2" class="form-label">Post Photo <span style="color: red;">*</span></label>
+                                <input type="file" name="post_image" required class="form-control" id="input1" onChange="mainThamUrl(this)">
                                 <div class="mt-2"></div>
                                     <img src="" id="mainThmb">
                             </div>

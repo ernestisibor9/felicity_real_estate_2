@@ -650,7 +650,8 @@ a:hover {
 .btn.btn-b-n {
   background-color: #800080;
   color: #ffffff;
- border-radius: 0 20px 20px 0 !important;
+ border-radius: 20px !important;
+ padding: 10px 25px !important;
 }
 
 .btn.btn-b-n:hover {

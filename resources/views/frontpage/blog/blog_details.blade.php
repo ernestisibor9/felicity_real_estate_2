@@ -171,7 +171,7 @@
                     <p class="comment-description">
                       {{$item->message}}
                     </p>
-                    <a href="3">Reply</a>
+                    {{-- <a href="3">Reply</a> --}}
                   </div>
                 </li>
                 @php
@@ -188,7 +188,7 @@
                     <p class="comment-description">
                       {!! $rep->message !!}
                     </p>
-                    <a href="3">Reply</a>
+                    {{-- <a href="3">Reply</a> --}}
                   </div>
                 </li>
                 @endforeach
@@ -222,26 +222,26 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
-                      <label for="inputName">Enter name</label>
-                      <input type="text" name="name" class="form-control form-control-lg form-control-a" id="inputName" placeholder="Name *" required>
+                      <label for="inputName">Enter name <span style="color:red;">*</span></label>
+                      <input type="text" name="name" class="form-control form-control-lg form-control-a" id="inputName" placeholder="Name" required>
                     </div>
                   </div>
                   <div class="col-md-6 mb-3">
                     <div class="form-group">
-                      <label for="inputEmail1">Enter email</label>
-                      <input type="email" name="email" class="form-control form-control-lg form-control-a" id="inputEmail1" placeholder="Email *" required>
+                      <label for="inputEmail1">Enter email <span style="color:red;">*</span></label>
+                      <input type="email" name="email" class="form-control form-control-lg form-control-a" id="inputEmail1" placeholder="Email" required>
                     </div>
                   </div>
                   <div class="col-md-12 mb-3">
                     <div class="form-group">
-                      <label for="inputUrl">Subject</label>
-                      <input type="text" name="subject" class="form-control form-control-lg form-control-a" id="inputUrl" placeholder="Subject">
+                      <label for="inputUrl">Subject <span style="color:red;">*</span></label>
+                      <input type="text" name="subject" required class="form-control form-control-lg form-control-a" id="inputUrl" placeholder="Subject">
                     </div>
                   </div>
                   <div class="col-md-12 mb-3">
                     <div class="form-group">
-                      <label for="textMessage">Enter message</label>
-                      <textarea id="textMessage" name="message" class="form-control" placeholder="Comment *" name="message" cols="45" rows="8" required></textarea>
+                      <label for="textMessage">Enter message <span style="color:red;">*</span></label>
+                      <textarea id="textMessage" name="message" required class="form-control" placeholder="Comment " name="message" cols="45" rows="8" required></textarea>
                     </div>
                   </div>
                   <div class="col-md-12">

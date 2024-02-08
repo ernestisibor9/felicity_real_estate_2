@@ -594,7 +594,7 @@
 							<img src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no-image.png') }}" class="user-img" alt="user avatar">
 							<div class="user-info">
 								<p class="user-name mb-0">{{ $profileData->name }}</p>
-								<p class="designattion mb-0">Web Designer</p>
+								<p class="designattion mb-0">{{$profileData->role}}</p>
 							</div>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end">

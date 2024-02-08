@@ -18,17 +18,17 @@
 					<div class="card">
 						<div class="card-body">
                             <div class="col-md-12">
-                                <label for="input8" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="input8" name="name" placeholder="Full Name">
+                                <label for="input8" class="form-label">Name <span style="color: red;">*</span></label>
+                                <input type="text" required class="form-control" id="input8" name="name" placeholder="Full Name">
                             </div>
                             
                             <div class="col-md-12">
-                                <label for="">Message</label>
-                                <textarea class="form-control"  rows="4" name="message"></textarea>
+                                <label for="">Message <span style="color: red;">*</span></label>
+                                <textarea class="form-control" required  rows="4" name="message"></textarea>
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="input2" class="form-label">Testimonial Photo</label>
-                                <input type="file" name="photo" class="form-control" id="input1" onChange="mainThamUrl(this)">
+                                <label for="input2" class="form-label">Testimonial Photo <span style="color: red;">*</span></label>
+                                <input type="file" required name="photo" class="form-control" id="input1" onChange="mainThamUrl(this)">
                                 <div class="mt-2"></div>
                                     <img src="" id="mainThmb">
                             </div>

@@ -174,7 +174,7 @@
     <div class="copyright-footer container-fluid">
       <p class="copyright color-text-a">
         &copy; Copyright
-        <span class="color-a">FELICITY PROPERTY LTD</span> All Rights Reserved.
+        <span class="color-a">Felicity Properties Limited.</span> All Rights Reserved.
       </p>
     </div>
   </footer>
