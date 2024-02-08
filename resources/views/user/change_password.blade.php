@@ -2,6 +2,10 @@
 
 @section('user_main')
 
+@section('title')
+        Felicity Properties  - Chanege Password
+      @endsection
+
 <div class="page-wrapper">
 			<div class="page-content">
 				<!--breadcrumb-->

@@ -2,6 +2,9 @@
 
 
 @section('main')
+    @section('title')
+    Felicity Properties - Land Property
+    @endsection
 		<main id="main">
              <!-- =======Intro Single ======= -->
     <!-- End Intro Single-->

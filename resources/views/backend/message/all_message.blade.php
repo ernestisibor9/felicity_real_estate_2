@@ -3,6 +3,10 @@
 
 @section('admin')
 
+@section('title')
+	Felicity Properties - All Messages
+@endsection
+
 
 <div class="page-wrapper">
     <div class="page-content">

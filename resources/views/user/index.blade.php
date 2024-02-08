@@ -2,6 +2,10 @@
 
 @section('user_main')
 
+	@section('title')
+        Felicity Properties Limited
+      @endsection
+
 @php
 	$id = Auth::user()->id;
 	$userData = App\Models\User::find($id);

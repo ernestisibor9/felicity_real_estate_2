@@ -2,6 +2,11 @@
 
 
 @section('main')
+
+@section('title')
+	Felicity Properties -About us
+@endsection
+
     <main id="main">
         <!-- ======= Intro Single ======= -->
     <section class="intro-single">

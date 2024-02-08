@@ -2,6 +2,9 @@
 
 
 @section('main')
+      @section('title')
+        Felicity Properties - Unfinished Property
+      @endsection
     <main id="main">
         <section class="mt-5">
             <div class="container mt-5">

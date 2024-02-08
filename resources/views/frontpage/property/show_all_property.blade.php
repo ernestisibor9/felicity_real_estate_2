@@ -12,6 +12,9 @@
   </style>
 
 @section('main')
+    @section('title')
+    Felicity Properties - Shown All Property
+    @endsection
     <main id="main">
         <!-- ======= Finished Properties Section ======= -->
         <section class="section-property section-t8">

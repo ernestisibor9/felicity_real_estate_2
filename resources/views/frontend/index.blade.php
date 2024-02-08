@@ -1,7 +1,11 @@
 @extends('frontend.dashboard')
 
-
 @section('main')
+
+@section('title')
+	Felicity Properties Limited - Home
+@endsection
+
 		<main id="main">
 
       @php

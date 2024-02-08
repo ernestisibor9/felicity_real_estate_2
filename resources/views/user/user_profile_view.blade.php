@@ -2,6 +2,10 @@
 
 @section('user_main')
 
+	@section('title')
+        Felicity Properties - User Profile
+      @endsection
+
 <div class="page-wrapper">
 			<div class="page-content">
 				<!--breadcrumb-->

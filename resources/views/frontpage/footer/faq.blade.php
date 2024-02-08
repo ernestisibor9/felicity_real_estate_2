@@ -15,6 +15,9 @@
 </style>
 
 @section('main')
+      @section('title')
+        Felicity Properties - FAQ
+      @endsection
     <main id="main">
         <!-- ======= Intro Single ======= -->
     <section class="intro-single">

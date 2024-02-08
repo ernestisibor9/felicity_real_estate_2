@@ -2,6 +2,10 @@
 
 @section('admin')
 
+@section('title')
+	Felicity Properties - Admin Profile
+@endsection
+
 <div class="page-wrapper">
 			<div class="page-content">
 				<!--breadcrumb-->

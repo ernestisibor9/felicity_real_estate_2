@@ -2,6 +2,11 @@
 
 
 @section('main')
+
+  @section('title')
+    Felicity Properties - Book Inspection
+  @endsection
+
 		<main id="main">
              <!-- =======Intro Single ======= -->
     <!-- End Intro Single-->

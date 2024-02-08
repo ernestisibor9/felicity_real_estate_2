@@ -2,6 +2,9 @@
 
 
 @section('main')
+      @section('title')
+        Felicity Properties - Buy Finished Property
+      @endsection
 		<main id="main">
              <!-- =======Intro Single ======= -->
     <!-- End Intro Single-->

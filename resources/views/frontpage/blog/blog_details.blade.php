@@ -4,6 +4,10 @@
 @section('main')
 <main id="main">
 
+  @section('title')
+	  Felicity Properties - Blog Details
+  @endsection
+
     <!-- ======= Intro Single ======= -->
     <section class="intro-single">
       <div class="container">

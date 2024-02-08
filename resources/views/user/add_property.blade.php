@@ -2,6 +2,9 @@
 
 @section('user_main')
 
+@section('title')
+        Felicity Properties - Add Propertty
+      @endsection
 
 <div class="page-wrapper">
     <div class="page-content">

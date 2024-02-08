@@ -2,6 +2,10 @@
 
 @section('admin')
 
+@section('title')
+	Felicity Properties - Edit Property Type
+@endsection
+
 <div class="page-wrapper">
 			<div class="page-content">
 				<div class="row justify-content-center">

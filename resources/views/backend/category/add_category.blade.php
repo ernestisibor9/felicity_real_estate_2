@@ -2,6 +2,10 @@
 
 @section('admin')
 
+@section('title')
+	Felicity Properties - Add Category
+@endsection
+
 <div class="page-wrapper">
 			<div class="page-content">
 				<div class="row justify-content-center">

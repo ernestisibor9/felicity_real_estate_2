@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/dark-theme.css') }}" />
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/header-colors.css') }}" />
-	<title>Felicity - Admin Dashboard</title>
+	<title>@yield('title')</title>
 </head>
 
 <body onload="info_noti()">

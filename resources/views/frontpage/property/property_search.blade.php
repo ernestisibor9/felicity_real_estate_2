@@ -2,6 +2,9 @@
 
 
 @section('main')
+    @section('title')
+    Felicity Properties - Property Search
+    @endsection
     <main id="main">
         <section class="intro-single">
             <div class="container">

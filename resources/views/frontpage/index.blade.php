@@ -2,6 +2,9 @@
 
 
 @section('main')
+      @section('title')
+        Felicity Properties Limited
+      @endsection
 		<main id="main">
 
     <!-- ======= Services Section ======= -->

@@ -11,6 +11,9 @@
 </style>
 
 @section('main')
+      @section('title')
+        Felicity Properties - Finished Property Details
+      @endsection
     <main id="main">
         <section class="intro-single">
             <div class="container">

@@ -2,6 +2,9 @@
 
 @section('admin')
 
+@section('title')
+	Felicity Properties - Blog Category
+@endsection
 
 <div class="page-wrapper">
 			<div class="page-content">

@@ -19,6 +19,11 @@
 
 @section('main')
     <main id="main">
+
+        @section('title')
+            Felicity Properties -All Blog
+        @endsection
+
         <!-- ======= Real Estate Blog Section ======= -->
         <section class="section-news section-t8" id="blog">
             <div class="container">

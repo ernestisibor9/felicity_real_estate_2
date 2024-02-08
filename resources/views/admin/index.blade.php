@@ -2,6 +2,10 @@
 
 @section('admin')
 
+@section('title')
+	Felicity Properties - Admin Dashboard
+@endsection
+
 <style>
 	.stats{
 		color: #fff;

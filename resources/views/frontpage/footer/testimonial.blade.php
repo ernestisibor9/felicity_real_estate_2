@@ -12,6 +12,9 @@
 </style>
 
 @section('main')
+    @section('title')
+    Felicity Properties - Testimonial
+    @endsection
     <main id="main">
         <!-- ======= Testimonials Section ======= -->
     <section class="section-testimonials section-t8 nav-arrow-a">
