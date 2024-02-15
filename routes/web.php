@@ -21,6 +21,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FooterController;
 use App\Http\Controllers\Frontend\RentPropertyController;
 use App\Http\Controllers\Frontend\ServicesController;
+use App\Http\Controllers\PaystackController;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\Facades\Route;
 
@@ -228,6 +229,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login')->middleware(RedirectIfAuthenticated::class);
+
+
+// Paystack Controller
+Route::get('callback', [PaystackController::class,'callback'])->name('callback');
+Route::get('success', [PaystackController::class,'success'])->name('success');
+Route::get('cancel', [PaystackController::class,'cancel'])->name('cancel');
 
 
 

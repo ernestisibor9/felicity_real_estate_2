@@ -138,6 +138,9 @@
                           {{$item->long_desc}}
                         </p>
                       </div>
+                      <div class="mt-5">
+                        <a class="btn btn-primary" href="{{route('buy.finished.property', $item->id)}}">Buy Now</a>
+                      </div>
                       {{-- <div class="row section-t3">
                         <div class="col-sm-12">
                           <div class="title-box-d">

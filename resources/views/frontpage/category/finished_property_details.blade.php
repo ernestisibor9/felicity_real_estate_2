@@ -45,7 +45,7 @@
           </section><!-- End Intro Single-->
       
           <!-- ======= Property Single ======= -->
-          {{-- @foreach ($property as $item) --}}
+          
           <section class="property-single nav-arrow-b">
             <div class="container">
               <div class="row justify-content-center">
@@ -192,10 +192,66 @@
                     </div>
                   </div>
                 </div>
-                <h4 class="text-center">Property Video</h4>
+                <h4 class="text-center">Property Video</h4> 
                 <div class="col-md-10">
                     <iframe width="1200" height="315" src="{{$pid->property_video}}" class="d-none d-md-block" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
                 </div>
+
+                // Paystack Form
+
+                <form id="paymentForm" class= 'mt-5'>
+                  <div class="form-submit">
+                    <button type="submit" class= 'btn btn-primary' onclick="payWithPaystack()"> Pay With Paystack </button>
+                  </div>
+                </form>
+
+                <script src="https://js.paystack.co/v1/inline.js"></script>
+
+                <script>
+                    const paymentForm = document.getElementById('paymentForm');
+                    paymentForm.addEventListener("submit", payWithPaystack, false);
+
+                    function payWithPaystack(e) {
+                      e.preventDefault();
+
+                      let handler = PaystackPop.setup({
+                        key: '{{env('PAYSTACK_PUBLIC_KEY')}}', // Replace with your public key
+                        email: 'ernestisibor9@gmail.com',
+                        amount: 5 * 100,
+                        metadata:{
+                          custom_fields:[
+                            {
+                              display_name: "Lakers Property",
+                              variable_name: "Lakers Property",
+                              value: "lakers property"
+                            },
+                            {
+                              display_name: "Quantity",
+                              variable_name: "Quantity",
+                              value: "1"
+                            }
+                          ]
+                        },
+                        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                        // label: "Optional string that replaces customer email"
+                        
+                        onClose: function(){
+                          alert('Window closed.');
+                        },
+                        callback: function(response){
+                          // let message = 'Payment complete! Reference: ' + response.reference;
+                          // alert(message);
+                          // alert(JSON.stringify(response))
+                          window.location.href = "{{route('callback')}}" + response.redirecturl
+                        }
+                      });
+
+                      handler.openIframe();
+                    }
+                </script>
+
+
+
                 {{-- <div class="col-md-10 offset-md-1">
                   <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
                     <li class="nav-item">
@@ -315,7 +371,7 @@
               </div>
             </div>
           </section>   
-          {{-- @endforeach  --}}
+          
     </main>
 
 

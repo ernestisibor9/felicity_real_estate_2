@@ -237,7 +237,7 @@
               <form action="{{route('store.subscriber')}}" method="post">
                 @csrf
                 <div class="d-flex">
-                  <input type="email" name="email" required class="form-control" id="" placeholder="Email address">
+                  <input type="email" name="email" required class="form-control" id="" placeholder="Email">
                 <button class="btn btn-submit" type="submit">Subscribe</button>
                 </div>
               </form>
