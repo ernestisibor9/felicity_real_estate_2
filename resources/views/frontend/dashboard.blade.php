@@ -40,6 +40,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <title>@yield('title')</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" type="text/css" media="all" />
 </head>
 
 <body>
@@ -71,6 +72,8 @@
   <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('frontend/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('frontend/assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
 
   <!-- Template Main JS File -->
   <script src="{{ asset('frontend/assets/js/main.js') }}"></script>

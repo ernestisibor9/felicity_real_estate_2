@@ -19,6 +19,7 @@ use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\Frontend\BookInspectionController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FooterController;
+use App\Http\Controllers\Frontend\PriceController;
 use App\Http\Controllers\Frontend\RentPropertyController;
 use App\Http\Controllers\Frontend\ServicesController;
 use App\Http\Controllers\PaystackController;
@@ -77,6 +78,10 @@ Route::post('/store/rent/property', [RentPropertyController::class, 'StoreRentPr
 
 // Read Services Route
 Route::get('/our/services', [ServicesController::class,'ReadServices'])->name('read.services');
+
+// Price Filter
+Route::get('/filter/price', [PriceController::class,'PriceFilter']);
+Route::post('/store/filter', [PriceController::class,'StoreFilter'])->name('store.filter');
 
 
 // PropertyCategory

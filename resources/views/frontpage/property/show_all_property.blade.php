@@ -23,17 +23,17 @@
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between mob">
                     <div class="title-box">
-                        @if (count($finishedProperties) === 1)
+                        @if (count($finishedProperties) >= 0)
                         <h2 class="title-a">Finished Properties</h2>
                         @else
                         <h2 class="title-a"></h2> 
                         @endif 
                     </div>
-                    <div class="title-link">
+                    {{-- <div class="title-link">
                     <a href="property-grid.html">Finished Properties
                         <span class="bi bi-chevron-right"></span>
                     </a>
-                    </div>
+                    </div> --}}
                 </div>
                 </div>
             </div>
@@ -105,17 +105,17 @@
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between">
                     <div class="title-box">
-                        @if (count($finishedProperties) === 1)
+                        @if (count($finishedProperties) >= 0)
                         <h2 class="title-a">Unfinished Properties</h2>
                         @else
                         <h2 class="title-a"></h2> 
                         @endif 
                     </div>
-                    <div class="title-link">
+                    {{-- <div class="title-link">
                     <a href="property-grid.html">Unfinished Properties
                         <span class="bi bi-chevron-right"></span>
                     </a>
-                    </div>
+                    </div> --}}
                 </div>
                 </div>
             </div>
@@ -188,17 +188,17 @@
                 <div class="title-wrap d-flex justify-content-between">
                     <div class="title-box">
                     {{-- <h2 class="title-a">Land Properties</h2> --}}
-                    @if (count($land) === 1)
+                    @if (count($land) >= 0)
                         <h2 class="title-a">Land Properties</h2>
                     @else
                     <h2 class="title-a"></h2> 
                     @endif  
                     </div>
-                    <div class="title-link">
+                    {{-- <div class="title-link">
                     <a href="property-grid.html">Land Properties
                         <span class="bi bi-chevron-right"></span>
                     </a>
-                    </div>
+                    </div> --}}
                 </div>
                 </div>
             </div>
@@ -277,11 +277,11 @@
                     <h2 class="title-a"></h2> 
                     @endif  
                     </div>
-                    <div class="title-link">
+                    {{-- <div class="title-link">
                     <a href="property-grid.html">Rent Properties
                         <span class="bi bi-chevron-right"></span>
                     </a>
-                    </div>
+                    </div> --}}
                 </div>
                 </div>
             </div>
