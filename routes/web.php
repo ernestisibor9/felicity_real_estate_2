@@ -82,7 +82,7 @@ Route::get('/our/services', [ServicesController::class,'ReadServices'])->name('r
 // Price Filter
 Route::get('/filter/price', [PriceController::class,'PriceFilter']);
 Route::post('/store/filter', [PriceController::class,'StoreFilter'])->name('store.filter');
-
+Route::post('/store/filter/finished', [PriceController::class,'StoreFilterFinished'])->name('store.filter.finished');
 
 // PropertyCategory
 Route::get('/land/property', [PropertyCategoryController::class, 'LandProperty'])->name('land.property');
@@ -98,10 +98,13 @@ Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 
 Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
 Route::get('/show/all/properties', [PropertyCategoryController::class, 'ShowAllProperties'])->name('show.all.properties');
 Route::get('/finished/property2', [PropertyCategoryController::class, 'FinishedProperty2'])->name('finished.property2');
-Route::get('/finished/property/lekki', [PropertyCategoryController::class, 'Lekki'])->name('Lekki');
+// Route::get('/finished/property/lekki', [PropertyCategoryController::class, 'Lekki'])->name('Lekki');
 Route::get('/property/checkbox', [PropertyCategoryController::class, 'PropertyTypes'])->name('property.type.checkbox');
 Route::post('/store/property/checkbox', [PropertyCategoryController::class, 'ShopFilter'])->name('shop.filter');
 
+Route::post('/search/property/city', [PropertyCategoryController::class, 'SearchPropertyCity'])->name('search.property.city');
+
+Route::post('/store/filter/property/type', [PropertyCategoryController::class, 'SearchPropertyType'])->name('store.filter.property.type');
 
 // Book Inspection
 Route::get('/inspect/property/{id}', [BookInspectionController::class, 'InspectProperty'])->name('inspect.property');

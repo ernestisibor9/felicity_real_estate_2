@@ -35,11 +35,16 @@
 										<label for="input2" class="form-label">Price <span style="color: red;">*</span></label>
 										<select id="input7" class="form-select" name="price">
 											<option selected="" disabled>Select Price Range</option>
-											<option value="1m-2m">&#8358;1m - &#8358;2m</option>
-											<option value="3m-4m">&#8358;3m - &#8358;4m</option>
-											<option value="5m-6m">&#8358;5m - &#8358;6m</option>
-											<option value="7m-8m">&#8358;7m - &#8358;8m</option>
-											<option value="9m-10m">&#8358;9m - &#8358;10m</option>
+											<option value="10000000">&#8358;10m</option>
+											<option value="20000000">&#8358;20m</option>
+											<option value="30000000">&#8358;30m</option>
+											<option value="40000000">&#8358;40m</option>
+											<option value="50000000">&#8358;50m</option>
+											<option value="60000000">&#8358;60m</option>
+											<option value="70000000">&#8358;70m</option>
+											<option value="80000000">&#8358;80m</option>
+											<option value="90000000">&#8358;90m</option>
+											<option value="100000000">&#8358;100m</option>
 										</select>
 									</div>
 									<div class="col-md-6 form-group">
@@ -94,8 +99,13 @@
 									</div>
 									
 									<div class="col-md-6">
-										<label for="input8" class="form-label">City <span style="color: red;">*</span></label>
-										<input type="text" class="form-control" id="input8" name="city" placeholder="City">
+										<label for="input8" class="form-label">Location <span style="color: red;">*</span></label>
+										<select id="input7" class="form-select form-group" name="city_id">
+											<option selected="" disabled>Select Location</option>
+											@foreach ($cities as $city)
+												<option value="{{ $city->id }}">{{ $city->city }}</option>
+											@endforeach
+										</select>
 									</div>
 									<div class="col-md-6">
 										<label for="input9" class="form-label">State <span style="color: red;">*</span></label>

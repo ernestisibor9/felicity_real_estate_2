@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\MultiImage;
 use App\Models\Property;
 use App\Models\PropertyType;
@@ -17,7 +18,8 @@ class PropertyController extends Controller
     // AddProperty
     public function AddProperty(){
         $propertyTypes = PropertyType::latest()->get();
-        return view('backend.property.add_property', compact("propertyTypes"));
+        $cities = City::orderBy('city', 'ASC')->get();
+        return view('backend.property.add_property', compact("propertyTypes", "cities"));
     }
     // StoreProperty
     public function StoreProperty(Request $request){
@@ -58,7 +60,7 @@ class PropertyController extends Controller
             'property_video' => $request->property_video,
 
             'address' => $request->address,
-            'city' => $request->city,
+            'city_id' => $request->city_id,
             'state' => $request->state,
             'featured' => $request->featured,
             'hot' => $request->hot,
@@ -173,7 +175,7 @@ class PropertyController extends Controller
                 'property_video' => $request->property_video,
 
                 'address' => $request->address,
-                'city' => $request->city,
+                'city_id' => $request->city_id,
                 'state' => $request->state,
                 'featured' => $request->featured,
                 'hot' => $request->hot,
@@ -201,7 +203,7 @@ class PropertyController extends Controller
                 'property_video' => $request->property_video,
 
                 'address' => $request->address,
-                'city' => $request->city,
+                'city_id' => $request->city_id,
                 'state' => $request->state,
                 'featured' => $request->featured,
                 'hot' => $request->hot,

@@ -18,4 +18,12 @@ class Property extends Model
     public function multi_img(){
         return $this->belongsTo(MultiImage::class, 'id', 'property_id');
     }
+
+    public function citys(){
+        return $this->belongsTo(City::class, 'city_id', 'id');
+    }
+
+    // public function city(){
+    //     return $this->hasMany(City::class, 'city_id', 'id');
+    // }
 }

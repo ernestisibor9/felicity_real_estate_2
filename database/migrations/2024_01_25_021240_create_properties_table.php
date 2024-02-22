@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('property_size')->nullable();
             $table->string('property_video')->nullable();
             $table->text('address')->nullable();
-            $table->string('city')->nullable();
+            $table->string('city_id')->nullable();
             $table->string('state')->nullable();
             $table->string('featured')->nullable();
             $table->string('hot')->nullable();

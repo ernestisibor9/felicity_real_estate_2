@@ -9,6 +9,7 @@ use App\Models\Property;
 use App\Models\BuyProperty;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ScheduleMail;
+use App\Models\City;
 
 class PropertyCategoryController extends Controller
 {
@@ -136,7 +137,8 @@ class PropertyCategoryController extends Controller
     // FinishedProperty2
     public function FinishedProperty2(){
         // $property = Property::where('property_category','finished_property')->where('status','1')->groupBy('city')->pluck('city');
-        return view('frontpage.property.select_city_finished');
+        $cities = City::orderBy('city', 'ASC')->get();
+        return view('frontpage.property.select_city_finished', compact('cities'));
     }
     public function Lekki(){
         $city = Property::where('city', 'Lekki')->latest()->get();
@@ -146,5 +148,31 @@ class PropertyCategoryController extends Controller
     public function PropertyTypes(){
         $types = PropertyType::latest()->get();
         return view('frontpage.types.property_checkbox', compact('types'));
+    }
+    // SearchPropertyCity
+    public function SearchPropertyCity(Request $request){
+        $cityId = $request->city_id;
+        //dd($cityId);
+        $prop = Property::where('city_id', $cityId)->first();
+        $property = Property::where('city_id', $cityId)->get();
+        $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
+
+        return view('frontpage.property.city_property', compact('property', 'prop', 'propertyType'));
+    }
+    // SearchPropertyType
+    public function SearchPropertyType(Request $request){
+        $ptypeId = $request->ptype_id;
+        $cityId = $request->city_id;
+        // dd($ptypeId);
+        try{
+            $prop = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->first();
+            $property = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->get();
+            $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
+    
+            return view('frontpage.property.property_type', compact('property', 'prop', 'propertyType'));
+        }
+        catch(\Exception $e){
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 }
