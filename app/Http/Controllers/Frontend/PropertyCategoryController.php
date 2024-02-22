@@ -133,4 +133,18 @@ class PropertyCategoryController extends Controller
         $property = Property::where('property_status','let')->where('status', '1')->latest()->get(); 
         return view('frontpage.property.short_let_property', compact('property'));
     }
+    // FinishedProperty2
+    public function FinishedProperty2(){
+        // $property = Property::where('property_category','finished_property')->where('status','1')->groupBy('city')->pluck('city');
+        return view('frontpage.property.select_city_finished');
+    }
+    public function Lekki(){
+        $city = Property::where('city', 'Lekki')->latest()->get();
+        return view('frontpage.property.lekki', compact('city'));
+    }
+    // PropertyTypes
+    public function PropertyTypes(){
+        $types = PropertyType::latest()->get();
+        return view('frontpage.types.property_checkbox', compact('types'));
+    }
 }

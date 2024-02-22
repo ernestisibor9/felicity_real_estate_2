@@ -97,6 +97,10 @@ Route::get('/unfinished/properties/details/{id}', [PropertyCategoryController::c
 Route::get('/buy/unfinished/property/{id}', [PropertyCategoryController::class, 'BuyUnFinishedProperty'])->name('buy.unfinished.property');
 Route::post('/store/unfinished/buy', [PropertyCategoryController::class, 'StoreUnFinishedBuy'])->name('store.unfinished.buy');
 Route::get('/show/all/properties', [PropertyCategoryController::class, 'ShowAllProperties'])->name('show.all.properties');
+Route::get('/finished/property2', [PropertyCategoryController::class, 'FinishedProperty2'])->name('finished.property2');
+Route::get('/finished/property/lekki', [PropertyCategoryController::class, 'Lekki'])->name('Lekki');
+Route::get('/property/checkbox', [PropertyCategoryController::class, 'PropertyTypes'])->name('property.type.checkbox');
+Route::post('/store/property/checkbox', [PropertyCategoryController::class, 'ShopFilter'])->name('shop.filter');
 
 
 // Book Inspection
