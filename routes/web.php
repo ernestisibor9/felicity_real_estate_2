@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\Backend\MessageController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
@@ -202,6 +203,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::controller(AdminInspectionController::class)->group(function(){
         Route::get('/admin/inspection', 'AdminBookingInspect')->name('admin.inspection');
         Route::get('/inspect/property/status/{id}', 'InspectPropertyStatus')->name('inspect.property.status');
+    });
+
+    // Location Route For Admin
+    Route::controller(LocationController::class)->group(function(){
+        Route::get('/add/location', 'AddLocation')->name('add.location');
+        Route::post('/store/location', 'StoreLocation')->name('store.location');
+        Route::get('/all/location', 'AllLocation')->name('all.location');
+        Route::get('/edit/location/{id}', 'EditLocation')->name('city.edit');
+        Route::post('/update/location', 'UpdateLocation')->name('update.location');
+        Route::get('/delete/location/{id}', 'DeleteLocation')->name('city.delete');
     });
 
     // Carousel Route For Admin

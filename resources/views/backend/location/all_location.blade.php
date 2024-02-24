@@ -3,13 +3,13 @@
 @section('admin')
 
 @section('title')
-	Felicity Properties - All Property Type
+	Felicity Properties - All Location
 @endsection
 
 <div class="page-wrapper">
 			<div class="page-content">
 				<div class="mt-2 mb-4">
-					<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Property Type</button>
+					<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Location</button>
 				</div>
 				<div class="card">
 					<div class="card-body">
@@ -18,18 +18,18 @@
 								<thead>
 									<tr>
 										<th>S/N</th>
-										<th>Property Type</th>
+										<th>City</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									@foreach ($types as $key => $type)
+									@foreach ($cities as $key => $city)
 										<tr>
 											<td>{{ $key + 1 }}</td>
-											<td>{{ $type->type_name }}</td>
+											<td>{{ $city->city }}</td>
 											<td>
-												<a href="{{ route('type.edit', $type->id) }}" title="Edit" class="btn btn-primary" >Edit</a>	
-												<a href="{{ route('type.delete', $type->id) }}" title="Delete" class="btn btn-danger" id="delete">Delete</a>			
+												<a href="{{ route('city.edit', $city->id) }}" title="Edit" class="btn btn-primary" >Edit</a>	
+												<a href="{{ route('city.delete', $city->id) }}" title="Delete" class="btn btn-danger" id="delete">Delete</a>			
 											</td>											
 										</tr>
 							</div>
@@ -41,14 +41,14 @@
 											<div class="modal-dialog">
 												<div class="modal-content">
 													<div class="modal-header">
-														<h5 class="modal-title" id="exampleModalLabel">Add Property Type</h5>
+														<h5 class="modal-title" id="exampleModalLabel">Add Location</h5>
 														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 													</div>
 													<div class="modal-body">
-														<form action="{{ route('store.type') }}" method="post">
+														<form action="{{ route('store.location') }}" method="post">
 					@csrf
 
-							<input type='text' class= 'form-control mb-3' name= 'type_name' placeholder='E.g duplex' required/>
+							 <input type='text' class= 'form-control mb-3' name= 'city' placeholder='E.g Lekki' required/>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -50,28 +50,6 @@
         </main>
 
         <script>
-	// $(document).ready(function(){
-	// 	if($('#slider-range').length > 0){
-	// 	   const max_price = parseInt($('#slider-range').data('max'));
-	// 	   const min_price = parseInt($('#slider-range').data('min'));  
-	// 	   let price_range = min_price+"-"+max_price
-	// 	   let price = price_range.split('-');
-
-    //        $("#slider-range").slider({
-    //         range: true,
-    //         min: min_price,
-    //         max: max_price,
-    //         values: price,
-
-    //         slide: function (event, ui) {
-
-    //             $("#amount").val('$'+ui.values[0]+"-"+'$'+ui.values[1]);
-    //             $("#price_range").val(ui.values[0]+"-"+ui.values[1]);
-    //         }
-    //         });
-	// 	}
-	// })
-
 
 </script>
 @endsection

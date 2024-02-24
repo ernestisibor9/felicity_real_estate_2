@@ -62,62 +62,7 @@
                   <input name="phone" type="text" class="form-control form-control-lg form-control-a" placeholder="Your Phone Number *" required="">
                 </div>
               </div>
-              {{-- <div class="col-md-6 mb-3">
-                <div class="form-group">
-                  <select name="ptype_id" id="" class="form-select form-control-lg form-control-a" >
-                    <option value="" disabled>Select Property Type *</option>
-                    @foreach ($propertyTypes as $ptype)
-                        <option value="{{ $ptype->id }}">{{ $ptype->type_name }}</option>
-                    @endforeach
-                  </select>
-                </div>
-              </div> --}}
-              {{-- <div class="col-md-6 mb-3">
-                <div class="form-group">
-                  <select name="budget" id="" class="form-select form-control-lg form-control-a" >
-                    <option value="">Select Budget For Apartment *</option>
-                    <option value="0-500000">0 - 500,000 Per Anual (P.A)</option>
-                    <option value="500,000 - 1,000,000">500,000 - 1,000,000 Per Anual (P.A)</option>
-                    <option value="1,000,000 - 2,000,000">1,000,000 - 2,000,000 (P.A)</option>
-                    <option value="2,000,000 - 3,000,000">2,000,000 - 3,000,000 Per Anual (P.A)</option>
-                    <option value="3,000,000 - 4,000,000">3,000,000 - 4,000,000 Per Anual (P.A)</option>
-                    <option value="4,000,000 - 5,000,000">4,000,000 - 5,000,000 Per Anual (P.A)</option>
-                    <option value="5,000,000 - 7,000,000">5,000,000 - 7,000,000 Per Anual (P.A)</option>
-                    <option value="Above 7,000,000">Above 7,000,000 Per Anual (P.A)</option>
-                  </select>
-                </div>
-              </div> --}}
-              {{-- <div class="col-md-6 mb-3">
-                <div class="form-group">
-                  <select name="city_id" id="" class="form-select form-control-lg form-control-a" >
-                    <option value="">Select City *</option>
-                    @foreach ($propertyAll as $city)
-                        <option value="{{ $city->city }}">{{ $city->city }}</option>
-                    @endforeach
-                  </select>
-                </div>
-              </div> --}}
               
-              {{-- <div class="col-md-12 mb-3">
-                <div class="form-group">
-                  <textarea name="amenities" class="form-control" cols="45" rows="4" placeholder="Are there specific amenities you consider essential (e.g., parking space, laundry facilities, pet-friendly)?" required=""></textarea>
-                </div>
-              </div>
-              <div class="col-md-12 mb-3">
-                <div class="form-group">
-                  <textarea name="state_of_community" class="form-control" cols="45" rows="4" placeholder="Are you looking for properties in a specific type of community (e.g., family-friendly, vibrant, quiet)?" required=""></textarea>
-                </div>
-              </div> --}}
-              {{-- <div class="col-md-12 mb-3">
-                <div class="form-group">
-                  <textarea name="property_size" class="form-control" cols="45" rows="4" placeholder="What are your preferences regarding property size and layout?" required=""></textarea>
-                </div>
-              </div> --}}
-              {{-- <div class="col-md-12 mb-3">
-                <div class="form-group">
-                  <textarea name="design_preferences" class="form-control" cols="45" rows="4" placeholder="Do you have any specific aesthetic or design preferences for the property?" required=""></textarea>
-                </div>
-              </div> --}}
               <div class="col-md-12 mb-3">
                 <div class="form-group">
                     <select name="employment_status" id="" class="form-select form-control-lg form-control-a" >

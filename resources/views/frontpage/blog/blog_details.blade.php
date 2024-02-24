@@ -194,22 +194,7 @@
                 @endforeach
                 
                 @endforeach
-                
-                {{-- <li>
-                  <div class="comment-avatar">
-                    <img src="assets/img/author-2.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Emma Stone</h4>
-                    <span>18 Sep 2017</span>
-                    <p class="comment-description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li> --}}
+              
               </ul>
             </div>
             <div class="form-comments">

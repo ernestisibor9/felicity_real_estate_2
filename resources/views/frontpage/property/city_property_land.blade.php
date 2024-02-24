@@ -32,19 +32,6 @@
                 </form>
                 <div>
                 
-                     {{-- <form action="{{route('store.filter.property.type3')}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type='hidden' id='city_id' name='city_id' value="{{$prop->city_id}}"/>
-
-                        <div class="sliderText">Filter by Property Type </div>
-                        <select class = 'form-select' name = 'ptype_id'>
-                            <option value=''>Property Type</option>
-                            @foreach ($propertyType as $item)
-                                <option value="{{$item->id}}">{{$item->type_name}}</option>
-                            @endforeach
-                        </select>
-                         <button type = 'submit' class='btn btn-danger mt-3'><i class="fa-solid fa-filter"></i> Filter</button>
-                    </form> --}}
                 </div>
               </div>
             </div>

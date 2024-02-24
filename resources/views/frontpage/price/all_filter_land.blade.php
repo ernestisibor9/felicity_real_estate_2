@@ -9,29 +9,7 @@
         <section class="mt-5">
             <div class="container-fluid mt-5">
               <div class="row justify-content-center">
-                {{-- <div class= 'col-md-1' style='margin-top:100px;'> --}}
-                  {{-- <form action="{{route('store.filter.finished')}}" method="post" enctype="multipart/form-data">
-                  @csrf
-
-                          <div class="price-range-block">
-
-                <div class="sliderText">Filter by Price (&#8358;) </div>
-
-                <div id="slider-range" class="price-filter-range" name="rangeInput" style='width:180px;'></div>
-                  
-                <div style="margin:20px auto"> 
-                  <input type="number"  id="min_price" class="price-range-field" name = 'min_price' style='width:90px;'/> 
-                  <input type="number"  id="max_price" class="price-range-field" name = 'max_price' 
-                  style='width:90px;'/>
-                </div>
-
-                <button type = 'submit' class='btn btn-success'>Filter</button>
-
-                <div id="searchResults" class="search-results-block"></div>
-
-              </div>
-          </form> --}}
-                {{-- </div> --}}
+                
                 <div class = 'col-md-10 mt-3'>
                    
                   <h2 class="text-center" style="margin-top: 80px; margin-bottom:30px;">Land Properties in {{$prop->citys->city}}</h2>

@@ -17,7 +17,7 @@
 
 					<div class="card">
 						<div class="card-body">
-							<select class="form-select mb-3 @error('type_name')
+							{{-- <select class="form-select mb-3 @error('type_name')
                           is-invalid
                           @enderror" name="type_name" aria-label="Default select example">
 								<option selected="" disabled>Select Property Type</option>
@@ -29,7 +29,10 @@
 								<option value="townhouse">Townhouse</option>
 								<option value="mansion">Mansion</option>
 								<option value="other">Other</option>
-							</select>
+							</select> --}}
+							<input type='text' class= 'form-control mb-3  @error('type_name')
+                          is-invalid
+                          @enderror' name= 'type_name' placeholder='E.g duplex'/>
 							<div>
 								@error('type_name')
                             <span class="text-danger">{{ $message }}</span>
