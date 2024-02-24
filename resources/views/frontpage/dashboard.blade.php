@@ -31,6 +31,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/price_range_style.css')}}"/>
 
+
    <title>@yield('title')</title>
 
   <!-- Template Main CSS File -->

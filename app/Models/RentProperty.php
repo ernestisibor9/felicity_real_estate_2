@@ -10,4 +10,5 @@ class RentProperty extends Model
     use HasFactory;
 
     protected $guarded = [];
+
 }

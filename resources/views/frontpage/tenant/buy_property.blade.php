@@ -27,7 +27,7 @@
                 <div class="card-box-c foo">
                   <div class="card-header-c d-flex">
                     <div class="card-box-ico">
-                      <span class="bi bi-cart"></span>
+                      <span class="bi bi-bank"></span>
                     </div>
                     <div class="card-title-c align-self-center">
                       <h2 class="title-c">Finished Property</h2>
@@ -49,7 +49,7 @@
               <div class="card-box-c foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
-                    <span class="bi bi-calendar4-week"></span>
+                    <span class="bi bi-house"></span>
                   </div>
                   <div class="card-title-c align-self-center">
                     <h2 class="title-c">Unfinished Property</h2>
@@ -70,7 +70,7 @@
               <div class="card-box-c foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
-                    <span class="bi bi-card-checklist"></span>
+                    <span class="bi bi-cash"></span>
                   </div>
                   <div class="card-title-c align-self-center">
                     <h2 class="title-c">Land</h2>

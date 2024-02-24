@@ -19,15 +19,14 @@
             <div class="col-md-4">
                 <h6>Property Name:</h6> <span> {{$property->property_name}}</span>
                 <h6>Property Type:</h6> <span>{{$property->type->type_name}}</span>
-                <h6>Property Category:</h6> <span>{{$property->property_category}}</span>
-                <h6>Price:</h6> <span>&#8358;{{$property->price}}</span>
+                {{-- <h6>Property Category:</h6> <span>{{$property->property_category}}</span> --}}
+                <h6>Price:</h6> <span>&#8358;{{number_format($property->price)}}</span>
                 <h6>No. of Bedroom:</h6> <span>{{$property->bedrooms}}</span>
                 <h6>No. of Bathroom:</h6> <span>{{$property->bathrooms}}</span>
             </div>
             <div class="col-md-4">
                 <h6>No. of Garage:</h6> <span>{{$property->garage}}</span>
-                <h6>City:</h6> <span>{{$property->city}}</span>
-                <h6>Address:</h6> <span>{{$property->address}}</span>
+                <h6>Location:</h6> <span>{{$property->citys->city}}</span>
                 <h6>State:</h6> <span>{{$property->state}}</span>
             </div>
           </div>

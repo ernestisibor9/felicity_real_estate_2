@@ -22,13 +22,13 @@
                           <div class="card-overlay-a-content">
                             <div class="card-header-a">
                               <h2 class="card-title-a">
-                                <a href="property-single.html">{{$item->property_name}}
-                                  <br /> {{$item->city}}</a>
+                                <a href="#">{{$item->citys->city}}
+                                  <br /> </a>
                               </h2>
                             </div>
                             <div class="card-body-a">
                               <div class="price-box d-flex">
-                                <span class="price-a">Price | &#8358;  {{$item->price}}</span>
+                                <span class="price-a">Price | &#8358;  {{number_format($item->price)}}</span>
                               </div>
                               <div>
                                 <a href="{{route('buy.finished.property', $item->id)}}" class="link-a">Click here to buy

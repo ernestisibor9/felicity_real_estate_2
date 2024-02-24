@@ -16,15 +16,20 @@
                             <img src="{{asset($item->property_thumbnail)}}" class="img-fluid mb-2"/>
                           </a>
                           <h6>Property Name: {{$item->property_name}}</h6>
-                          <h6>Property Category: Unfinished Property</h6>
-                          <h6>Property Price: &#8358;{{$item->price}}</h6>
+                          <h6>Location: {{$item->citys->city}}</h6>
+                          <h6>Property Price: &#8358;{{number_format($item->price)}}</h6>
                           <a href="{{route('buy.unfinished.property', $item->id)}}" class="btn btn-primary">Buy</a>
                           <a href="{{route('unfinish.properties.details', $item->id)}}" class="btn btn-danger">Details</a>
                         </div>
-                      @endforeach
+                      @endforeach 
               </div>
             </div>
           </section><!-- End Intro Single-->
+          <div class='container mt-5'>
+            <div>
+              {!!$property->links()!!}
+            </div>
+          </div>
     </main>
 
 

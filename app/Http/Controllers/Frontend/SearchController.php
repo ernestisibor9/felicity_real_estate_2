@@ -12,12 +12,14 @@ class SearchController extends Controller
     public function SearchProperty(Request $request){
         $propertyName = $request->property_name;
         $ptypeId = $request->ptype_id;
-        $city = $request->city;
-        $state = $request->state;
+        $cityId = $request->city_id;
+        // $state = $request->state;
         // $propertyCategory = $request->property_category;
         // $propertyStatus = $request->property_status;
 
-        $property = Property::where('property_name', 'like', '%' .$propertyName. '%')->orWhere('city', '!==', $city)->orWhere('state', '!==', $state)->get();
+        $property = Property::where('property_name', 'like', '%' .$propertyName. '%')->with('citys')->whereHas('citys', function($q) use($cityId){
+            $q->where('city', 'like', '%' .$cityId. '%');
+        })->get();
 
         // $property = Property::where('property_name', 'like', '%' .$propertyName. '%')->orWhere('city', '!==', $city)->orWhere('property_category', '!==', $propertyCategory)->get();
         return view('frontpage.property.property_search', compact('property'));

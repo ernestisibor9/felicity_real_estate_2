@@ -30,11 +30,45 @@ class PriceController extends Controller
         $cityId = $request->city_id;
 
         try{
-            $prop = Property::where('city_id', $cityId)->first();
-        $property = Property::whereBetween('price', [$minPrice, $maxPrice])->where('city_id', $cityId)->get();
+            $prop = Property::where('city_id', $cityId)->where('property_category', 'finished_property')->first();
+            $property = Property::whereBetween('price', [$minPrice, $maxPrice])->where('city_id', $cityId)->where('property_category', 'finished_property')->get();
         // return response()->json($products);
         // dd($products);
         return view('frontpage.price.all_filter_finished', compact('property', 'prop'));
+        }
+        catch(\Exception $e){
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+    // StoreFilterUnfinished
+    public function StoreFilterUnfinished(Request $request){
+        $minPrice = $request->min_price;
+        $maxPrice = $request->max_price;  
+        $cityId = $request->city_id;
+
+        try{
+            $prop = Property::where('city_id', $cityId)->where('property_category', 'unfinished_property')->first();
+            $property = Property::whereBetween('price', [$minPrice, $maxPrice])->where('city_id', $cityId)->where('property_category', 'unfinished_property')->get();
+        // return response()->json($products);
+        // dd($products);
+        return view('frontpage.price.all_filter_unfinished', compact('property', 'prop'));
+        }
+        catch(\Exception $e){
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+    // StoreFilterLand
+    public function StoreFilterLand(Request $request){
+        $minPrice = $request->min_price;
+        $maxPrice = $request->max_price;  
+        $cityId = $request->city_id;
+
+        try{
+            $prop = Property::where('city_id', $cityId)->where('property_category', 'land')->first();
+            $property = Property::whereBetween('price', [$minPrice, $maxPrice])->where('city_id', $cityId)->where('property_category', 'land')->get();
+        // return response()->json($products);
+        // dd($products);
+        return view('frontpage.price.all_filter_land', compact('property', 'prop'));
         }
         catch(\Exception $e){
             return redirect()->back()->with('error', $e->getMessage());

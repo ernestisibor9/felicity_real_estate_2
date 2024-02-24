@@ -10,7 +10,7 @@
             <div class="container-fluid mt-5">
               <div class="row">
                 <div class= 'col-md-3' style='margin-top:20px;'>
-                  <form action="{{route('store.filter.finished')}}" method="post" enctype="multipart/form-data">
+                  <form action="{{route('store.filter.land')}}" method="post" enctype="multipart/form-data">
                   @csrf
                   <input type='hidden' id='city_id' name='city_id' value="{{$prop->city_id}}"/>
 
@@ -32,7 +32,7 @@
                 </form>
                 <div>
                 
-                     <form action="{{route('store.filter.property.type')}}" method="post" enctype="multipart/form-data">
+                     {{-- <form action="{{route('store.filter.property.type3')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type='hidden' id='city_id' name='city_id' value="{{$prop->city_id}}"/>
 
@@ -44,13 +44,13 @@
                             @endforeach
                         </select>
                          <button type = 'submit' class='btn btn-danger mt-3'><i class="fa-solid fa-filter"></i> Filter</button>
-                    </form>
+                    </form> --}}
                 </div>
               </div>
             </div>
                 <div class = 'col-md-9 mt-3'>
                    
-                  <h2 class="text-center" style="margin-top: 80px; margin-bottom:30px;">Finished Properties in {{$prop->citys->city}}</h2>
+                  <h2 class="text-center" style="margin-top: 80px; margin-bottom:30px;">Land Properties in {{$prop->citys->city}}</h2>
                 <div id="property-carousel" class="swiper">
                   <div class="swiper-wrapper">
                     @foreach ($property as $item)

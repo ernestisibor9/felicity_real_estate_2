@@ -40,10 +40,10 @@
                             <option value="">Onirun</option>
                     </select>  --}}
                       <div class='col-md-8'>
-                        <form method= 'post' action='{{route('search.property.city')}}' class="row g-3">
+                        <form method= 'post' action='{{route('search.property.city2')}}' class="row g-3">
                         @csrf
                         <div class= 'col-md-7 col-auto'>
-                        <select name='city_id' class="form-select mb-5">
+                        <select name='city_id' class="form-select mb-5" required>
                         <option value=''>Select Location</option>
                         @foreach ($cities as $city)
                             <option value="{{$city->id}}">{{$city->city}}</option>

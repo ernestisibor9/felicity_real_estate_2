@@ -16,21 +16,6 @@
                     {{-- <span class="color-text-a">{{$property->property_name}}</span> --}}
                   </div>
                 </div>
-                <div class="col-md-12 col-lg-4">
-                  <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
-                      </li>
-                      <li class="breadcrumb-item">
-                        <a href="property-grid.html">Properties</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        304 Blaster Up
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
               </div>
             </div>
           </section><!-- End Intro Single-->
@@ -66,7 +51,7 @@
                             <span class="bi bi-cash">&#8358;</span>
                           </div>
                           <div class="card-title-c align-self-center">
-                            <h5 class="title-c">{{$item->price}}</h5>
+                            <h5 class="title-c">{{number_format($item->price)}}</h5>
                           </div>
                         </div>
                       </div>
@@ -90,7 +75,7 @@
                             </li>
                             <li class="d-flex justify-content-between">
                               <strong>Location:</strong>
-                              <span>{{$item->city}}</span>
+                              <span>{{$item->citys->city}}</span>
                             </li>
                             <li class="d-flex justify-content-between">
                               <strong>Property Type:</strong>
@@ -284,6 +269,11 @@
             </div>
           </section>   
           @endforeach 
+          {{-- <div class= 'container mt-5'>
+            <div class = 'row'>
+              {!!$property->links()!!}
+            </div>
+          </div> --}}
     </main>
 
 

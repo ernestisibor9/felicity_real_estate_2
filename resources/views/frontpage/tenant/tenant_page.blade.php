@@ -21,13 +21,13 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4">
+          <div class="row jusify-content-center">
+            {{-- <div class="col-md-4">
               <a href="{{route('buy.tenant.property')}}">
                 <div class="card-box-c foo">
                   <div class="card-header-c d-flex">
                     <div class="card-box-ico">
-                      <span class="bi bi-cart"></span>
+                      <span class="bi bi-cash"></span>
                     </div>
                     <div class="card-title-c align-self-center">
                       <h2 class="title-c">Buy</h2>
@@ -43,13 +43,13 @@
                   </div>
                 </div>
               </a>
-            </div>
+            </div> --}}
             <div class="col-md-4">
               <a href="{{route('rent.property')}}">
               <div class="card-box-c foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
-                    <span class="bi bi-calendar4-week"></span>
+                    <span class="bi bi-house"></span>
                   </div>
                   <div class="card-title-c align-self-center">
                     <h2 class="title-c">Rent</h2>
@@ -70,7 +70,7 @@
               <div class="card-box-c foo">
                 <div class="card-header-c d-flex">
                   <div class="card-box-ico">
-                    <span class="bi bi-card-checklist"></span>
+                    <span class="bi bi-bank"></span>
                   </div>
                   <div class="card-title-c align-self-center">
                     <h2 class="title-c">Let</h2>

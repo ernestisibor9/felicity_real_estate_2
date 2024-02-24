@@ -3,16 +3,15 @@
 
 @section('main')
       @section('title')
-        Felicity Properties - Properties in {{$prop->citys->city}}
+        Felicity Properties - Properties in Lekki
       @endsection
     <main id="main">
         <section class="mt-5">
             <div class="container-fluid mt-5">
-              <div class="row">
-                <div class= 'col-md-3' style='margin-top:20px;'>
-                  <form action="{{route('store.filter.finished')}}" method="post" enctype="multipart/form-data">
+              <div class="row justify-content-center">
+                {{-- <div class= 'col-md-1' style='margin-top:100px;'> --}}
+                  {{-- <form action="{{route('store.filter.finished')}}" method="post" enctype="multipart/form-data">
                   @csrf
-                  <input type='hidden' id='city_id' name='city_id' value="{{$prop->city_id}}"/>
 
                           <div class="price-range-block">
 
@@ -26,31 +25,17 @@
                   style='width:90px;'/>
                 </div>
 
-                <button type = 'submit' class='btn btn-success mb-3'><i class="fa-solid fa-filter"></i> Filter</button>
+                <button type = 'submit' class='btn btn-success'>Filter</button>
 
                 <div id="searchResults" class="search-results-block"></div>
-                </form>
-                <div>
-                
-                     <form action="{{route('store.filter.property.type')}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type='hidden' id='city_id' name='city_id' value="{{$prop->city_id}}"/>
 
-                        <div class="sliderText">Filter by Property Type </div>
-                        <select class = 'form-select' name = 'ptype_id'>
-                            <option value=''>Property Type</option>
-                            @foreach ($propertyType as $item)
-                                <option value="{{$item->id}}">{{$item->type_name}}</option>
-                            @endforeach
-                        </select>
-                         <button type = 'submit' class='btn btn-danger mt-3'><i class="fa-solid fa-filter"></i> Filter</button>
-                    </form>
-                </div>
               </div>
-            </div>
-                <div class = 'col-md-9 mt-3'>
+          </form> --}}
+                {{-- </div> --}}
+                <div class = 'col-md-10 mt-3'>
                    
-                  <h2 class="text-center" style="margin-top: 80px; margin-bottom:30px;">Finished Properties in {{$prop->citys->city}}</h2>
+                  <h2 class="text-center" style="margin-top: 80px; margin-bottom:30px;">Land Properties in {{$prop->citys->city}}</h2>
+                  <h5 class='text-center text-{{count($property) === 0 ? 'danger':'success'}} mb-3'>{{count($property)}} property found</h5>
                 <div id="property-carousel" class="swiper">
                   <div class="swiper-wrapper">
                     @foreach ($property as $item)

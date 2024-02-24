@@ -21,18 +21,25 @@
               <input type="text" name="property_name" class="form-control form-control-lg form-control-a" placeholder="Search name" >
             </div>
           </div>
-          <div class="col-md-12 mb-2">
+          @php
+              $cities = App\Models\City::orderBy('city', 'ASC')->get();
+          @endphp
+          <div class="col-md-12 mb-4 mt-3">
             <div class="form-group">
-              <label class="pb-2" for="Type">City</label>
-              <input type="text" name="city" class="form-control form-control-lg form-control-a" placeholder="City" >
+              <label class="pb-2" for="Type">Select City</label>
+              <select name= 'city_id' class= 'form-select'>
+                @foreach ($cities as $city)
+                    <option value = "{{$city->city}}">{{$city->city}}</option>
+                @endforeach
+              </select>
             </div>
           </div>
-          <div class="col-md-12 mb-2">
+          {{-- <div class="col-md-12 mb-2">
             <div class="form-group">
               <label class="pb-2" for="Type">State</label>
               <input type="text" name="state" class="form-control form-control-lg form-control-a" placeholder="State" >
             </div>
-          </div>
+          </div> --}}
           {{-- <div class="col-md-12 mb-2">
             <div class="form-group mt-3">
               <label class="pb-2" for="Type">Property Category</label>

@@ -15,7 +15,7 @@ class RentPropertyController extends Controller
 {
     // RentProperty
     public function RentProperty(){
-        $property = Property::where('property_status', 'rent')->latest()->get();
+        $property = Property::where('property_status', 'rent')->latest()->paginate(3);
         return view('frontpage.tenant.rent_property', compact('property'));
     }
     // RentPropertyTenant

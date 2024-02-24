@@ -104,7 +104,8 @@ class PropertyCategoryController extends Controller
     }
     // Unfinished Property
     public function UnFinishedProperty(){
-        $property = Property::where('property_category', 'unfinished_property')->latest()->get(); 
+        // $property = Property::where('property_category', 'unfinished_property')->latest()->get(); 
+        $property = Property::where('property_category', 'unfinished_property')->latest()->paginate(3);
         return view('frontpage.category.unfinished_property', compact('property'));
     }
     // 
@@ -131,7 +132,7 @@ class PropertyCategoryController extends Controller
     }
     // ShortLetProperty
     public function ShortLetProperty(){
-        $property = Property::where('property_status','let')->where('status', '1')->latest()->get(); 
+        $property = Property::where('property_status','let')->where('status', '1')->latest()->paginate(3); 
         return view('frontpage.property.short_let_property', compact('property'));
     }
     // FinishedProperty2
@@ -153,11 +154,22 @@ class PropertyCategoryController extends Controller
     public function SearchPropertyCity(Request $request){
         $cityId = $request->city_id;
         //dd($cityId);
-        $prop = Property::where('city_id', $cityId)->first();
-        $property = Property::where('city_id', $cityId)->get();
+        $prop = Property::where('city_id', $cityId)->where('property_category', 'finished_property')->first();
+        $property = Property::where('city_id', $cityId)->where('property_category', 'finished_property')->get();
         $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
 
-        return view('frontpage.property.city_property', compact('property', 'prop', 'propertyType'));
+        if($prop){
+            return view('frontpage.property.city_property', compact('property', 'prop', 'propertyType'));
+        }
+        else{
+            // echo "<h1>No information available</h1>";
+            $notification = array(
+                'message'=> 'No property available in the choosen location',
+                'alert-type'=>'error'
+        );
+        return redirect()->back()->with($notification);
+        }
+        
     }
     // SearchPropertyType
     public function SearchPropertyType(Request $request){
@@ -165,11 +177,96 @@ class PropertyCategoryController extends Controller
         $cityId = $request->city_id;
         // dd($ptypeId);
         try{
-            $prop = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->first();
-            $property = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->get();
+            $prop = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'finished_property')->first();
+            $property = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'finished_property')->get();
             $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
     
             return view('frontpage.property.property_type', compact('property', 'prop', 'propertyType'));
+        }
+        catch(\Exception $e){
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+    // UnFinishedProperty2
+    public function UnFinishedProperty2(){
+        $cities = City::orderBy('city', 'ASC')->get();
+        return view('frontpage.property.select_city_unfinished', compact('cities'));
+    }
+    //
+    // SearchPropertyCity - unfinish
+    public function SearchPropertyCity2(Request $request){
+        $cityId = $request->city_id;
+        //dd($cityId);
+        $prop = Property::where('city_id', $cityId)->where('property_category', 'unfinished_property')->first();
+        $property = Property::where('city_id', $cityId)->where('property_category', 'unfinished_property')->get();
+        $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
+
+        if($prop){
+            return view('frontpage.property.city_property_unfinished', compact('property', 'prop', 'propertyType'));
+        }
+        else{
+            // echo "<h1>No information available</h1>";
+            $notification = array(
+                'message'=> 'No property available in the choosen location',
+                'alert-type'=>'error'
+        );
+        return redirect()->back()->with($notification);
+        }
+        
+    }
+    // SearchPropertyType2
+    public function SearchPropertyType2(Request $request){
+        $ptypeId = $request->ptype_id;
+        $cityId = $request->city_id;
+        // dd($ptypeId);
+        try{
+            $prop = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'unfinished_property')->first();
+            $property = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'unfinished_property')->get();
+            $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
+    
+            return view('frontpage.property.property_type_unfinished', compact('property', 'prop', 'propertyType'));
+        }
+        catch(\Exception $e){
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+    // LandPropertyCity
+    public function LandPropertyCity(){
+        $cities = City::orderBy('city', 'ASC')->get();
+        return view('frontpage.property.select_city_land', compact('cities'));
+    }
+    //SearchPropertyCityLand
+    public function SearchPropertyCityLand(Request $request){
+        $cityId = $request->city_id;
+        //dd($cityId);
+        $prop = Property::where('city_id', $cityId)->where('property_category', 'land')->first();
+        $property = Property::where('city_id', $cityId)->where('property_category', 'land')->get();
+        $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
+
+        if($prop){
+            return view('frontpage.property.city_property_land', compact('property', 'prop', 'propertyType'));
+        }
+        else{
+            // echo "<h1>No information available</h1>";
+            $notification = array(
+                'message'=> 'No property available in the choosen location',
+                'alert-type'=>'error'
+        );
+        return redirect()->back()->with($notification);
+        }
+        
+    }
+    // Search Property Type3
+    public function SearchPropertyType3(Request $request){
+        $ptypeId = $request->ptype_id;
+        $cityId = $request->city_id;
+        // dd($ptypeId);
+        try{
+            $prop = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'land')->first();
+            $property = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'land')->get();
+            $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
+    
+            return view('frontpage.property.property_type_land', compact('property', 'prop', 'propertyType'));
         }
         catch(\Exception $e){
             return redirect()->back()->with('error', $e->getMessage());

@@ -25,21 +25,6 @@
                     {{-- <span class="color-text-a">{{$property->property_name}}</span> --}}
                   </div>
                 </div>
-                <div class="col-md-12 col-lg-4">
-                  <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-                    <ol class="breadcrumb">
-                      <li class="breadcrumb-item">
-                        <a href="index.html">Home</a>
-                      </li>
-                      <li class="breadcrumb-item">
-                        <a href="property-grid.html">Properties</a>
-                      </li>
-                      <li class="breadcrumb-item active" aria-current="page">
-                        304 Blaster Up
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
               </div>
             </div>
           </section><!-- End Intro Single-->
@@ -75,7 +60,7 @@
                             <span class="bi bi-cash">&#8358;</span>
                           </div>
                           <div class="card-title-c align-self-center">
-                            <h5 class="title-c">{{$pid->price}}</h5>
+                            <h5 class="title-c">{{number_format($pid->price)}}</h5>
                           </div>
                         </div>
                       </div>
@@ -95,7 +80,7 @@
                             </li>
                             <li class="d-flex justify-content-between">
                               <strong>Location:</strong>
-                              <span>{{$pid->city}}</span>
+                              <span>{{$pid->citys->city}}</span>
                             </li>
                             <li class="d-flex justify-content-between">
                               <strong>Property Type:</strong>
@@ -154,7 +139,7 @@
                       </div>
                     </div>
                     <div class="col-md-7 col-lg-7 section-md-t3">
-                      <div class="row">
+                      <div class="row mt-4">
                         <div class="col-sm-12">
                           <div class="title-box-d">
                             <h3 class="title-d">Property Description</h3>
@@ -197,13 +182,13 @@
                     <iframe width="1200" height="315" src="{{$pid->property_video}}" class="d-none d-md-block" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
                 </div>
 
-                // Paystack Form
+               
 
-                <form id="paymentForm" class= 'mt-5'>
+                {{-- <form id="paymentForm" class= 'mt-5'>
                   <div class="form-submit">
                     <button type="submit" class= 'btn btn-primary' onclick="payWithPaystack()"> Pay With Paystack </button>
                   </div>
-                </form>
+                </form> --}}
 
                 <script src="https://js.paystack.co/v1/inline.js"></script>
 
