@@ -15,10 +15,17 @@
       <form class="form-a" action="{{route('search.property')}}" method="post">
         @csrf
         <div class="row">
-          <div class="col-md-12 mb-2">
+          @php
+              $ptypes = App\Models\PropertyType::orderBy('type_name', 'ASC')->get();
+          @endphp
+          <div class="col-md-12 mb-4 mt-3">
             <div class="form-group">
-              <label class="pb-2" for="Type">Property Name</label>
-              <input type="text" name="property_name" class="form-control form-control-lg form-control-a" placeholder="Search name" >
+              <label class="pb-2" for="Type">Select Category</label>
+              <select name= 'ptype_id' class= 'form-select'>
+                @foreach ($ptypes as $ptype)
+                    <option value = "{{$ptype->type_name}}">{{$ptype->type_name}}</option>
+                @endforeach
+              </select>
             </div>
           </div>
           @php

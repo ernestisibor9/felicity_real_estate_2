@@ -18,20 +18,29 @@ class TestimonialController extends Controller
     }
     // StoreTestimonial
     public function StoreTestimonial(Request $request){
-        // create new manager instance with desired driver
-        $manager = new ImageManager(new Driver());
-
+        $request->validate([
+            'photo' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+        ]);
+        // Without Imagick 
         $image = $request->file('photo');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $filename = date('YmdHi') . $image->getClientOriginalName();
+        $image->move(public_path('upload/property/testimonial/'), $filename);
 
-        // read image from file system
-        $img = $manager->read($image);
-        $img = $img->resize(550, 450);
+        $save_url = 'upload/property/testimonial/' . $filename;
+        // // create new manager instance with desired driver
+        // $manager = new ImageManager(new Driver());
 
-        // save modified image in new format 
-        $img->toJpeg(80)->save(base_path('public/upload/testimonial/'.$name_gen));
+        // $image = $request->file('photo');
+        // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-        $save_url = 'upload/testimonial/'.$name_gen;
+        // // read image from file system
+        // $img = $manager->read($image);
+        // $img = $img->resize(550, 450);
+
+        // // save modified image in new format 
+        // $img->toJpeg(80)->save(base_path('public/upload/testimonial/'.$name_gen));
+
+        // $save_url = 'upload/testimonial/'.$name_gen;
 
         Testimonial::insert([
             'name' => $request->name,
@@ -60,20 +69,29 @@ class TestimonialController extends Controller
         $pid = $request->id;
 
         if($request->file('photo')){
-            // create new manager instance with desired driver
-            $manager = new ImageManager(new Driver());
+            // // create new manager instance with desired driver
+            // $manager = new ImageManager(new Driver());
 
+            // $image = $request->file('photo');
+            // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+
+            // // read image from file system
+            // $img = $manager->read($image);
+            // $img = $img->resize(550, 450);
+
+            // // save modified image in new format 
+            // $img->toJpeg(80)->save(base_path('public/upload/testimonial/'.$name_gen));
+
+            // $save_url = 'upload/testimonial/'.$name_gen;
+            $request->validate([
+                'photo' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+            ]);
+            // Without Imagick 700 x 800
             $image = $request->file('photo');
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-
-            // read image from file system
-            $img = $manager->read($image);
-            $img = $img->resize(550, 450);
-
-            // save modified image in new format 
-            $img->toJpeg(80)->save(base_path('public/upload/testimonial/'.$name_gen));
-
-            $save_url = 'upload/testimonial/'.$name_gen;
+            $filename = date('YmdHi') . $image->getClientOriginalName();
+            $image->move(public_path('upload/property/testimonial/'), $filename);
+    
+            $save_url = 'upload/property/testimonial/' . $filename;
 
             Testimonial::findOrFail($pid)->update([
                 'name' => $request->name,

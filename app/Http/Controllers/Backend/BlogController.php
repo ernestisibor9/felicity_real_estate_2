@@ -78,20 +78,31 @@ class BlogController extends Controller
     }
     // StorePost
     public function StorePost(Request $request){
-        // create new manager instance with desired driver
-        $manager = new ImageManager(new Driver());
+        $request->validate([
+            'post_image' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+            'long_desc' => 'required'
+        ]);
 
+        // Without Imagick 700 x 800
         $image = $request->file('post_image');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $filename = date('YmdHi') . $image->getClientOriginalName();
+        $image->move(public_path('upload/post/'), $filename);
 
-        // read image from file system
-        $img = $manager->read($image);
-        $img = $img->resize(700, 500);
+        $save_url = 'upload/post/' . $filename;
+        // // create new manager instance with desired driver
+        // $manager = new ImageManager(new Driver());
 
-        // save modified image in new format 
-        $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
+        // $image = $request->file('post_image');
+        // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-        $save_url = 'upload/post/'.$name_gen;
+        // // read image from file system
+        // $img = $manager->read($image);
+        // $img = $img->resize(700, 500);
+
+        // // save modified image in new format 
+        // $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
+
+        // $save_url = 'upload/post/'.$name_gen;
 
         BlogPost::insert([
             'blog_cat_id' => $request->blog_cat_id,
@@ -121,20 +132,31 @@ class BlogController extends Controller
         $pid = $request->id;
 
         if($request->file('post_image')){
-            // create new manager instance with desired driver
-            $manager = new ImageManager(new Driver());
+            // // create new manager instance with desired driver
+            // $manager = new ImageManager(new Driver());
 
+            // $image = $request->file('post_image');
+            // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+
+            // // read image from file system
+            // $img = $manager->read($image);
+            // $img = $img->resize(700, 500);
+
+            // // save modified image in new format 
+            // $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
+
+            // $save_url = 'upload/post/'.$name_gen;
+
+            $request->validate([
+                'post_image' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+            ]);
+    
+            // Without Imagick 
             $image = $request->file('post_image');
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-
-            // read image from file system
-            $img = $manager->read($image);
-            $img = $img->resize(700, 500);
-
-            // save modified image in new format 
-            $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
-
-            $save_url = 'upload/post/'.$name_gen;
+            $filename = date('YmdHi') . $image->getClientOriginalName();
+            $image->move(public_path('upload/post/'), $filename);
+    
+            $save_url = 'upload/post/' . $filename;
 
             BlogPost::findOrFail($pid)->update([
                 'blog_cat_id' => $request->blog_cat_id,

@@ -4,13 +4,26 @@
 @section('title')
 Felicity Properties - Rent Property
 @endsection
+
+  <style>
+  .good .img-fluid{
+    max-width: auto!important;
+    max-height: 300px!important;
+    min-height: 300px!important;
+  } 
+
+  .finish-cont{
+    margin-bottom: -150px;
+  }
+
+</style>
     <main id="main">
         <section class="mt-5">
             <div class="container mt-5">
               <div class="row">
                 <h2 class="text-center" style="margin-top: 80px;">Properties For Rent</h2>
                       @foreach ($property as $item)
-                        <div class="col-md-4 col-lg-4 g-5" data-aos="zoom-in" data-aos-duration="2000">
+                        <div class="col-md-4 col-lg-4 g-5 good" data-aos="zoom-in" data-aos-duration="2000">
                           <a href="{{route('finish.properties.details', $item->id)}}">
                             <img src="{{asset($item->property_thumbnail)}}" class="img-fluid mb-2"/>
                           </a>

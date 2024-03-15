@@ -17,8 +17,10 @@ class SearchController extends Controller
         // $propertyCategory = $request->property_category;
         // $propertyStatus = $request->property_status;
 
-        $property = Property::where('property_name', 'like', '%' .$propertyName. '%')->with('citys')->whereHas('citys', function($q) use($cityId){
+        $property = Property::where('property_name', 'like', '%' .$propertyName. '%')->with('citys', 'type')->whereHas('citys', function($q) use($cityId){
             $q->where('city', 'like', '%' .$cityId. '%');
+        })->whereHas('type', function($q) use($ptypeId){
+            $q->where('type_name', 'like', '%' .$ptypeId. '%');
         })->get();
 
         // $property = Property::where('property_name', 'like', '%' .$propertyName. '%')->orWhere('city', '!==', $city)->orWhere('property_category', '!==', $propertyCategory)->get();

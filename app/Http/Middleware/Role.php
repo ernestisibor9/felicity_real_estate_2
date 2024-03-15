@@ -18,6 +18,13 @@ class Role
         if ($request->user()->role !== $role) {
             return redirect('dashboard');
         }
+        // $userRole = $request->user()->role;
+        // if($userRole == 'user' && $role !== 'user') {
+        //     return redirect('dashboard');
+        // }
+        // elseif($userRole == 'admin' && $role !== 'user') {
+        //     return redirect('/admin/dashboard');
+        // }
         return $next($request);
     }
 }

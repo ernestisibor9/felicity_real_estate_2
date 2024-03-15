@@ -1,3 +1,8 @@
+  @php
+      $route = Route::current()->getName();
+  @endphp
+  
+  
   <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
@@ -17,11 +22,11 @@
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
 
-          <li class="nav-item">
+          <li class="nav-item {{($route == '/') ? 'my-menu': ''}}">
             <a class="nav-link" href="{{url('/')}}">Home</a>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item {{($route == 'about.us') ? 'my-menu': ''}}">
             <a class="nav-link " href="{{route('about.us')}}">About</a>
           </li>
 

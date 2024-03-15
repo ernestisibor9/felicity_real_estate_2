@@ -32,7 +32,7 @@
 							</select> --}}
 							<input type='text' class= 'form-control mb-3  @error('type_name')
                           is-invalid
-                          @enderror' name= 'type_name' placeholder='E.g duplex'/>
+                          @enderror' name= 'type_name' placeholder='E.g duplex' required/>
 							<div>
 								@error('type_name')
                             <span class="text-danger">{{ $message }}</span>

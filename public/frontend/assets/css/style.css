@@ -34,6 +34,10 @@ a:hover {
   text-decoration: none;
 }
 
+.my-menu{
+  color: purple
+}
+
 .link-two {
   color: #000000;
   transition: all 0.5s ease;

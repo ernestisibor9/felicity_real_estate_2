@@ -11,13 +11,26 @@
   }
   </style>
 
+  <style>
+  .swiper-slide .img-fluid{
+    max-width: auto!important;
+    max-height: 380px!important;
+    min-height: 380px!important;
+  } 
+
+  .finish-cont{
+    margin-bottom: -150px;
+  }
+
+</style>
+
 @section('main')
     @section('title')
     Felicity Properties - Shown All Property
     @endsection
     <main id="main">
         <!-- ======= Finished Properties Section ======= -->
-        <section class="section-property section-t8">
+        <section class="section-property section-t8 finish-cont">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -38,7 +51,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper">
+            <div id="property-carousel" class="swiper swipe-prop">
                 <div class="swiper-wrapper">
                 
                 @foreach ($finishedProperties as $item)
@@ -99,7 +112,7 @@
         </section><!-- End Finished Properties Section -->
 
         <!-- ======= Unfinished Properties Section ======= -->
-        <section class="section-property section- sect">
+        <section class="section-property section- sect finish-cont">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -120,7 +133,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper">
+            <div id="property-carousel" class="swiper swipe-prop">
                 <div class="swiper-wrapper">
                 
                 @foreach ($unfinishedProperties as $item)
@@ -181,7 +194,7 @@
         </section><!-- End Latest Properties Section -->
 
         <!-- ======= Land Properties Section ======= -->
-        <section class="section-property section- sect">
+        <section class="section-property section- sect finish-cont">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -203,7 +216,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper">
+            <div id="property-carousel" class="swiper swipe-prop">
                 <div class="swiper-wrapper">
                 
                 @foreach ($land as $item)
@@ -264,14 +277,14 @@
         </section><!-- End Latest Properties Section -->
 
         <!-- ======= Rent Properties Section ======= -->
-        <section class="section-property section- sect">
+        <section class="section-property section- sect finish-cont">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between">
                     <div class="title-box">
                     {{-- <h2 class="title-a">Land Properties</h2> --}}
-                    @if (count($rent) === 1)
+                    @if (count($rent) >= 0)
                         <h2 class="title-a">Rent Properties</h2>
                     @else
                     <h2 class="title-a"></h2> 

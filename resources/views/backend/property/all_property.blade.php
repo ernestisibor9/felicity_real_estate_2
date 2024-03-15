@@ -10,6 +10,10 @@
 <div class="page-wrapper">
     <div class="page-content">
         <h4>All Properties</h4>
+        <div class = 'd-flex mb-3'>
+            <a href='{{route('import.property')}}' class='btn btn-primary' style='margin-right: 20px;'>Import</a>
+            <a href='{{route('export')}}' class='btn btn-danger'>Export</a>
+        </div>
         <div class="table-responsive">
             <table id="example" class="table table-striped table-bordered" style="width:100%">
                 <thead>
@@ -32,7 +36,7 @@
                             <td>{{ $item->property_name }}</td>
                             <td>{{ $item->type->type_name }}</td>
                             <td>{{ $item->property_category }}</td>
-                            <td>{{ $item->city }}</td>
+                            <td>{{ $item->citys->city }}</td>
                             <td>
                                 @if ( $item->status == '1')
                                             <span class="badge rounded-pill bg-success">Active</span>

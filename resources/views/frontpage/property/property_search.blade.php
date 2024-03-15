@@ -31,9 +31,9 @@
                       <div class="carousel-item-b swiper-slide">
                         <img src="{{asset($item->property_thumbnail)}}" alt="">
                       </div>
-                      <div class="carousel-item-b swiper-slide">
+                      {{-- <div class="carousel-item-b swiper-slide">
                         <img src="{{asset($item->multi_img->photo_name)}}" alt="">
-                      </div>
+                      </div> --}}
                     </div>
                   </div>
                   <div class="property-single-carousel-pagination carousel-pagination"></div>

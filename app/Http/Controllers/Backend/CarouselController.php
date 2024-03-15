@@ -18,20 +18,30 @@ class CarouselController extends Controller
     }
     // StoreCarousel
     public function StoreCarousel(Request $request){
-        // create new manager instance with desired driver
-        $manager = new ImageManager(new Driver());
 
+        $request->validate([
+            'photo_slide' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+        ]);
+        // Without Imagick 
         $image = $request->file('photo_slide');
-        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        $filename = date('YmdHi') . $image->getClientOriginalExtension();
+        $image->move(public_path('upload/property/slides/'), $filename);
 
-        // read image from file system
-        $img = $manager->read($image);
-        $img = $img->resize(1400, 1500);
+        $save_url = 'upload/property/slides/'.$filename;
+        // // create new manager instance with desired driver
+        // $manager = new ImageManager(new Driver());
 
-        // save modified image in new format 
-        $img->toJpeg(80)->save(base_path('public/upload/property/slides/'.$name_gen));
+        // $image = $request->file('photo_slide');
+        // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-        $save_url = 'upload/property/slides/'.$name_gen;
+        // // read image from file system
+        // $img = $manager->read($image);
+        // $img = $img->resize(1400, 1500);
+
+        // // save modified image in new format 
+        // $img->toJpeg(80)->save(base_path('public/upload/property/slides/'.$name_gen));
+
+        // $save_url = 'upload/property/slides/'.$name_gen;
 
         Carousel::insert([
             'property_name' => $request->property_name,
@@ -44,7 +54,7 @@ class CarouselController extends Controller
             'message'=> 'Slider Inserted Successfully',
             'alert-type'=>'success'
         );
-        return redirect()->back()->with($notification);
+        return redirect()->route('all.carousel')->with($notification);
     }
     // AllCarousel
     public function AllCarousel(){
@@ -62,20 +72,29 @@ class CarouselController extends Controller
         $pid = $request->id;
 
         if($request->file('photo_slide')){
-            // create new manager instance with desired driver
-            $manager = new ImageManager(new Driver());
-
+            $request->validate([
+                'photo_slide' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+            ]);
+            // Without Imagick 
             $image = $request->file('photo_slide');
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            $filename = date('YmdHi') . $image->getClientOriginalExtension();
+            $image->move(public_path('upload/property/slides/'), $filename);
+    
+            $save_url = 'upload/property/slides/'.$filename;
+            // // create new manager instance with desired driver
+            // $manager = new ImageManager(new Driver());
 
-            // read image from file system
-            $img = $manager->read($image);
-            $img = $img->resize(1400, 1500);
+            // $image = $request->file('photo_slide');
+            // $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
 
-            // save modified image in new format 
-            $img->toJpeg(80)->save(base_path('public/upload/property/slides/'.$name_gen));
+            // // read image from file system
+            // $img = $manager->read($image);
+            // $img = $img->resize(1400, 1500);
 
-            $save_url = 'upload/property/slides/'.$name_gen;
+            // // save modified image in new format 
+            // $img->toJpeg(80)->save(base_path('public/upload/property/slides/'.$name_gen));
+
+            // $save_url = 'upload/property/slides/'.$name_gen;
 
             Carousel::findOrFail($pid)->update([
                 'property_name' => $request->property_name,

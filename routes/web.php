@@ -6,8 +6,10 @@ use App\Http\Controllers\Backend\PropertyController;
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Http\Controllers\Backend\CarouselController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\ExportImportController;
 use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\Backend\MessageController;
+use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\TestimonialController;
 use App\Http\Controllers\Frontend\BlogController as FrontendBlogController;
 use App\Http\Controllers\Frontend\TenantController;
@@ -43,6 +45,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+Route::group(["middleware"=> "prevent-back-history"], function () {
 
 
 Route::get('/', [UserController::class, 'Index']);
@@ -155,7 +159,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
 Route::get('/dashboard', function () {
     return view('user.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'roles:user', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -251,11 +255,38 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/delete/blog/post/{id}', 'DeletePost')->name('delete.post');
     });
 
+    // Roles and Permissions For Admin
+    Route::controller(RoleController::class)->group(function(){
+        Route::get('/all/permission', 'AllPermission')->name('all.permission');
+        Route::get('/add/permission', 'AddPermission')->name('add.permission');
+        Route::post('/store/permission', 'StorePermission')->name('store.permission');
+        Route::get('/edit/permission/{id}', 'EditPermission')->name('edit.permission');
+        Route::post('/update/permission', 'UpdatePermission')->name('update.permission');
+        Route::get('/delete/permission/{id}', 'DeletePermission')->name('delete.permission');
+        // Route::get('/all/carousel', 'AllCarousel')->name('all.carousel');
+        // Route::get('/edit/carousel/{id}', 'EditCarousel')->name('edit.carousel');
+        // Route::post('/update/carousel', 'UpdateCarousel')->name('update.carousel');
+        // Route::get('/delete/carousel/{id}', 'DeleteCarousel')->name('delete.carousel');
+        Route::get('/all/roles', 'AllRoles')->name('all.roles');
+        Route::get('/add/roles', 'AddRoles')->name('add.roles');
+        Route::post('/store/roles', 'StoreRoles')->name('store.roles');
+        Route::get('/edit/roles/{id}', 'EditRoles')->name('edit.roles');
+        Route::post('/update/roles', 'UpdateRoles')->name('update.roles');
+        Route::get('/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
+        Route::get('/add/roles/permission', 'AllRolesPermission')->name('add.roles.permission');
+    });
+
     // Message to Admin Route
     Route::controller(MessageController::class)->group(function(){
         Route::get('/admin/message', 'AdminMessage')->name('admin.message');
     });
 
+    // Export/Import CSV File
+    Route::controller(ExportImportController::class)->group(function(){
+        Route::get('/import/property', 'ImportProperty')->name('import.property');
+        Route::get('/export', 'Export')->name('export');
+        Route::post('/import', 'Import')->name('import');
+    });
 });
 
 
@@ -267,6 +298,6 @@ Route::get('callback', [PaystackController::class,'callback'])->name('callback')
 Route::get('success', [PaystackController::class,'success'])->name('success');
 Route::get('cancel', [PaystackController::class,'cancel'])->name('cancel');
 
-
+});
 
 require __DIR__.'/auth.php';

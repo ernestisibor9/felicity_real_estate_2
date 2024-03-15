@@ -29,7 +29,7 @@
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $item->property_name }}</td>
                             <td><img src="{{ asset($item->photo_slide) }}" alt="Admin" class="rounded-circle p-1 bg-primary" width="60" height="60"></td>
-                            <td>{{ $item->price }}</td>
+                            <td>&#8358; {{ number_format($item->price) }}</td>
                             <td>{{ $item->city }}</td>
                            
                             <td>

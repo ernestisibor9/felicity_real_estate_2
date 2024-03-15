@@ -44,8 +44,12 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="input2" class="form-label">Post Photo</label>
-                                <input type="file" name="post_image" class="form-control" id="image">
-                                <div class="mt-2"></div>
+                                <input type="file" name="post_image" class="form-control @error('post_image')is-invalid @enderror" id="image">
+                                <div class="mt-2">
+                                @error('post_image')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                 <div>
                                     <img src="{{asset($editPost->post_image)}}" id="showImage" alt="" width="90px" height="90px">
                                 </div>

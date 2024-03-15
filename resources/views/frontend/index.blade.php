@@ -6,10 +6,34 @@
 	Felicity Properties Limited - Home
 @endsection
 
+<style>
+  .caro .img-fluid{
+    max-width: auto !important;
+    max-height: 320px !important;
+    min-height: 300px !important;
+  }
+  .slide .img-fluid{
+    max-width: auto !important;
+    max-height: 600px !important;
+    min-height: 300px !important;
+  }
+  .my-swipe .img-fluid{
+    max-width: auto !important;
+    max-height: 600px !important;
+    min-height: 300px !important;
+  }
+  .swiper-slide .img-fluid{
+    max-width: auto!important;
+    max-height: 500px!important;
+    min-height: 400px!important;
+  }
+</style>
+
 		<main id="main">
 
       @php
           $blog = App\Models\BlogPost::latest()->limit(5)->get();
+          $property = App\Models\Property::latest()->limit(9)->get();
       @endphp
 
       <!-- ======= Service Section ======= -->
@@ -126,9 +150,9 @@
                 <h2 class="title-a">Latest Properties</h2>
               </div>
               <div class="title-link">
-                <a href="property-grid.html">All Property
+                {{-- <a href="property-grid.html">All Property
                   <span class="bi bi-chevron-right"></span>
-                </a>
+                </a> --}}
               </div>
             </div>
           </div>
@@ -138,7 +162,7 @@
           <div class="swiper-wrapper">
             
             @foreach ($property as $item)
-            <div class="carousel-item-b swiper-slide">
+            <div class="carousel-item-b swiper-slide caro">
               <div class="card-box-a card-shadow">
                 <div class="img-box-a">
                   <img src="{{asset($item->property_thumbnail)}}" alt="" class="img-a img-fluid">
@@ -259,15 +283,15 @@
                 <h2 class="title-a">Recent Blogs</h2>
               </div>
               <div class="title-link">
-                <a href="blog-grid.html">All Blogs
+                {{-- <a href="blog-grid.html">All Blogs
                   <span class="bi bi-chevron-right"></span>
-                </a>
+                </a> --}}
               </div>
             </div>
           </div>
         </div>
 
-        <div id="news-carousel" class="swiper">
+        <div id="news-carousel" class="swiper my-swipe">
           <div class="swiper-wrapper">
             @foreach ($blog as $item)
             <div class="carousel-item-c swiper-slide">
@@ -315,7 +339,7 @@
           </div>
         </div>
 
-        <div id="testimonial-carousel" class="swiper">
+        <div id="testimonial-carousel" class="swiper slide my-slide">
           <div class="swiper-wrapper">
 
             @php

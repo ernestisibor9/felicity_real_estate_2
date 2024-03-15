@@ -3,19 +3,32 @@
 <style>
     @media screen and (max-width: 540px) {
     .mob {
-      margin-top: 50px;
+      margin-top: 30px;
     }
      .mob-politics{
-      margin-top: -580px;
+      margin-top: -550px;
     } 
     .mob-business{
-      margin-top: -580px;
+      margin-top: -550px;
     }
     .mob-sports{
-      margin-top: -580px;
+      margin-top: -550px;
     }  
   }
   </style>
+
+  <style>
+  .swiper-slide .img-fluid{
+    max-width: auto!important;
+    max-height: 380px!important;
+    min-height: 380px!important;
+  } 
+
+  .finish-cont{
+    margin-bottom: -280px;
+  }
+
+</style>
 
 @section('main')
     <main id="main">
@@ -25,18 +38,18 @@
         @endsection
 
         <!-- ======= Real Estate Blog Section ======= -->
-        <section class="section-news section-t8" id="blog">
+        <section class="section-news section-t8 finish-cont" id="blog">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between mob">
                     <div class="title-box">
-                    <h2 class="title-a">Blogs</h2>
+                    <h2 class="title-a">Real Estate</h2>
                     </div>
                     <div class="title-link">
-                    <a href="blog-grid.html">Real Estate Blogs
+                    {{-- <a href="blog-grid.html">Real Estate Blogs
                         <span class="bi bi-chevron-right"></span>
-                    </a>
+                    </a> --}}
                     </div>
                 </div>
                 </div>
@@ -77,18 +90,20 @@
             </div>
         </section><!-- End Real Estate Section -->
         <!-- ======= Politics Blog Section ======= -->
-        <section class="section-news section-t8 mob-politics" id="blog">
+        <section class="section-news section-t8 mob-politics finish-cont" id="blog">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between">
                     <div class="title-box">
-                    <h2 class="title-a"></h2>
+                    <div class="title-box">
+                    <h2 class="title-a">Politics</h2>
+                    </div>
                     </div>
                     <div class="title-link">
-                    <a href="blog-grid.html">Politics Blogs
+                    {{-- <a href="blog-grid.html">Politics Blogs
                         <span class="bi bi-chevron-right"></span>
-                    </a>
+                    </a> --}}
                     </div>
                 </div>
                 </div>
@@ -129,18 +144,20 @@
             </div>
         </section><!-- End Politics Section -->
         <!-- ======= Business Blog Section ======= -->
-        <section class="section-news section-t8 mob-business" id="blog">
+        <section class="section-news section-t8 mob-business finish-cont" id="blog">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between">
                     <div class="title-box">
-                    <h2 class="title-a"></h2>
+                    <div class="title-box">
+                    <h2 class="title-a">Business</h2>
+                    </div>
                     </div>
                     <div class="title-link">
-                    <a href="blog-grid.html">Business Blogs
+                    {{-- <a href="blog-grid.html">Business Blogs
                         <span class="bi bi-chevron-right"></span>
-                    </a>
+                    </a> --}}
                     </div>
                 </div>
                 </div>
@@ -181,18 +198,20 @@
             </div>
         </section><!-- End Business Section -->
         <!-- ======= Sports Blog Section ======= -->
-        <section class="section-news section-t8 mob-sports" id="blog">
+        <section class="section-news section-t8 mob-sports finish-cont" id="blog">
             <div class="container">
             <div class="row">
                 <div class="col-md-12">
                 <div class="title-wrap d-flex justify-content-between">
                     <div class="title-box">
-                    <h2 class="title-a"></h2>
+                    <div class="title-box">
+                    <h2 class="title-a">Sports</h2>
+                    </div>
                     </div>
                     <div class="title-link">
-                    <a href="blog-grid.html">Sports Blogs
+                    {{-- <a href="blog-grid.html">Sports Blogs
                         <span class="bi bi-chevron-right"></span>
-                    </a>
+                    </a> --}}
                     </div>
                 </div>
                 </div>

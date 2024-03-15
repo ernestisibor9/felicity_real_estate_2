@@ -28,8 +28,12 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="input2" class="form-label">Testimonial Photo <span style="color: red;">*</span></label>
-                                <input type="file" required name="photo" class="form-control" id="input1" onChange="mainThamUrl(this)">
-                                <div class="mt-2"></div>
+                                <input type="file" required name="photo" class="form-control @error('photo')is-invalid @enderror" id="input1" onChange="mainThamUrl(this)">
+                                <div class="mt-2">
+                                @error('photo')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
                                     <img src="" id="mainThmb">
                             </div>
 							<div class="mt-3">
