@@ -7,8 +7,6 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
 
 class AdminController extends Controller
 {
@@ -40,29 +38,15 @@ class AdminController extends Controller
     // AdminProfileStore
     public function AdminProfileStore(Request $request){
 
-        // create new manager instance with desired driver
-        $manager = new ImageManager(new Driver());
-
         $id = Auth::user()->id;
         $data = User::find($id);
         
         if($request->file('photo')){
-            // $file = $request->file('photo');
-            // $filename = date("YmdHi").$file->getClientOriginalName(); // 23232.ariyan.png
-            // $file->move(public_path('upload/admin_images'), $filename);
-            // $data['photo'] = $filename; 
-            $image = $request->file('photo');
-
-            // read image from file system
-            $img = $manager->read($image);
-            $img = $img->resize(110, 110);
-
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-
-            // save modified image in new format 
-            $img->toJpeg(80)->save(base_path('public/upload/admin_images/'.$name_gen));
-
-            $data['photo'] = $name_gen; 
+            $file = $request->file('photo');
+            unlink(public_path('upload/admin_images/'.$data->photo));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/admin_images'),$filename);
+            $data['photo'] = $filename;
         }
 
         // Insert Data into Multi Img table

@@ -13,9 +13,14 @@
 
   <style>
   .swiper-slide .img-fluid{
-    max-width: auto!important;
+    /* max-width: auto!important;
     max-height: 380px!important;
-    min-height: 380px!important;
+    min-height: 380px!important; */
+
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    width: auto; /* Allows the image to adjust its width based on the container */
+    height: auto; /* Allows the image to adjust its height based on the container */
   } 
 
   .finish-cont{

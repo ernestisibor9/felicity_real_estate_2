@@ -181,7 +181,7 @@ class PropertyCategoryController extends Controller
             $property = Property::where('ptype_id', $ptypeId )->where('city_id', $cityId)->where('property_category', 'finished_property')->get();
             $propertyType = PropertyType::orderBy('type_name', 'ASC')->get();
     
-            return view('frontpage.property.property_type', compact('property', 'prop', 'propertyType'));
+            return view('frontpage.property.property_type_finished', compact('property', 'prop', 'propertyType'));
         }
         catch(\Exception $e){
             return redirect()->back()->with('error', $e->getMessage());

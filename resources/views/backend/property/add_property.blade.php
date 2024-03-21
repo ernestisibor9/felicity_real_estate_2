@@ -245,9 +245,6 @@
                 property_category: {
                     required: true,
                 },
-                property_thumbnail: {
-                    required: true
-                },
                 ptype_id: {
                     required: true
                 }
@@ -265,9 +262,6 @@
                 },
                 property_category: {
                     required: 'Please Select Property Category',
-                },
-                property_thumbnail: {
-                    required: 'Please Upload a Thumbnail Photo',
                 },
                 ptype_id: {
                     required: 'Please Select a Property Type',

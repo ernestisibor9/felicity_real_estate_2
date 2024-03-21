@@ -22,28 +22,23 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="about.html">About</a>
+            <a class="nav-link " href="#">About</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
+            <a class="nav-link " href="#">Property</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">Blog</a>
+            <a class="nav-link " href="#">Blog</a>
           </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Agents</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">Property Single</a>
-              <a class="dropdown-item " href="blog-single.html">Blog Single</a>
-              <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
-              <a class="dropdown-item " href="agent-single.html">Agent Single</a>
-            </div>
-          </li>
           <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
+            <a class="nav-link " href="{{route('admin.login')}}">Admin</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -51,7 +46,7 @@
       @auth
           
 				<button type="button" class="btn btn-success" data-bs-toggle="" data-bs-target="">
-					<a href="{{ route('login') }}" class="text-white">Sign in</a>
+					<a href="{{ route('admin.login') }}" class="text-white">Sign in</a>
 				</button>
 
       @else

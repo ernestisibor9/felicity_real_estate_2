@@ -8,24 +8,46 @@
 
 <style>
   .caro .img-fluid{
-    max-width: auto !important;
+    /* max-width: auto !important;
     max-height: 320px !important;
-    min-height: 300px !important;
+    min-height: 300px !important; */
+
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    width: auto; /* Allows the image to adjust its width based on the container */
+    height: auto; /* Allows the image to adjust its height based on the container */
   }
   .slide .img-fluid{
-    max-width: auto !important;
+    /* max-width: auto !important;
     max-height: 600px !important;
-    min-height: 300px !important;
+    min-height: 300px !important; */
+
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    width: auto; /* Allows the image to adjust its width based on the container */
+    height: auto; /* Allows the image to adjust its height based on the container */
   }
   .my-swipe .img-fluid{
-    max-width: auto !important;
+    /* max-width: auto !important;
     max-height: 600px !important;
-    min-height: 300px !important;
+    min-height: 300px !important; */
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    width: auto; /* Allows the image to adjust its width based on the container */
+    height: auto; /* Allows the image to adjust its height based on the container */
   }
   .swiper-slide .img-fluid{
-    max-width: auto!important;
-    max-height: 500px!important;
-    min-height: 400px!important;
+
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    width: auto; /* Allows the image to adjust its width based on the container */
+    height: auto; /* Allows the image to adjust its height based on the container */
+  }
+  #testimonial-carousel{
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    max-height: 100%; /* Ensures the image does not exceed the container's height */
+    width: auto; /* Allows the image to adjust its width based on the container */
+    height: auto; /* Allows the image to adjust its height based on the container */
   }
 </style>
 
@@ -48,7 +70,7 @@
             </div>
           </div>
           <div class="col-md-3 ">
-            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card" >
               <div class="card-body">
                 <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px; color: #800080;"></i>
                 <h5 class="mb-3" style="color: #800080;">Property Sales and Purchase</h5>
@@ -60,7 +82,7 @@
             </div>
           </div>
           <div class=" col-md-3 ">
-            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card">
               <div class="card-body">
                 <i class="fa-solid fa-house mb-3" style="font-size: 45px; color: #800080;"></i>
                 <h5 class="mb-3" style="color: #800080;">Rental Solutions</h5>
@@ -72,7 +94,7 @@
             </div>
           </div>
           <div class="col-md-3 ">
-            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card">
               <div class="card-body">
                 <i class="fa-solid fa-shop mb-3" style="font-size: 45px; color: #800080;"></i>
                 <h5 class="mb-3" style="color: #800080;">Long Lease</h5>
@@ -84,7 +106,7 @@
             </div>
           </div>    
           <div class="col-md-3 ">
-            <div class="card shadow text-center p-2 my-card" data-aos="zoom-in-down" data-aos-duration="3000">
+            <div class="card shadow text-center p-2 my-card">
               <div class="card-body">
                 <i class="fa-solid fa-shop mb-3" style="font-size: 45px; color: #800080;"></i>
                 <h5 class="mb-3" style="color: #800080;">Long Lease</h5>

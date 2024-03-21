@@ -1,6 +1,7 @@
   @php
     $sliders = App\Models\Carousel::latest()->limit(3)->get();  
   @endphp  
+
   
   <!-- ======= Intro Section ======= -->
   <div class="intro intro-carousel swiper position-relative">

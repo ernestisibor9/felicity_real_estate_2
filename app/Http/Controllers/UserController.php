@@ -56,22 +56,11 @@ class UserController extends Controller
         $data = User::find($id);
         
         if($request->file('photo')){
-            // $file = $request->file('photo');
-            // $filename = date("YmdHi").$file->getClientOriginalName(); // 23232.ariyan.png
-            // $file->move(public_path('upload/user_images'), $filename);
-            // $data['photo'] = $filename; 
-            $image = $request->file('photo');
-
-            // read image from file system
-            $img = $manager->read($image);
-            $img = $img->resize(110, 110);
-
-            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-
-            // save modified image in new format 
-            $img->toJpeg(80)->save(base_path('public/upload/user_images/'.$name_gen));
-
-            $data['photo'] = $name_gen; 
+            $file = $request->file('photo');
+            unlink(public_path('upload/user_images/'.$data->photo));
+            $filename = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/user_images'),$filename);
+            $data['photo'] = $filename;
         }
 
         // Insert Data into Multi Img table

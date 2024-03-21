@@ -115,7 +115,7 @@ Route::post('/store/property/checkbox', [PropertyCategoryController::class, 'Sho
 
 Route::post('/search/property/city', [PropertyCategoryController::class, 'SearchPropertyCity'])->name('search.property.city');
 
-Route::post('/store/filter/property/type', [PropertyCategoryController::class, 'SearchPropertyType'])->name('store.filter.property.type');
+Route::post('/store/filter/property/type/finished', [PropertyCategoryController::class, 'SearchPropertyType'])->name('store.filter.property.type');
 Route::post('/store/filter/property/type/unfinished', [PropertyCategoryController::class, 'SearchPropertyType2'])->name('store.filter.property.type2');
 Route::post('/store/filter/property/type/land', [PropertyCategoryController::class, 'SearchPropertyType3'])->name('store.filter.property.type3');
 

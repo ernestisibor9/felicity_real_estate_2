@@ -10,8 +10,6 @@ use App\Models\PropertyType;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-use Intervention\Image\ImageManager;
-use Intervention\Image\Drivers\Imagick\Driver;
 
 class PropertyController extends Controller
 {

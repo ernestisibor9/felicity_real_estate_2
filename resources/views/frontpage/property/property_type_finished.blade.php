@@ -3,7 +3,7 @@
 
 @section('main')
       @section('title')
-        Felicity Properties - Properties in Lekki
+        Felicity Properties - 
       @endsection
     <main id="main">
         <section class="mt-5">
@@ -36,12 +36,12 @@
                    
                   <h2 class="text-center" style="margin-top: 80px; margin-bottom:30px;">Finished Properties </h2>
                   <h5 class='text-center text-{{count($property) === 0 ? 'danger':'success'}} mb-3'>
-                  @if (count($property) > 0)
-                  {{count($property)}} property found
-                  @else 
-                  <span class="text-danger">No property found</span> <br> <br>
-                  <a href="{{route('finished.property2')}}" class="btn btn-primary">Back</a>
-                  @endif
+                    @if (count($property) > 0)
+                    {{count($property)}} property found
+                    @else 
+                    <span class="text-danger">No property found</span> <br> <br>
+                    <a href="{{route('finished.property2')}}" class="btn btn-primary">Back</a>
+                    @endif
                   </h5>
                 <div id="property-carousel" class="swiper">
                   <div class="swiper-wrapper">
