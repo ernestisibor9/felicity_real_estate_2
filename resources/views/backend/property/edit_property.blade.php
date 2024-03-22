@@ -19,6 +19,7 @@
                             enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="id" id="" value="{{ $property->id }}">
+                            <input type="hidden" name="property_photo" id="" value="{{ $property->property_thumbnail }}">
                             <div class="col-md-6 form-group">
                                 <label for="input1" class="form-label">Property Name</label>
                                 <input type="text" name="property_name" class="form-control" id="input1"

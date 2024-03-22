@@ -130,6 +130,7 @@ class BlogController extends Controller
     // UpdatePost
     public function UpdatePost(Request $request){
         $pid = $request->id;
+        $postImg = $request->post_img;
 
         if($request->file('post_image')){
             // // create new manager instance with desired driver
@@ -146,9 +147,10 @@ class BlogController extends Controller
             // $img->toJpeg(80)->save(base_path('public/upload/post/'.$name_gen));
 
             // $save_url = 'upload/post/'.$name_gen;
+            unlink(public_path($postImg));
 
             $request->validate([
-                'post_image' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+                'post_image' => 'required|image|max:1024',
             ]);
     
             // Without Imagick 

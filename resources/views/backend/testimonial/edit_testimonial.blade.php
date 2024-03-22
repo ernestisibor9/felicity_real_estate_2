@@ -28,7 +28,10 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <label for="input2" class="form-label"> Photo</label>
-                                <input type="file" name="photo" id="image" class="form-control">
+                                <input type="file" name="photo" id="image" class="form-control @error('photo')is-invalid @enderror">
+                                @error('photo')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 <div class="mt-2"></div>
                                 <div>
                                     <img src="{{asset($editTestimonial->photo)}}" id="showImage" alt="" width="90px" height="90px">

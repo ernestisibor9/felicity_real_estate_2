@@ -15,6 +15,7 @@
                 <form action="{{ route('update.carousel') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{ $editCarousel->id }}">
+                    <input type="hidden" name="photo_caro" value="{{ $editCarousel->photo_slide }}">
                     <div class="card">
                         <div class="card-body">
                             <div class="col-md-12">

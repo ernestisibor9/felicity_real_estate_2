@@ -15,6 +15,7 @@
 				<form action="{{ route('update.post') }}" method="post" enctype="multipart/form-data">
 					@csrf
                     <input type="hidden" name="id" value="{{$editPost->id}}">
+                    <input type="hidden" name="post_img" value="{{$editPost->post_image}}">
 					<div class="card">
 						<div class="card-body">
                             <div class="col-md-12">

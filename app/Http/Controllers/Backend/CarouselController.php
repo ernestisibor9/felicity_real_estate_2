@@ -69,13 +69,16 @@ class CarouselController extends Controller
     }
     // UpdateCarousel
     public function UpdateCarousel(Request $request){
-        // $request->validate([
-        //     'photo_slide' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
-        // ]);
+        
         $pid = $request->id;
+        $photoSlider = $request->photo_caro;
 
         if($request->file('photo_slide')){
+            $request->validate([
+                'photo_slide' => 'required|image|max:1024',
+            ]);
             // Without Imagick 
+            unlink(public_path($photoSlider));
             $image = $request->file('photo_slide');
             $filename = date('YmdHi') . $image->getClientOriginalExtension();
             $image->move(public_path('upload/property/slides/'), $filename);

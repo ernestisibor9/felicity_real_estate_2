@@ -146,13 +146,14 @@ class PropertyController extends Controller
         // ]);
 
         $pid = $request->id;
+        $propertyPhoto = $request->property_photo;
 
 
         if ($request->file('property_thumbnail')) {
             $request->validate([
-                'property_thumbnail' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+                'property_thumbnail' => 'required|image|max:1024',
             ]);
-            // Without Imagick 700 x 800
+            unlink(public_path($propertyPhoto));
             $image = $request->file('property_thumbnail');
             $filename = date('YmdHi') . $image->getClientOriginalName();
             $image->move(public_path('upload/property/thumbnail/'), $filename);

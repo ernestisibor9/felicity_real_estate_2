@@ -1,6 +1,15 @@
 @extends('frontpage.dashboard')
 
 <style>
+    .my-swipe .img-fluid{
+    max-width: auto !important;
+    max-height: auto !important;
+    min-height: 360px !important;
+
+  }
+</style>
+
+<style>
     @media screen and (max-width: 540px) {
     .mob {
       margin-top: 30px;
@@ -18,15 +27,11 @@
   </style>
 
   <style>
-  .swiper-slide .img-fluid{
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
-  } 
-
   .finish-cont{
-    margin-bottom: -400px;
+    margin-bottom: -350px;
+  }
+  .sports{
+    margin-bottom: 150px !important;
   }
 
 </style>
@@ -56,7 +61,7 @@
                 </div>
             </div>
 
-            <div id="news-carousel" class="swiper">
+            <div id="news-carousel" class="swiper my-swipe">
                 <div class="swiper-wrapper">
                 @foreach ($realEstate as $item)
                 <div class="carousel-item-c swiper-slide">
@@ -110,7 +115,7 @@
                 </div>
             </div>
 
-            <div id="news-carousel" class="swiper">
+            <div id="news-carousel" class="swiper my-swipe">
                 <div class="swiper-wrapper">
                 @foreach ($politics as $item)
                 <div class="carousel-item-c swiper-slide">
@@ -164,7 +169,7 @@
                 </div>
             </div>
 
-            <div id="news-carousel" class="swiper">
+            <div id="news-carousel" class="swiper my-swipe">
                 <div class="swiper-wrapper">
                 @foreach ($business as $item)
                 <div class="carousel-item-c swiper-slide">
@@ -218,7 +223,7 @@
                 </div>
             </div>
 
-            <div id="news-carousel" class="swiper">
+            <div id="news-carousel" class="swiper my-swipe sports">
                 <div class="swiper-wrapper">
                 @foreach ($sports as $item)
                 <div class="carousel-item-c swiper-slide">

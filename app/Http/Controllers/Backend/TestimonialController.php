@@ -84,7 +84,7 @@ class TestimonialController extends Controller
 
             // $save_url = 'upload/testimonial/'.$name_gen;
             $request->validate([
-                'photo' => 'required|image|max:1024|mimes:jpg,jpeg,png,gif',
+                'photo' => 'required|image|max:1024',
             ]);
             // Without Imagick 700 x 800
             $image = $request->file('photo');

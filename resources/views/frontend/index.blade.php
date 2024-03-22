@@ -7,48 +7,15 @@
 @endsection
 
 <style>
-  .caro .img-fluid{
-    /* max-width: auto !important;
-    max-height: 320px !important;
-    min-height: 300px !important; */
 
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
-  }
-  .slide .img-fluid{
-    /* max-width: auto !important;
-    max-height: 600px !important;
-    min-height: 300px !important; */
 
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
-  }
   .my-swipe .img-fluid{
-    /* max-width: auto !important;
-    max-height: 600px !important;
-    min-height: 300px !important; */
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
-  }
-  .swiper-slide .img-fluid{
+    max-width: auto !important;
+    max-height: auto !important;
+    min-height: 360px !important;
 
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
   }
-  #testimonial-carousel{
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
-  }
+
 </style>
 
 		<main id="main">
@@ -69,7 +36,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 ">
+          <div class="col-md-3 mb-3">
             <div class="card shadow text-center p-2 my-card" >
               <div class="card-body">
                 <i class="fa-solid fa-money-check-dollar mb-3" style="font-size: 45px; color: #800080;"></i>
@@ -81,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class=" col-md-3 ">
+          <div class=" col-md-3 mb-3">
             <div class="card shadow text-center p-2 my-card">
               <div class="card-body">
                 <i class="fa-solid fa-house mb-3" style="font-size: 45px; color: #800080;"></i>
@@ -93,7 +60,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 ">
+          <div class="col-md-3 mb-3">
             <div class="card shadow text-center p-2 my-card">
               <div class="card-body">
                 <i class="fa-solid fa-shop mb-3" style="font-size: 45px; color: #800080;"></i>
@@ -105,7 +72,7 @@
               </div>
             </div>
           </div>    
-          <div class="col-md-3 ">
+          <div class="col-md-3 mb-3">
             <div class="card shadow text-center p-2 my-card">
               <div class="card-body">
                 <i class="fa-solid fa-shop mb-3" style="font-size: 45px; color: #800080;"></i>
@@ -180,11 +147,11 @@
           </div>
         </div>
 
-        <div id="property-carousel" class="swiper">
+        <div id="property-carousel" class="swiper my-swipe">
           <div class="swiper-wrapper">
             
             @foreach ($property as $item)
-            <div class="carousel-item-b swiper-slide caro">
+            <div class="carousel-item-b swiper-slide ">
               <div class="card-box-a card-shadow">
                 <div class="img-box-a">
                   <img src="{{asset($item->property_thumbnail)}}" alt="" class="img-a img-fluid">
@@ -361,7 +328,7 @@
           </div>
         </div>
 
-        <div id="testimonial-carousel" class="swiper slide my-slide">
+        <div id="testimonial-carousel" class="swiper slide my-slide ">
           <div class="swiper-wrapper">
 
             @php

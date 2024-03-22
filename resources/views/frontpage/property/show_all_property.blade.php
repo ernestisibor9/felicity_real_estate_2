@@ -12,17 +12,12 @@
   </style>
 
   <style>
-  .swiper-slide .img-fluid{
-    /* max-width: auto!important;
-    max-height: 380px!important;
-    min-height: 380px!important; */
+.my-swipe .img-fluid{
+    max-width: auto !important;
+    max-height: auto !important;
+    min-height: 360px !important;
 
-    max-width: 100%; /* Ensures the image does not exceed the container's width */
-    max-height: 100%; /* Ensures the image does not exceed the container's height */
-    width: auto; /* Allows the image to adjust its width based on the container */
-    height: auto; /* Allows the image to adjust its height based on the container */
-  } 
-
+  }
   .finish-cont{
     margin-bottom: -150px;
   }
@@ -56,7 +51,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper swipe-prop">
+            <div id="property-carousel" class="swiper swipe-prop my-swipe ">
                 <div class="swiper-wrapper">
                 
                 @foreach ($finishedProperties as $item)
@@ -138,7 +133,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper swipe-prop">
+            <div id="property-carousel" class="swiper swipe-prop my-swipe ">
                 <div class="swiper-wrapper">
                 
                 @foreach ($unfinishedProperties as $item)
@@ -221,7 +216,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper swipe-prop">
+            <div id="property-carousel" class="swiper swipe-prop my-swipe ">
                 <div class="swiper-wrapper">
                 
                 @foreach ($land as $item)
@@ -304,7 +299,7 @@
                 </div>
             </div>
     
-            <div id="property-carousel" class="swiper">
+            <div id="property-carousel" class="swiper my-swipe ">
                 <div class="swiper-wrapper">
                 
                 @foreach ($rent as $item)
