@@ -1,159 +1,541 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      
-        <title>FELICITY PROPERTY LIMITED</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
-      
-        <!-- Favicons -->
-        <link href="{{asset('frontend/assets/img/logo.jpg')}}" rel="icon">
-        <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-      
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-      
-        <!-- Vendor CSS Files -->
-        <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-        <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      
-        <!-- Template Main CSS File -->
-        <link href="assets/css/style.css" rel="stylesheet">
-      
-        <!-- =======================================================
-        * Template Name: EstateAgency
-        * Updated: Jan 09 2024 with Bootstrap v5.3.2
-        * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-        * Author: BootstrapMade.com
-        * License: https://bootstrapmade.com/license/
-        ======================================================== -->
-</head>
+<title></title>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
 <style>
-    .image {
-        background-color: white;
-    }
-    .image img {
-        width: 150px;
-        display: inline !important;
-        display: flex;
-        justify-content: space-between;
-    }
-    .message {
-        background-image: linear-gradient(rgba(2, 2, 2, 0.8), rgba(255, 255, 255, 0.2)), url("{{asset('frontend/assets/img/property-7.jpg')}}");
-        height: 60vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding-top: 20px;
-        text-align: center;
-    }
-    @media (max-width:844px) {
-        .message span {
-        color: #800080;
-        font-weight: 700;
-        font-size: 1.5rem;
-    }
-    .message .felicity {
-        background-color: #4bd680;
-        padding: 10px 5px;
-    }
-    .image .ima {
-        display: none !important;
-    }
-    }
-    .message p {
-        color: #fff;
-        font-weight: 300;
-        font-size: 1.2rem;
-        padding-top: 50px;
-    }
-    .message p span {
-        color: #4bd680;
-        font-weight: 300;
-        font-size: 1.2rem;
-    }
-    .message .attach {
-        padding-bottom: 50px;
-    }
-    .message a {
-        color: white;
-        text-align: center;
-        padding-top: 100px !important;
-    }
+		.bee-row,
+		.bee-row-content {
+			position: relative
+		}
 
-    /* Large Screen */
-    @media (min-width: 768px) {
-        .image .im {
-            margin-left: 300px;
-        }
-        .image .ima {
-            margin-left: 300px;
-            width: 500px;
-            border-radius: 10px;
-            border-color: 3px solid #4bd680;
-            outline: #4bd680;
-        }
-        .message {
-        background-image: linear-gradient(rgba(2, 2, 2, 0.8), rgba(255, 255, 255, 0.5)), url("{{asset('frontend/assets/img/property-7.jpg')}}");
-        height: 63.8vh;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        padding-top: 20px;
-        text-align: center;
-    }
-    .message .felicity {
-        color: #4bd680;
-        font-weight: 700;
-        font-size: 2.5rem;
-        background-color: #800080;
-        padding: 10px 20px;
-        margin: 200px 0px;
-    }
-    .message p {
-        color: #fff;
-        font-weight: 600;
-        font-size: 1.2rem;
-        padding-top: 50px;
-        text-align: center;
-    }
-    .message p span {
-        color: #4bd680;
-        font-weight: 600;
-        font-size: 1.2rem;
-    }
-    .message .attach {
-        padding-bottom: 100px;
-    }
-    .message a {
-        color: white;
-        text-align: center;
-        padding-top: 100px !important;
-    }
-    }
-</style>
+		.bee-row-1,
+		.bee-row-10,
+		.bee-row-11,
+		.bee-row-12,
+		.bee-row-13,
+		.bee-row-14,
+		.bee-row-15,
+		.bee-row-16,
+		.bee-row-2,
+		.bee-row-3,
+		.bee-row-4,
+		.bee-row-5,
+		.bee-row-6,
+		.bee-row-7,
+		.bee-row-8,
+		.bee-row-9 {
+			background-repeat: no-repeat
+		}
 
+		body {
+			background-color: #cbe0ee;
+			color: #000;
+			font-family: Arial, Helvetica Neue, Helvetica, sans-serif
+		}
+
+		a {
+			color: #8a3c90
+		}
+
+		* {
+			box-sizing: border-box
+		}
+
+		body,
+		h1,
+		p {
+			margin: 0
+		}
+
+		.bee-row-content {
+			max-width: 1025px;
+			margin: 0 auto;
+			display: flex
+		}
+
+		.bee-row-content .bee-col-w1 {
+			flex-basis: 8%
+		}
+
+		.bee-row-content .bee-col-w2 {
+			flex-basis: 17%
+		}
+
+		.bee-row-content .bee-col-w3 {
+			flex-basis: 25%
+		}
+
+		.bee-row-content .bee-col-w4 {
+			flex-basis: 33%
+		}
+
+		.bee-row-content .bee-col-w5 {
+			flex-basis: 42%
+		}
+
+		.bee-row-content .bee-col-w6 {
+			flex-basis: 50%
+		}
+
+		.bee-row-content .bee-col-w8 {
+			flex-basis: 67%
+		}
+
+		.bee-row-content .bee-col-w12 {
+			flex-basis: 100%
+		}
+
+		.bee-button .content {
+			text-align: center
+		}
+
+		.bee-button a,
+		.bee-icon .bee-icon-label-right a {
+			text-decoration: none
+		}
+
+		.bee-icon {
+			display: inline-block;
+			vertical-align: middle
+		}
+
+		.bee-icon .bee-content {
+			display: flex;
+			align-items: center
+		}
+
+		.bee-paragraph,
+		.bee-text {
+			overflow-wrap: anywhere
+		}
+
+		.bee-row-1 .bee-row-content,
+		.bee-row-2 .bee-row-content {
+			background-color: #800080;
+			background-repeat: no-repeat;
+			border-radius: 0;
+			color: #000
+		}
+
+		.bee-row-11 .bee-row-content,
+		.bee-row-12 .bee-row-content,
+		.bee-row-3 .bee-row-content,
+		.bee-row-4 .bee-row-content,
+		.bee-row-5 .bee-row-content {
+			background-color: #fff;
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-3 .bee-row-content {
+			background-image: url('https://d1oco4z2z1fhwp.cloudfront.net/templates/default/7326/hero-background.png');
+			background-size: auto;
+			border-radius: 0
+		}
+
+		.bee-row-3 .bee-col-1 {
+			padding-bottom: 20px;
+			padding-right: 00px
+		}
+
+		.bee-row-3 .bee-col-2 {
+			padding-bottom: 20px;
+			padding-left: 10px;
+			padding-right: 10px
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-2 {
+			padding-bottom: 30px;
+			text-align: center;
+			width: 100%
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-3,
+		.bee-row-4 .bee-col-1 .bee-block-1 {
+			padding-bottom: 30px
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-4 {
+			padding: 10px;
+			text-align: center
+		}
+
+		.bee-row-3 .bee-col-3 {
+			padding: 5px 30px
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-1 {
+			padding-bottom: 30px;
+			padding-left: 10px;
+			padding-right: 10px
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-2 {
+			padding: 10px 10px 30px;
+			text-align: center
+		}
+
+		.bee-row-6 .bee-row-content,
+		.bee-row-7 .bee-row-content {
+			background-color: #fafafa;
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-10 .bee-row-content,
+		.bee-row-8 .bee-row-content,
+		.bee-row-9 .bee-row-content {
+			background-color: #fafafa;
+			background-repeat: no-repeat;
+			border-radius: 0;
+			color: #000
+		}
+
+		.bee-row-11 .bee-col-1 {
+			padding: 30px
+		}
+
+		.bee-row-13 .bee-row-content {
+			background-color: #fff;
+			background-repeat: no-repeat;
+			border-radius: 0;
+			color: #000
+		}
+
+		.bee-row-14 .bee-row-content {
+			background-color: #800080;
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-14 .bee-col-1 {
+			padding: 30px 20px 10px
+		}
+
+		.bee-row-14 .bee-col-2 {
+			padding: 30px 10px 10px
+		}
+
+		.bee-row-14 .bee-col-2 .bee-block-1,
+		.bee-row-14 .bee-col-2 .bee-block-2,
+		.bee-row-14 .bee-col-3 .bee-block-1,
+		.bee-row-14 .bee-col-3 .bee-block-2,
+		.bee-row-15 .bee-col-1 .bee-block-1 {
+			padding: 10px
+		}
+
+		.bee-row-14 .bee-col-3,
+		.bee-row-14 .bee-col-4 {
+			padding: 30px 10px
+		}
+
+		.bee-row-15 .bee-row-content,
+		.bee-row-16 .bee-row-content {
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-16 .bee-col-1 {
+			padding-bottom: 5px;
+			padding-top: 5px
+		}
+
+		.bee-row-16 .bee-col-1 .bee-block-1 {
+			color: #9d9d9d;
+			font-family: inherit;
+			font-size: 15px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			text-align: center
+		}
+
+		.bee-row-4 .bee-col-1 .bee-block-1 {
+			color: #393d47;
+			direction: ltr;
+			font-family: "Roboto Slab", Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 44px;
+			font-weight: 700;
+			letter-spacing: 0;
+			line-height: 120%;
+			text-align: center
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-3,
+		.bee-row-5 .bee-col-2 .bee-block-1 {
+			direction: ltr;
+			font-weight: 400;
+			letter-spacing: 0;
+			line-height: 120%;
+			text-align: left
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-3 a,
+		.bee-row-4 .bee-col-1 .bee-block-1 a,
+		.bee-row-5 .bee-col-2 .bee-block-1 a {
+			color: #8a3b8f
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-3 p:not(:last-child),
+		.bee-row-4 .bee-col-1 .bee-block-1 p:not(:last-child),
+		.bee-row-5 .bee-col-2 .bee-block-1 p:not(:last-child) {
+			margin-bottom: 16px
+		}
+
+		.bee-row-3 .bee-col-2 .bee-block-3 {
+			color: #fff;
+			font-size: 16px
+		}
+
+		@media (max-width:768px) {
+			.bee-row-content:not(.no_stack) {
+				display: block
+			}
+
+			.bee-row-3 .bee-col-2 .bee-block-2 h1,
+			.bee-row-4 .bee-col-1 .bee-block-1 {
+				font-size: 60px !important
+			}
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-1 {
+			color: #3c3c3c;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 23px
+		}
+
+		.bee-row-16 .bee-col-1 .bee-block-1 .bee-icon-image {
+			padding: 5px 6px 5px 5px
+		}
+
+		.bee-row-16 .bee-col-1 .bee-block-1 .bee-icon:not(.bee-icon-first) .bee-content {
+			margin-left: 0
+		}
+
+		.bee-row-16 .bee-col-1 .bee-block-1 .bee-icon::not(.bee-icon-last) .bee-content {
+			margin-right: 0
+		}
+	</style>
+</head>
 <body>
-    <div class="container-fluid">
-        <div class="row image">
-            <div class="col-md-12">
-                    <img src="{{asset('frontend/assets/img/logo.jpg')}} " alt="">
-                    <img src="{{asset('frontend/assets/img/slide-2.jpg')}}" alt="" class="ima">
-                    <img src="{{asset('frontend/assets/img/Newsletter-pic.png')}}" alt="" class="im">
-            </div>
-        </div>
-        <div>
-            {{$booking['Subject']}}
-            {{$booking['Message']}} 
-        </div>
-    </div>
+<div class="bee-page-container">
+<div class="bee-row bee-row-1">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:15px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-2">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:30px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-3">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w1">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w5">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:20px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-heading">
+    <img src="{{asset('frontend/assets/img/logorem.png')}} " alt="" width="130px" height="130px">
+<h1 style="color:#800080;direction:ltr;font-family:'Roboto Slab', Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:74px;font-weight:700;letter-spacing:normal;line-height:120%;text-align:left;margin-top:0;margin-bottom:0;">Felicity Properties Limited<br/> </h1>
+</div>
+<div class="bee-block bee-block-3 bee-paragraph">
+</div>
+<div class="bee-block bee-block-4 bee-button"></div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w6"></div>
+</div>
+</div>
+<div class="bee-row bee-row-4">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-paragraph">
+<p>Welcome!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-5">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w8">
+<div class="bee-block bee-block-1 bee-paragraph">
+<p><strong>Hello Sir/Ma </strong><br/><strong> {{$booking['Subject']}} </strong></p>
+<p> {{$booking['Message']}}</p>
+</div>
+<div class="bee-block bee-block-2 bee-button"></div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-6">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12"></div>
+</div>
+</div>
+<div class="bee-row bee-row-7">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w8"></div>
+<div class="bee-col bee-col-3 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-8">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w4"></div>
+<div class="bee-col bee-col-3 bee-col-w4"></div>
+<div class="bee-col bee-col-4 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-9">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w4"></div>
+<div class="bee-col bee-col-3 bee-col-w4"></div>
+<div class="bee-col bee-col-4 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-10">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-11">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12"></div>
+</div>
+</div>
+<div class="bee-row bee-row-12">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w8"></div>
+<div class="bee-col bee-col-3 bee-col-w2">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:1px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-13">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:20px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-14">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w3"></div>
+<div class="bee-col bee-col-2 bee-col-w3">
+<div class="bee-block bee-block-1 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; font-family: inherit; color: #fafafa;">
 
-   
+</div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #fafafa;">
+</div>
+</div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w3">
+<div class="bee-block bee-block-1 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; font-family: inherit; color: #fafafa;">
+<p style="font-size: 14px; line-height: 16px; text-align: center;"><span style="font-size: 18px; line-height: 21px;"><strong style=""><span style="line-height: 14px;">Contact Us</span></strong></span></p>
+</div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #fafafa;">
+<p style="line-height: 18px; text-align: center;"><span style="line-height: 18px;">13, Joseph Street, Ikeja, Lagos</span></p>
+<p style="line-height: 18px; text-align: center;"><span style="line-height: 18px;">info@felicitypropertiesltd.com </span></p>
+<p style="line-height: 18px; text-align: center;"><span style="line-height: 18px;">+2347038950658</span></p>
+</div>
+</div>
+</div>
+<div class="bee-col bee-col-4 bee-col-w3"></div>
+</div>
+</div>
+<div class="bee-row bee-row-15">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; font-family: inherit; color: #868686;">
+<p style="font-size: 14px; line-height: 16px; text-align: center;"><span style="font-size: 12px; line-height: 14px;"><?= date('Y') ?> © All Rights Reserved</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-16">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-icons">
+<div class="bee-icon bee-icon-last">
+<div class="bee-content">
 
-
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
