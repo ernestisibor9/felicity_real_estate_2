@@ -22,7 +22,7 @@
 
       @php
           $blog = App\Models\BlogPost::latest()->limit(5)->get();
-          $property = App\Models\Property::latest()->limit(9)->get();
+          $property = App\Models\Property::latest()->limit(6)->get();
       @endphp
 
       <!-- ======= Service Section ======= -->

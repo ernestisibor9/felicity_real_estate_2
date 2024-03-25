@@ -117,7 +117,7 @@
                       <br> {{$slide->city}}
                     </h1>
                     <p class="intro-subtitle intro-price">
-                      <a href="#"><span class="price-a"> &#8358; {{$slide->price}}</span></a>
+                      <a href="#"><span class="price-a"> &#8358; {{number_format($slide->price)}}</span></a>
                     </p>
                   </div>
                 </div>
